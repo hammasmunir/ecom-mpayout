@@ -1,7 +1,7 @@
 import ImageCarousel from '@/components/product/ImageCarousel';
 import Image from 'next/image';
 import { MdArrowOutward } from 'react-icons/md';
-import ROICalculator from './ROICalculator';
+import ROICalculator from '../../components/product/ROICalculator';
 
 export default function HomeHero() {
   return (

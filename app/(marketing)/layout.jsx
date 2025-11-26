@@ -5,7 +5,7 @@ export default function MarketingLayout({ children }) {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Fixed Navbar */}
-      <div className="relative mx-auto min-h-screen w-full max-w-[1440px] pt-20">
+      <div className="relative mx-auto min-h-screen w-full pt-20">
         {/* ← THIS is the only fix */}
         <div className="fixed top-0 left-1/2 z-30 mt-5 w-full -translate-x-1/2 backdrop-blur-md">
           <header className="flex items-center justify-center">
@@ -17,8 +17,8 @@ export default function MarketingLayout({ children }) {
         <main className="mt-5 flex-1">{children}</main>
 
         {/* Centered Hello Section */}
-        <section className="pointer-events-none absolute inset-0 z-40 flex items-center justify-center px-4 lg:px-11 2xl:px-16">
-          <div className="h-full w-full border-x border-dashed border-red-500 text-center"></div>
+        <section className="pointer-events-none absolute inset-0 flex items-center justify-center px-4 lg:px-11 2xl:px-16 max-w-[1440px] bg-red-500 mx-auto z- opacity-45">
+          <div className="h-full border-x border-dashed border-red-500 text-center w-full"></div>
         </section>
 
         {/* Footer */}
@@ -27,3 +27,4 @@ export default function MarketingLayout({ children }) {
     </div>
   );
 }
+;
