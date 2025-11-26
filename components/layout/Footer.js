@@ -12,8 +12,8 @@ export default function Footer() {
     <footer className="w-full">
       {/* Banner Section */}
 
-      <div className="w-full px-6 py-20 md:px-16 lg:px-28 border-b border-dashed border-gray-300">
-        <div className="relative max-w-[1440px] mx-auto h-[350px] overflow-hidden rounded-2xl md:h-[447px] lg:h-[447px]">
+      <div className="w-full  py-20 border-b border-dashed border-gray-300">
+        <div className="px-5 relative max-w-[1440px] mx-auto h-[350px] overflow-hidden rounded-2xl md:h-[447px] lg:h-[447px]">
           {/* ==== Always 1440px image ==== */}
           <div className="absolute inset-0">
             <Image src="/footer/footerlg.png" alt="Footer Large" fill className="object-cover" />
@@ -51,8 +51,8 @@ export default function Footer() {
 
       {/* Main Footer Content */}
 
-      <div className="border-b border-dashed border-gray-300 px-6 md:px-0 ">
-        <div className='flex flex-col max-w-[1440px] mx-auto  lg:flex-row lg:items-start lg:justify-between '>
+      <div className="border-b border-dashed border-gray-300 ">
+        <div className='flex flex-col max-w-[1440px] mx-auto  lg:flex-row lg:items-start lg:justify-between px-5'>
           {/* ------- LEFT SIDE ------- */}
         <div className="flex w-full flex-col items-start py-8 lg:w-auto lg:pl-20">
           <div className="h-[50px] w-[200px] md:w-[260px]">
@@ -169,7 +169,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="px-8 py-7 md:px-24">
-        <div className="flex flex-col items-center justify-between md:flex-row max-w-[1440px] mx-auto">
+        <div className="flex flex-col items-center justify-between md:flex-row max-w-[1440px] mx-auto px-5">
           <p className="text-gray-[#525252] text-base md:text-xl">
             &copy; 2024 EcomPayouts. All rights reserved.
           </p>
