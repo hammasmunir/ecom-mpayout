@@ -221,7 +221,7 @@ const Navbar = () => {
               <div
                 className={`overflow-hidden transition-all duration-400 ease-in-out ${activeDropdown === item.title ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}
               >
-                <div className="mx-2 mt-1 space-y-2 rounded-xl bg-gray-50 p-2 pb-3 pl-4">
+                <div className="mx-2 my-2 space-y-2 rounded-xl bg-gray-50 p-2 pb-3 pl-4">
                   {item.links.map((link, linkIndex) => (
                     <a
                       key={link.name}
