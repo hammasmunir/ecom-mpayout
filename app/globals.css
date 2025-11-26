@@ -43,3 +43,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.dash-border{
+  border-style: dashed;
+  border-width: 3px;
+  border-color: #E0E0E0;
+  border-top: none;
+  border-bottom: 1px;
+  border-left: none;
+  border-right: none;
+}
