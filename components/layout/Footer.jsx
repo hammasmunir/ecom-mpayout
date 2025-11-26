@@ -51,7 +51,7 @@ export default function Footer() {
 
       {/* Main Footer Content */}
 
-      <div className="border-b border-dashed border-gray-300 ">
+      <div className="border-b border-dashed border-gray-300 border-[3px] ">
         <div className='flex flex-col max-w-[1440px] mx-auto  lg:flex-row lg:items-start lg:justify-between px-5'>
           {/* ------- LEFT SIDE ------- */}
         <div className="flex w-full flex-col items-start py-8 lg:w-auto lg:pl-20">

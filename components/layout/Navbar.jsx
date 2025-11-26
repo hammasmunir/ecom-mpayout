@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 
@@ -89,17 +90,17 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`sticky top-0 z-50 w-full px-4 transition-all duration-300 sm:px-8 lg:px-16`}>
-      <div className="mx-auto w-full max-w-[1200px] rounded-full border border-[#EBEBEB] bg-white px-4 sm:px-6 lg:px-8">
+    <nav className={`sticky top-0 z-50 w-full transition-all duration-300 px-5`}>
+      <div className="mx-auto w-full max-w-[1440px] rounded-full border border-[#EBEBEB] bg-white px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a
+            <Link
               href="/"
               className="text-xl font-bold text-gray-800 transition-colors duration-300 hover:text-blue-600 sm:text-2xl"
             >
               YourLogo
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -136,7 +137,7 @@ const Navbar = () => {
                     <a
                       key={link.name}
                       href={link.href}
-                      className="block transform px-4 py-3 text-sm text-gray-700 transition-all duration-250 hover:translate-x-2 hover:bg-blue-50 hover:text-blue-600"
+                      className="block transform px-4 py-3 text-sm text-gray-700 transition-all duration-250 hover:translate-x-2 hover:bg-blue-50 hover:text-blue-600 rounded-lg"
                       style={{
                         transitionDelay: activeDropdown === index ? `${linkIndex * 50}ms` : '0ms',
                       }}

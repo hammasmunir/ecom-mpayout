@@ -21,8 +21,8 @@ export default function HomeHero() {
         </div>
 
         {/* ===== Center Content ===== */}
-        <div className="relative z-10 mt-20 flex flex-col items-center justify-center text-center sm:mt-24 md:mt-28">
-          <h1 className="mb-4 px-2 text-3xl font-extrabold text-gray-900 sm:px-0 sm:text-4xl md:text-5xl lg:text-6xl">
+        <div className="relative z-10 mt-20 flex flex-col items-center justify-center text-center sm:mt-24 md:mt-28 max-w-[1440px] mx-auto px-5">
+          <h1 className="mb-4 px-5 text-3xl font-extrabold text-gray-900 sm:px-0 sm:text-4xl md:text-5xl lg:text-6xl">
             The Most Reliable Payments for High-Risk Merchants.
           </h1>
 
