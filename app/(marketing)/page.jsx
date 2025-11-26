@@ -2,6 +2,8 @@ import ImageCarousel from '@/components/product/ImageCarousel';
 import Image from 'next/image';
 import { MdArrowOutward } from 'react-icons/md';
 import ROICalculator from '../../components/product/ROICalculator';
+import Label from '@/components/ui/Label';
+import FlashIcon from '@/assets/icons/FlashIcon';
 
 export default function HomeHero() {
   return (
@@ -59,6 +61,7 @@ export default function HomeHero() {
       <section className="mt-20 h-auto border-y border-dashed border-gray-200 px-4 py-10">
         <ImageCarousel />
       </section>
+      <Label text='Hello World' icon={<FlashIcon/>}/>
     </>
   );
 }

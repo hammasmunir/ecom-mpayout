@@ -17,8 +17,8 @@ export default function MarketingLayout({ children }) {
         <main className="mt-5 flex-1">{children}</main>
 
         {/* Centered Hello Section */}
-        <section className="pointer-events-none absolute inset-0 flex items-center justify-center px-4 lg:px-11 2xl:px-16 max-w-[1440px] bg-red-500 mx-auto z- opacity-45">
-          <div className="h-full border-x border-dashed border-red-500 text-center w-full"></div>
+        <section className="pointer-events-none absolute inset-0 flex items-center justify-center max-w-[1440px] bg-red-500 mx-auto opacity-45">
+          <div className="h-full border-x border-dashed border-blue-500 text-center w-full"></div>
         </section>
 
         {/* Footer */}
