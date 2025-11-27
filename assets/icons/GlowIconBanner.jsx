@@ -250,8 +250,8 @@ const GlowIconBanner = () => {
           y2="282"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="1" stop-color="#0357F0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="#0357F0" />
         </linearGradient>
       </defs>
     </svg>

@@ -50,7 +50,7 @@ const FAQs = () => {
   };
 
   return (
-    <section className="border-b border-dashed border-gray-300 py-16 lg:py-20">
+    <section className="py-16 lg:py-20">
       <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
         <Starter
           heading="Got Questions? We've Got Answers."
