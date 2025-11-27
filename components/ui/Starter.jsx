@@ -9,7 +9,7 @@ const Starter = ({ heading, text, noCenter, label, className }) => {
       {' '}
       <Label text={label} />
       <h3 className="text-2xl font-semibold md:text-3xl lg:text-5xl">{heading}</h3>
-      <p className="text-base md:text-xl">{text && text}</p>
+      <p className="text-text text-base md:text-xl">{text && text}</p>
     </div>
   );
 };

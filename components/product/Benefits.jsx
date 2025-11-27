@@ -24,7 +24,7 @@ const Benefits = () => {
             />
             <div className="flex flex-col gap-3 lg:mt-20">
               <h5 className="text-lg font-medium">Built for Speed and Stability</h5>
-              <p>
+              <p className="text-text">
                 Process payments faster with near-zero downtime and globally optimized reliability.
               </p>
             </div>
@@ -32,7 +32,7 @@ const Benefits = () => {
           <article className="flex flex-col justify-between gap-3 overflow-hidden rounded-2xl shadow-md">
             <div className="flex flex-col gap-3 px-6 pt-6">
               <h5 className="text-lg font-medium">Transparent and Fair Processing</h5>
-              <p>
+              <p className="text-text">
                 No surprise freezes, full visibility and honest communication for every transaction.
               </p>
             </div>
@@ -45,7 +45,9 @@ const Benefits = () => {
           <article className="flex flex-col justify-between gap-3 overflow-hidden rounded-2xl shadow-md">
             <div className="flex flex-col gap-3 px-6 pt-6">
               <h5 className="text-lg font-medium">Scales as You Grow</h5>
-              <p>Expand smoothly into new markets with flexible, stable payment infrastructure. </p>
+              <p className="text-text">
+                Expand smoothly into new markets with flexible, stable payment infrastructure.{' '}
+              </p>
             </div>
             <Image
               src={BenfitsImage2}
@@ -56,7 +58,7 @@ const Benefits = () => {
           <article className="flex flex-col justify-between gap-3 overflow-hidden rounded-2xl shadow-md">
             <div className="flex max-w-lg flex-col gap-3 px-6 pt-6">
               <h5 className="text-lg font-medium">Know Exactly Where Your Money Is</h5>
-              <p>
+              <p className="text-text">
                 Track every payout and transaction instantly from one clear, powerful
                 dashboard.{' '}
               </p>

@@ -22,7 +22,7 @@ const Hero = () => {
             The Most Reliable Payments for High-Risk Merchants.
           </h1>
 
-          <p className="mb-6 max-w-xl px-2 text-base text-gray-700 sm:max-w-2xl sm:px-0 sm:text-lg md:text-xl">
+          <p className="text-text mb-6 max-w-xl px-2 text-base sm:max-w-2xl sm:px-0 sm:text-lg md:text-xl">
             Get approved fast, process globally, and never worry about sudden holds or bans again.
           </p>
 
