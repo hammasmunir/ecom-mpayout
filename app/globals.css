@@ -77,8 +77,6 @@ spans {
   width: 100%;
 }
 
-/* Below lg: single column (one item per row) - includes md breakpoint */
-/* lg and above: 3-column grid with specific layout */
 @media (min-width: 1024px) {
   .benefits-grid {
     grid-template-columns: repeat(3, 1fr);
