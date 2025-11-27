@@ -5,7 +5,7 @@ import FlashImage from '@/assets/images/why-choose-flash.svg';
 const WhyChooseUs = () => {
   return (
     <>
-      <section className="bg-pink-200 pt-16 pb-10 lg:pt-20">
+      <section className="pt-16 pb-10 lg:pt-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
           <div className="flex w-full items-center justify-between gap-5">
             <Starter
@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
           </div>
         </section>
       </section>
-      <section className="bg-amber-100">
+      <section className="">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
           <section className="why-choose-grid">
             <article className="flex flex-col gap-3 px-7 py-12">
