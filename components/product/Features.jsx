@@ -37,7 +37,7 @@ const Features = () => {
             From smart routing to fraud protection everything you need to scale securely.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {cards.map((card) => (
             <article
               key={card.title}
