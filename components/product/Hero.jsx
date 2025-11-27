@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { MdArrowOutward } from 'react-icons/md';
 import Label from '../ui/Label';
 import FlashIcon from '@/assets/icons/FlashIcon';
+import HeroDesktop from '@/assets/images/hero-desk.svg';
+import HeroMobile from '@/assets/images/hero-mobile.svg';
 
 const Hero = () => {
   return (
@@ -31,23 +33,13 @@ const Hero = () => {
         </div>
 
         {/* ===== Dashboard + Group Image ===== */}
-        <div className="relative mt-20 w-full max-w-5xl sm:mt-28 md:mt-32">
+        <div className="relative -mt-16 w-full max-w-5xl">
           {/* Dashboard Image */}
+          <Image src={HeroDesktop} alt="Dashboard preview" className="hidden w-full md:block" />
           <Image
-            src="/home/section1/Dashboard.png"
-            alt="Dashboard"
-            width={960}
-            height={500}
-            className="w-full object-contain"
-          />
-
-          {/* Group Image on top-center of Dashboard */}
-          <Image
-            src="/home/section1/Group.png"
-            alt="Blue Icons"
-            width={966}
-            height={264}
-            className="animate-bounce-slow pointer-events-none absolute -top-8 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 sm:-top-10"
+            src={HeroMobile}
+            alt="Dashboard preview mobile"
+            className="block w-full md:hidden"
           />
         </div>
       </div>
