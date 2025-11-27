@@ -40,7 +40,7 @@ const Features = () => {
             >
               <div className="flex flex-col gap-3 p-6">
                 <h5 className="text-lg font-medium">{card.title}</h5>
-                <p>{card.description}</p>
+                <p className="text-text">{card.description}</p>
               </div>
               {card.image && <Image src={card.image} alt={card.title} className="h-auto w-full" />}
             </article>

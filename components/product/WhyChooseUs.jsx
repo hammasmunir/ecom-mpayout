@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
         onClick={() => setActiveTab(index)}
       >
         <h3 className="max-w-[300px] text-xl font-medium lg:text-3xl">{tab.title}</h3>
-        <p>{tab.description}</p>
+        <p className="text-text">{tab.description}</p>
         {tab.mobileImage && (
           <Image
             src={tab.mobileImage}
@@ -83,7 +83,7 @@ const WhyChooseUs = () => {
               className="max-w-[400px] lg:items-start lg:text-left"
               noCenter={true}
             />
-            <p className="max-w-[500px] text-center lg:text-left">
+            <p className="text-text max-w-[500px] text-center lg:text-left">
               We built a payment system that gives you speed, transparency, and control exactly what
               every modern business deserves.
             </p>
