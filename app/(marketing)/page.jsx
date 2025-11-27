@@ -59,9 +59,8 @@ export default function HomeHero() {
         </div>
       </section>
 
-      <section className="mt-20 h-auto border-y border-dashed border-gray-200 px-4 py-10">
-        <ImageCarousel />
-      </section>
+      <ImageCarousel />
+
       <Features />
       <ROICalculator />
       <Label text="Hello World" icon={<FlashIcon />} />

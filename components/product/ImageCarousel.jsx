@@ -19,12 +19,12 @@ const images = [
 
 export default function ImageCarousel() {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 6,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     responsive: [
       {
@@ -39,20 +39,22 @@ export default function ImageCarousel() {
   };
 
   return (
-    <div className="w-full">
-      <Slider {...settings}>
-        {images.map((src, index) => (
-          <div key={index} className="p-2">
-            <Image
-              src={src}
-              alt={`Image ${index + 1}`}
-              width={500}
-              height={70}
-              className="h-[70px] w-full rounded-lg object-cover"
-            />
-          </div>
-        ))}
-      </Slider>
-    </div>
+    <section className="py-16 lg:py-20">
+      <section className="mx-auto max-w-[1440px] px-5">
+        <Slider {...settings}>
+          {images.map((src, index) => (
+            <div key={index} className="p-2">
+              <Image
+                src={src}
+                alt={`Image ${index + 1}`}
+                width={500}
+                height={70}
+                className="w-full max-w-[150px] object-contain object-bottom"
+              />
+            </div>
+          ))}
+        </Slider>
+      </section>
+    </section>
   );
 }
