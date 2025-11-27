@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
 
   return (
     <>
-      <section className="pt-16 pb-10 lg:pt-20">
+      <section className="border-border border-b-[3px] border-dashed pt-16 pb-10 lg:pt-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
           <div className="flex w-full flex-col items-center gap-5 lg:flex-row lg:items-center lg:justify-between">
             <Starter
@@ -95,6 +95,7 @@ const WhyChooseUs = () => {
           <section className="why-choose-grid">{renderArticles}</section>
         </section>
       </section>
+      <section className="border-border h-[80px] border-t-[3px] border-b-[3px] border-dashed"></section>
     </>
   );
 };

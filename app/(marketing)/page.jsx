@@ -12,9 +12,9 @@ export default function ProductPage() {
       <Hero />
       <ImageCarousel />
       <Features />
-      <ROICalculator />
-      <Benefits />
       <WhyChooseUs />
+      <Benefits />
+      <ROICalculator />
       <FAQs />
     </>
   );

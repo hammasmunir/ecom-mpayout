@@ -90,8 +90,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`sticky top-0 z-50 w-full transition-all duration-300 px-5`}>
-      <div className="mx-auto w-full max-w-[1440px] rounded-full border border-[#EBEBEB] bg-white px-4 sm:px-6 lg:px-8">
+    <nav className={`sticky top-0 z-50 w-full px-5 transition-all duration-300`}>
+      <div className="mx-auto w-full max-w-[1440px] rounded-full border border-[#EBEBEB] px-4 backdrop-blur-md sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -137,7 +137,7 @@ const Navbar = () => {
                     <a
                       key={link.name}
                       href={link.href}
-                      className="block transform px-4 py-3 text-sm text-gray-700 transition-all duration-250 hover:translate-x-2 hover:bg-blue-50 hover:text-blue-600 rounded-lg"
+                      className="block transform rounded-lg px-4 py-3 text-sm text-gray-700 transition-all duration-250 hover:translate-x-2 hover:bg-blue-50 hover:text-blue-600"
                       style={{
                         transitionDelay: activeDropdown === index ? `${linkIndex * 50}ms` : '0ms',
                       }}

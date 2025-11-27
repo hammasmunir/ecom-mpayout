@@ -6,7 +6,7 @@ import ROIimage from '@/assets/images/roi-calc.svg';
 
 const ROICalculator = () => {
   return (
-    <section className="py-16 lg:py-20">
+    <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
       <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
         <Starter
           heading="See How Much You Could Save With Smarter Payments"
