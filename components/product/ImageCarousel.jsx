@@ -17,6 +17,7 @@ export default function ImageCarousel() {
     dots: false,
     infinite: true,
     speed: 500,
+    arrows: false,
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,

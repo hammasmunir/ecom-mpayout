@@ -192,7 +192,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="px-8 py-7 md:px-24">
+      <div className="border-border border-t-[3px] border-dashed py-7">
         <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between px-5 md:flex-row">
           <p className="text-gray-[#525252] text-base md:text-xl">
             &copy; 2024 EcomPayouts. All rights reserved.
