@@ -24,6 +24,8 @@
   --color-secondary-800: #86198f;
   --color-secondary-900: #701a75;
 
+  --color-text: #777777;
+
   /* Your existing variables */
   --color-background: #ffffff;
   --color-foreground: #171717;
@@ -54,11 +56,9 @@ h6 {
   font-family: var(--font-plus-jakarta-sans), sans-serif;
 }
 
-/* Paragraphs, spans, and buttons use Inter */
 p,
 spans {
   font-family: var(--font-inter), sans-serif;
-  color: #777777;
 }
 
 .dash-border {
