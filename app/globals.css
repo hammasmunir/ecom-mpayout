@@ -95,3 +95,28 @@ spans {
     grid-area: 2 / 2 / 3 / 4;
   }
 }
+
+.why-choose-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 0.7fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  article:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: pink;
+  }
+  article:nth-child(2) {
+    grid-area: 1 / 2 / 4 / 3;
+    background-color: blue;
+  }
+  article:nth-child(3) {
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: green;
+  }
+  article:nth-child(4) {
+    grid-area: 3 / 1 / 4 / 2;
+    background-color: yellow;
+  }
+}
