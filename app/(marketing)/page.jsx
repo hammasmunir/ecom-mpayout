@@ -4,6 +4,7 @@ import { MdArrowOutward } from 'react-icons/md';
 import ROICalculator from '../../components/product/ROICalculator';
 import Label from '@/components/ui/Label';
 import FlashIcon from '@/assets/icons/FlashIcon';
+import Features from '@/components/product/Features';
 
 export default function HomeHero() {
   return (
@@ -21,7 +22,7 @@ export default function HomeHero() {
         </div>
 
         {/* ===== Center Content ===== */}
-        <div className="relative z-10 mt-20 flex flex-col items-center justify-center text-center sm:mt-24 md:mt-28 max-w-[1440px] mx-auto px-5">
+        <div className="relative z-10 mx-auto mt-20 flex max-w-[1440px] flex-col items-center justify-center px-5 text-center sm:mt-24 md:mt-28">
           <h1 className="mb-4 px-5 text-3xl font-extrabold text-gray-900 sm:px-0 sm:text-4xl md:text-5xl lg:text-6xl">
             The Most Reliable Payments for High-Risk Merchants.
           </h1>
@@ -57,11 +58,13 @@ export default function HomeHero() {
           </div>
         </div>
       </section>
-      <ROICalculator/>
+
       <section className="mt-20 h-auto border-y border-dashed border-gray-200 px-4 py-10">
         <ImageCarousel />
       </section>
-      <Label text='Hello World' icon={<FlashIcon/>}/>
+      <Features />
+      <ROICalculator />
+      <Label text="Hello World" icon={<FlashIcon />} />
     </>
   );
 }

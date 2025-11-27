@@ -45,11 +45,10 @@ body {
 }
 
 .dash-border{
-  border-style: dashed;
-  border-width: 3px;
+  border-style: dashed !important;
+  border-width: 3px !important;
   border-color: #E0E0E0;
-  border-top: none;
-  border-bottom: 1px;
-  border-left: none;
-  border-right: none;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
