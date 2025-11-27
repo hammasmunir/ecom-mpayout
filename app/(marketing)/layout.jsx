@@ -7,7 +7,7 @@ export default function MarketingLayout({ children }) {
       {/* Fixed Navbar */}
       <div className="relative mx-auto min-h-screen w-full pt-20">
         {/* ← THIS is the only fix */}
-        <div className="fixed top-0 left-1/2 z-30 mt-5 w-full -translate-x-1/2 backdrop-blur-md">
+        <div className="fixed top-0 left-1/2 z-30 mt-5 w-full -translate-x-1/2">
           <header className="flex items-center justify-center">
             <Navbar />
           </header>
@@ -27,4 +27,3 @@ export default function MarketingLayout({ children }) {
     </div>
   );
 }
-;
