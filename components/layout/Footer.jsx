@@ -123,7 +123,7 @@ export default function Footer() {
             {/* TOP 3 COLUMNS */}
             <div className="grid grid-cols-3 sm:grid-cols-2 lg:flex lg:flex-row">
               {/* Product */}
-              <div className="border-r border-b border-dashed border-gray-300 p-2 sm:border-b-0 md:p-8">
+              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Product</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>Processing</li>
@@ -134,7 +134,7 @@ export default function Footer() {
               </div>
 
               {/* Integrations */}
-              <div className="border-r border-b border-dashed border-gray-300 p-2 sm:border-b-0 md:p-8">
+              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Integrations</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>All Integrations</li>
@@ -155,9 +155,9 @@ export default function Footer() {
             </div>
 
             {/* BOTTOM 3 COLUMNS */}
-            <div className="grid grid-cols-3 border-t border-dashed border-gray-300 sm:grid-cols-2 lg:flex lg:flex-row">
+            <div className="border-border grid grid-cols-3 border-t-[3px] border-dashed sm:grid-cols-2 lg:flex lg:flex-row">
               {/* Partners */}
-              <div className="border-r border-b border-dashed border-gray-300 p-2 sm:border-b-0 md:p-8">
+              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Partners</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>Partner Program</li>
@@ -167,7 +167,7 @@ export default function Footer() {
               </div>
 
               {/* Customers */}
-              <div className="border-r border-b border-dashed border-gray-300 p-2 sm:border-b-0 md:p-8">
+              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Customers</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>All case studies</li>
