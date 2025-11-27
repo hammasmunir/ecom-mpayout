@@ -7,6 +7,7 @@ import { SlSocialInstagram } from 'react-icons/sl';
 import { PiFacebookLogo } from 'react-icons/pi';
 import { TfiGame } from 'react-icons/tfi';
 import FooterBg from '@/assets/images/footer-bg.svg';
+import FooterBgM from '@/assets/images/footer-bg-mobile.svg';
 import DollarIcon from '@/assets/icons/DollarIcon';
 import ThumbIcon from '@/assets/icons/ThumbIcon';
 import WalletIcon from '@/assets/icons/WalletIcon';
@@ -20,46 +21,55 @@ export default function Footer() {
             src={FooterBg}
             alt="Footer Background"
             fill
-            className="absolute inset-0 -z-10 object-cover"
+            className="absolute inset-0 -z-10 hidden object-cover md:block"
             priority
           />
-          <div className="absolute top-15 right-10 z-1">
+          <Image
+            src={FooterBgM}
+            alt="Footer Background"
+            fill
+            className="absolute inset-0 -z-10 block object-cover md:hidden"
+            priority
+          />
+          <div className="absolute top-5 right-5 z-1 md:top-15 md:right-10">
             <DollarIcon />
           </div>
-          <div className="absolute right-40 bottom-15 z-1">
+          <div className="absolute right-5 bottom-5 z-1 md:right-40 md:bottom-15">
             <WalletIcon />
           </div>
-          <div className="absolute top-15 left-10 z-1">
+          <div className="absolute top-5 left-5 z-1 md:top-15 md:left-10">
             <ThumbIcon />
           </div>
-          <div className="absolute bottom-15 left-30 z-1">
+          <div className="absolute bottom-5 left-5 z-1 md:bottom-15 md:left-30">
             <CardIcon />
           </div>
 
-          <h2 className="z-5 mb-4 text-3xl font-bold text-white md:text-5xl lg:text-6xl">
-            Let&apos;s Grow Your Business Without Limits
-          </h2>
+          <div className="flex min-h-[600px] max-w-[90%] flex-col items-center justify-center md:min-h-0 md:max-w-[700px]">
+            <h2 className="z-5 mb-4 text-3xl font-bold text-white md:text-5xl lg:text-6xl">
+              Let&apos;s Grow Your Business Without Limits
+            </h2>
 
-          <p className="z-5 mb-4 max-w-xl text-sm text-white md:text-base">
-            EcomPayouts is your trusted partner for seamless e-commerce payouts. We provide reliable
-            and efficient payment solutions tailored to your business needs.
-          </p>
+            <p className="z-5 mb-4 max-w-xl text-sm text-white md:text-base">
+              EcomPayouts is your trusted partner for seamless e-commerce payouts. We provide
+              reliable and efficient payment solutions tailored to your business needs.
+            </p>
 
-          <div className="z-5 flex flex-wrap justify-center gap-6 text-white">
-            <Link href="/about" className="hover:text-gray-100">
-              About Us
-            </Link>
-            <Link href="/contact" className="hover:text-gray-100">
-              Contact
-            </Link>
-          </div>
-
-          <button className="bg-primary-500 hover:text-primary-500 mt-6 rounded-full border-4 px-6 py-3 font-semibold text-white transition hover:bg-gray-100">
-            <div className="flex items-center justify-center gap-2">
-              <span>Secure your spot</span>
-              <MdArrowOutward />
+            <div className="z-5 flex flex-wrap justify-center gap-6 text-white">
+              <Link href="/about" className="hover:text-gray-100">
+                About Us
+              </Link>
+              <Link href="/contact" className="hover:text-gray-100">
+                Contact
+              </Link>
             </div>
-          </button>
+
+            <button className="bg-primary-500 hover:text-primary-500 mt-6 rounded-full border-4 px-6 py-3 font-semibold text-white transition hover:bg-gray-100">
+              <div className="flex items-center justify-center gap-2">
+                <span>Secure your spot</span>
+                <MdArrowOutward />
+              </div>
+            </button>
+          </div>
         </div>
       </div>
 

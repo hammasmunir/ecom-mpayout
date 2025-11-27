@@ -2,7 +2,14 @@ import React from 'react';
 
 const CardIcon = () => {
   return (
-    <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="86"
+      height="86"
+      viewBox="0 0 86 86"
+      className="max-md:h-[40px] max-md:w-[40px]"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g filter="url(#filter0_i_38_244)">
         <rect
           y="24.168"

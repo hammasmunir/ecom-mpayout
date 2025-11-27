@@ -2,7 +2,14 @@ import React from 'react';
 
 const DollarIcon = () => {
   return (
-    <svg width="79" height="79" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="79"
+      height="79"
+      className="max-md:h-[40px] max-md:w-[40px]"
+      viewBox="0 0 79 79"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g filter="url(#filter0_i_38_246)">
         <rect
           x="12.7842"

@@ -2,7 +2,14 @@ import React from 'react';
 
 const ThumbIcon = () => {
   return (
-    <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="78"
+      height="78"
+      viewBox="0 0 78 78"
+      className="max-md:h-[40px] max-md:w-[40px]"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g filter="url(#filter0_i_38_240)">
         <rect
           y="12.5938"
