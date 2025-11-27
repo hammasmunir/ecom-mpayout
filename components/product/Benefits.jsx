@@ -17,7 +17,11 @@ const Benefits = () => {
         />
         <section className="benefits-grid">
           <article className="flex flex-col gap-3 rounded-2xl p-6 shadow-md lg:justify-end">
-            <Image src={BenfitsImage1} alt="Benefit 1" className="h-auto w-full" />
+            <Image
+              src={BenfitsImage1}
+              alt="Benefit 1"
+              className="mx-auto h-auto w-full max-w-[400px] lg:max-w-full"
+            />
             <div className="flex flex-col gap-3 lg:mt-20">
               <h5 className="text-lg font-medium">Built for Speed and Stability</h5>
               <p>
@@ -32,14 +36,22 @@ const Benefits = () => {
                 No surprise freezes, full visibility and honest communication for every transaction.
               </p>
             </div>
-            <Image src={BenfitsImage3} alt="Benefit 3" className="h-auto w-full" />
+            <Image
+              src={BenfitsImage3}
+              alt="Benefit 3"
+              className="mx-auto h-auto w-full max-w-[400px] lg:max-w-full"
+            />
           </article>
           <article className="flex flex-col justify-between gap-3 overflow-hidden rounded-2xl shadow-md">
             <div className="flex flex-col gap-3 px-6 pt-6">
               <h5 className="text-lg font-medium">Scales as You Grow</h5>
               <p>Expand smoothly into new markets with flexible, stable payment infrastructure. </p>
             </div>
-            <Image src={BenfitsImage2} alt="Benefit 2" className="h-auto w-full" />
+            <Image
+              src={BenfitsImage2}
+              alt="Benefit 2"
+              className="mx-auto h-auto w-full max-w-[400px] lg:max-w-full"
+            />
           </article>
           <article className="flex flex-col justify-between gap-3 overflow-hidden rounded-2xl shadow-md">
             <div className="flex max-w-lg flex-col gap-3 px-6 pt-6">

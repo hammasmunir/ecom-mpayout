@@ -72,20 +72,28 @@ spans {
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 0.7fr;
+  grid-template-columns: 1fr;
   gap: 20px;
   width: 100%;
-  article:nth-child(1) {
+}
+
+/* Below lg: single column (one item per row) - includes md breakpoint */
+/* lg and above: 3-column grid with specific layout */
+@media (min-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 0.7fr;
+  }
+  .benefits-grid article:nth-child(1) {
     grid-area: 1 / 1 / 3 / 2;
   }
-  article:nth-child(2) {
+  .benefits-grid article:nth-child(2) {
     grid-area: 1 / 2 / 2 / 3;
   }
-  article:nth-child(3) {
+  .benefits-grid article:nth-child(3) {
     grid-area: 1 / 3 / 2 / 4;
   }
-  article:nth-child(4) {
+  .benefits-grid article:nth-child(4) {
     grid-area: 2 / 2 / 3 / 4;
   }
 }

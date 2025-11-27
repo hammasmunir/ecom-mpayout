@@ -15,7 +15,6 @@ export default function ProductPage() {
       <Features />
       <ROICalculator />
       <Benefits />
-      <Label text="Hello World" icon={<FlashIcon />} />
     </>
   );
 }
