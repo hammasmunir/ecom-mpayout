@@ -12,11 +12,12 @@ import DollarIcon from '@/assets/icons/DollarIcon';
 import ThumbIcon from '@/assets/icons/ThumbIcon';
 import WalletIcon from '@/assets/icons/WalletIcon';
 import CardIcon from '@/assets/icons/CardIcon';
+import Logo from '@/assets/images/main-logo.svg';
 export default function Footer() {
   return (
     <footer className="w-full">
-      <div className="w-full py-20">
-        <div className="relative mx-auto flex min-h-[350px] max-w-[1440px] flex-col items-center justify-center overflow-hidden rounded-2xl bg-cover bg-center bg-no-repeat px-6 text-center md:min-h-[447px] md:px-20 lg:min-h-[447px] lg:px-40">
+      <div className="w-full px-5 py-20">
+        <div className="relative mx-auto flex min-h-[350px] max-w-[1440px] flex-col items-center justify-center overflow-hidden rounded-2xl text-center md:min-h-[447px] lg:min-h-[447px]">
           <Image
             src={FooterBg}
             alt="Footer Background"
@@ -80,13 +81,7 @@ export default function Footer() {
           {/* ------- LEFT SIDE ------- */}
           <div className="flex w-full flex-col items-start py-8 lg:w-auto lg:pl-20">
             <div className="h-[50px] w-[200px] md:w-[260px]">
-              <Image
-                src="/footer/logo.png"
-                alt="Footer Logo"
-                width={260}
-                height={50}
-                className="object-cover"
-              />
+              <Image src={Logo} alt="Footer Logo" />
             </div>
 
             {/* Social Icons */}

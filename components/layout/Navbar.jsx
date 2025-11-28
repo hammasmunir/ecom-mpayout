@@ -1,8 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
+import FullLogo from '@/assets/images/main-logo.svg';
+import HalfLogo from '@/assets/images/half-logo.svg';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -99,7 +102,8 @@ const Navbar = () => {
               href="/"
               className="text-xl font-bold text-gray-800 transition-colors duration-300 hover:text-blue-600 sm:text-2xl"
             >
-              YourLogo
+              <Image src={FullLogo} className="hidden lg:block" />
+              <Image src={HalfLogo} className="block lg:hidden" />
             </Link>
           </div>
 
