@@ -95,15 +95,15 @@ const Navbar = () => {
   return (
     <nav className={`sticky top-0 z-50 w-full px-5 transition-all duration-300`}>
       <div className="mx-auto w-full max-w-[1440px] rounded-full border border-[#EBEBEB] px-4 backdrop-blur-md sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 items-center justify-between gap-5">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="">
             <Link
               href="/"
               className="text-xl font-bold text-gray-800 transition-colors duration-300 hover:text-blue-600 sm:text-2xl"
             >
-              <Image src={FullLogo} className="hidden lg:block" />
-              <Image src={HalfLogo} className="block lg:hidden" />
+              <Image src={FullLogo} className="hidden lg:block" alt="Full Logo" />
+              <Image src={HalfLogo} className="block lg:hidden" alt="Half Logo" />
             </Link>
           </div>
 
