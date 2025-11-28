@@ -78,8 +78,16 @@ const navItems = [
     dropdownWidth: 'w-[900px]',
     columns: 3,
     cards: [
-      { title: 'Partner Program', description: 'Earn more by partnering with us', Icon: PartnerProgramIcon },
-      { title: 'White Label Solutions', description: 'Launch your own payment brand', Icon: WhiteLabelIcon },
+      {
+        title: 'Partner Program',
+        description: 'Earn more by partnering with us',
+        Icon: PartnerProgramIcon,
+      },
+      {
+        title: 'White Label Solutions',
+        description: 'Launch your own payment brand',
+        Icon: WhiteLabelIcon,
+      },
       { title: 'ISO Platform', description: 'Manage merchants under your account', Icon: IOSIcon },
     ],
     mobileLinks: ['Partner Program', 'White Label', 'ISO Platform'],
@@ -125,13 +133,15 @@ const navItems = [
 ];
 
 const MegaMenuShell = ({ children }) => (
-  <div className="rounded-[28px] bg-[#3b3b3b] p-5 text-white shadow-2xl ring-1 ring-white/10">
+  <div className="rounded-[28px] bg-white/90 p-5 text-gray-900 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl">
     <div className="space-y-4">{children}</div>
   </div>
 );
 
 const MegaMenuCard = ({ title, description, Icon, className = '' }) => (
-  <div className={`flex h-full flex-col justify-between rounded-[20px] bg-white p-5 text-left shadow-sm ${className}`}>
+  <div
+    className={`flex h-full flex-col justify-between rounded-[20px] bg-white p-5 text-left shadow-sm ${className}`}
+  >
     <div>
       <h4 className="text-lg font-semibold text-gray-900">{title}</h4>
       <p className="mt-1 text-sm text-gray-500">{description}</p>
@@ -152,7 +162,13 @@ const MegaMenuLogoList = ({ logos }) => (
         className="flex items-center justify-between rounded-[20px] bg-white px-4 py-3 shadow-sm"
       >
         <span className="text-sm font-medium text-gray-700">{logo.name}</span>
-        <Image src={logo.image} alt={logo.name} width={logo.width} height={logo.height} className="h-6 w-auto" />
+        <Image
+          src={logo.image}
+          alt={logo.name}
+          width={logo.width}
+          height={logo.height}
+          className="h-6 w-auto"
+        />
       </div>
     ))}
   </div>
@@ -226,6 +242,7 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const mobileMenuRef = useRef(null);
+  const hideTimeoutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -251,9 +268,34 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    return () => {
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleMenuEnter = (title) => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+      hideTimeoutRef.current = null;
+    }
+    setActiveDropdown(title);
+  };
+
+  const handleMenuLeave = () => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+    }
+    hideTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150);
+  };
+
   return (
-    <nav className={`sticky top-0 z-50 w-full px-5 transition-all duration-300`}>
-      <div className="mx-auto w-full max-w-[1440px] rounded-full border border-[#EBEBEB] px-4 backdrop-blur-md sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-50 w-full px-5 transition-all duration-300">
+      <div className="relative mx-auto w-full max-w-[1440px] rounded-full border border-[#EBEBEB] px-4 backdrop-blur-md sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-5">
           {/* Logo */}
           <div className="">
@@ -285,9 +327,9 @@ const Navbar = () => {
               return (
                 <div
                   key={item.title}
-                  className="group relative"
-                  onMouseEnter={() => setActiveDropdown(item.title)}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  className="group"
+                  onMouseEnter={() => handleMenuEnter(item.title)}
+                  onMouseLeave={handleMenuLeave}
                 >
                   <button className="flex items-center text-sm font-medium whitespace-nowrap text-gray-700 transition-all duration-300 hover:text-blue-600 xl:text-base">
                     {item.title}
@@ -299,10 +341,10 @@ const Navbar = () => {
                   </button>
 
                   <div
-                    className={`absolute left-1/2 top-full z-50 max-w-[95vw] ${
-                      item.dropdownWidth || 'w-[960px]'
-                    } origin-top -translate-x-1/2 pt-4 transition-all duration-300 ${
-                      isActive ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-3 opacity-0'
+                    className={`absolute top-full left-1/2 z-50 w-screen max-w-[1440px] -translate-x-1/2 px-4 pt-4 transition-all duration-300 ${
+                      isActive
+                        ? 'pointer-events-auto visible translate-y-0 opacity-100'
+                        : 'pointer-events-none invisible -translate-y-3 opacity-0'
                     }`}
                   >
                     {renderMegaMenuContent(item)}
@@ -382,7 +424,9 @@ const Navbar = () => {
             return (
               <div key={item.title} className="border-b border-gray-100 last:border-b-0">
                 <button
-                  onClick={() => setActiveDropdown(activeDropdown === item.title ? null : item.title)}
+                  onClick={() =>
+                    setActiveDropdown(activeDropdown === item.title ? null : item.title)
+                  }
                   className="flex w-full items-center justify-between py-4 text-left text-base font-medium text-gray-700 transition-all duration-300 hover:text-blue-600"
                 >
                   <span className="transition-transform duration-300 hover:translate-x-2">
@@ -406,7 +450,8 @@ const Navbar = () => {
                         key={section}
                         className="block transform rounded-lg px-3 py-3 text-sm text-gray-600 transition-all duration-300 hover:translate-x-3 hover:bg-blue-100 hover:text-blue-600"
                         style={{
-                          transitionDelay: activeDropdown === item.title ? `${index * 80}ms` : '0ms',
+                          transitionDelay:
+                            activeDropdown === item.title ? `${index * 80}ms` : '0ms',
                         }}
                       >
                         {section}
