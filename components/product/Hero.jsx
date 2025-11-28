@@ -33,7 +33,7 @@ const Hero = () => {
         </div>
 
         {/* ===== Dashboard + Group Image ===== */}
-        <div className="relative -mt-16 w-full max-w-5xl">
+        <div className="hero-div relative -mt-16 w-full max-w-5xl">
           {/* Dashboard Image */}
           <Image src={HeroDesktop} alt="Dashboard preview" className="hidden w-full md:block" />
           <Image
