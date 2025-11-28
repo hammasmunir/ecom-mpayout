@@ -3,6 +3,10 @@ import Label from '../ui/Label';
 import Starter from '../ui/Starter';
 import Image from 'next/image';
 import ROIimage from '@/assets/images/roi-calc.svg';
+import ROIBg from '@/assets/images/roi-bg.png';
+import Logo from '@/assets/images/main-logo.svg';
+import CalculatorIcon from '@/assets/icons/CalculatorIcon';
+import NotesIcon from '@/assets/icons/NotesIcon';
 
 const ROICalculator = () => {
   return (
@@ -13,7 +17,33 @@ const ROICalculator = () => {
           text="Our ROI calculator shows how much more you could make with lower fees, fewer declines, and faster payouts."
           label="ROI Calculator"
         />
-        <Image src={ROIimage} alt="ROI Calculator" />
+        <section
+          className="mx-auto grid w-full max-w-5xl grid-cols-[0.8fr_1fr_1fr] grid-rows-1 gap-5 overflow-hidden rounded-lg bg-cover p-5"
+          style={{ backgroundImage: `url(${ROIBg.src})` }}
+        >
+          <div className="col-span-1 rounded-md bg-white p-4">
+            <div className="mb-4 rounded-md bg-[#EDF3FF] p-4">
+              <Image src={Logo} alt="Logo" />
+            </div>
+            <ul className="text-text text-center text-xl">
+              <li className="py-4">Competitor 1</li>
+              <li className="py-4">Competitor 2</li>
+              <li className="py-4">Competitor 3</li>
+            </ul>
+          </div>
+          <div className="col-span-1 rounded-md bg-white p-4">
+            <div className="flex items-center gap-2">
+              <CalculatorIcon />
+              <h3 className="text-xl font-medium">ROI Calculator</h3>
+            </div>
+          </div>
+          <div className="col-span-1 rounded-md bg-white p-4">
+            <div className="flex items-center gap-2">
+              <NotesIcon />
+              <h3 className="text-xl font-medium">Output Summary</h3>
+            </div>
+          </div>{' '}
+        </section>
       </section>
     </section>
   );
