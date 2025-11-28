@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import FullLogo from '@/assets/images/main-logo.svg';
 import HalfLogo from '@/assets/images/half-logo.svg';
-import ProcessingIcon from '@/assets/icons/menu/GatewayIcon';
+import ProcessingIcon from '@/assets/icons/menu/IOSIcon';
 import GatewayIcon from '@/assets/icons/menu/GatewayIcon';
 import InsightsIcon from '@/assets/icons/menu/InsightsIcon';
 import AlertIcon from '@/assets/icons/menu/AlertIcon';
@@ -133,7 +133,7 @@ const navItems = [
 ];
 
 const MegaMenuShell = ({ children }) => (
-  <div className="rounded-[28px] bg-white/90 p-5 text-gray-900 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl">
+  <div className="rounded-[28px] bg-white p-5 text-gray-900 shadow-2xl backdrop-blur-xl">
     <div className="space-y-4">{children}</div>
   </div>
 );
@@ -186,7 +186,7 @@ const renderMegaMenuContent = (item) => {
 
       return (
         <MegaMenuShell>
-          <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 ${columnClass}`}>
+          <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 ${columnClass} `}>
             {item.cards.map((card) => (
               <MegaMenuCard key={card.title} {...card} />
             ))}
