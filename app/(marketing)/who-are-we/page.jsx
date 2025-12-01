@@ -1,4 +1,3 @@
-import Hero from '@/components/who/Hero';
 import Image from 'next/image';
 import React from 'react';
 import WhoImage1 from '@/assets/images/who-are-we/who-1.jpg';
