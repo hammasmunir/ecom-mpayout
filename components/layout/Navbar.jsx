@@ -406,7 +406,7 @@ const Navbar = () => {
       {/* Mobile Menu with Smooth Animation */}
       <div
         ref={mobileMenuRef}
-        className={`absolute top-full right-4 left-4 z-50 transform overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl transition-all duration-500 ease-in-out lg:hidden ${
+        className={`absolute top-full right-4 left-4 z-50 translate-y-3 transform overflow-hidden rounded-2xl border border-gray-200 bg-white/70 shadow-2xl backdrop-blur-xs transition-all duration-500 ease-in-out lg:hidden ${
           isMobileMenuOpen
             ? 'max-h-[80vh] translate-y-0 scale-100 opacity-100'
             : 'max-h-0 -translate-y-4 scale-95 opacity-0'
