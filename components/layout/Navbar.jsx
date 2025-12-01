@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import FullLogo from '@/assets/images/main-logo.svg';
 import HalfLogo from '@/assets/images/half-logo.svg';
-import ProcessingIcon from '@/assets/icons/menu/IOSIcon';
+import ProcessingIcon from '@/assets/icons/menu/ProcessingIcon';
 import GatewayIcon from '@/assets/icons/menu/GatewayIcon';
 import InsightsIcon from '@/assets/icons/menu/InsightsIcon';
 import AlertIcon from '@/assets/icons/menu/AlertIcon';
@@ -37,10 +37,25 @@ const navItems = [
     cards: [
       { title: 'Processing', description: 'Fast, stable global payments', Icon: ProcessingIcon },
       { title: 'Gateway', description: 'Smart, secure integrations', Icon: GatewayIcon },
-      { title: 'Insights', description: 'Real-time performance tracking', Icon: InsightsIcon },
-      { title: 'Alerts', description: 'Instant fraud & payout updates', Icon: AlertIcon },
+      {
+        title: 'Insights',
+        description: 'Real-time performance tracking',
+        Icon: InsightsIcon,
+        href: '/insights',
+      },
+      {
+        title: 'Alerts',
+        description: 'Instant fraud & payout updates',
+        Icon: AlertIcon,
+        href: '/insights#alerts',
+      },
     ],
-    mobileLinks: ['Processing', 'Gateway', 'Insights', 'Alerts'],
+    mobileLinks: [
+      { label: 'Processing' },
+      { label: 'Gateway' },
+      { label: 'Insights', href: '/insights' },
+      { label: 'Alerts', href: '/insights#alerts' },
+    ],
   },
   {
     title: 'Customers',
@@ -51,13 +66,19 @@ const navItems = [
       title: 'All case studies',
       description: 'See real success stories',
       Icon: CaseStudyIcon,
+      href: '/case-studies',
     },
     logos: [
       { name: 'Viberide', image: ViberideLogo, width: 92, height: 30 },
       { name: 'Healthletic', image: HealthleticLogo, width: 120, height: 30 },
       { name: 'OMNX', image: OmnxLogo, width: 90, height: 28 },
     ],
-    mobileLinks: ['All case studies', 'Viberide', 'Healthletic', 'OMNX'],
+    mobileLinks: [
+      { label: 'All case studies', href: '/case-studies' },
+      { label: 'Viberide' },
+      { label: 'Healthletic' },
+      { label: 'OMNX' },
+    ],
   },
   {
     title: 'Industries',
@@ -123,12 +144,22 @@ const navItems = [
       title: 'Who we are',
       description: 'Learn about our mission',
       Icon: WhoAreWeIcon,
+      href: '/who-are-we',
     },
     cards: [
-      { title: 'Careers', description: 'Grow with a team that cares', Icon: CareersIcon },
+      {
+        title: 'Careers',
+        description: 'Grow with a team that cares',
+        Icon: CareersIcon,
+        href: '/careers',
+      },
       { title: 'Contact Us', description: "We're here to help you", Icon: ContactIcon },
     ],
-    mobileLinks: ['Who we are', 'Careers', 'Contact Us'],
+    mobileLinks: [
+      { label: 'Who we are', href: '/who-are-we' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'Contact Us' },
+    ],
   },
 ];
 
@@ -138,21 +169,32 @@ const MegaMenuShell = ({ children, className = '' }) => (
   </div>
 );
 
-const MegaMenuCard = ({ title, description, Icon, className = '' }) => (
-  <div
-    className={`flex h-full flex-col justify-between rounded-[20px] bg-white p-5 text-left shadow-md ${className}`}
-  >
-    <div>
-      <h4 className="text-lg font-semibold text-gray-900">{title}</h4>
-      <p className="mt-1 text-sm text-gray-500">{description}</p>
-    </div>
-    {Icon && (
-      <div className="mt-4">
-        <Icon />
+const MegaMenuCard = ({ title, description, Icon, className = '', href }) => {
+  const cardClasses = `flex h-full flex-col justify-between rounded-[20px] bg-white p-5 text-left shadow-md transition hover:-translate-y-0.5 hover:shadow-lg ${className}`;
+  const content = (
+    <div className={cardClasses}>
+      <div>
+        <h4 className="text-lg font-semibold text-gray-900">{title}</h4>
+        <p className="mt-1 text-sm text-gray-500">{description}</p>
       </div>
-    )}
-  </div>
-);
+      {Icon && (
+        <div className="mt-4">
+          <Icon />
+        </div>
+      )}
+    </div>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className="block h-full">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
+};
 
 const MegaMenuLogoList = ({ logos }) => (
   <div className="flex flex-col gap-3">
@@ -231,10 +273,15 @@ const renderMegaMenuContent = (item) => {
   }
 };
 
+const formatMobileSection = (section) =>
+  typeof section === 'string' ? { label: section } : section;
+
 const getMobileSections = (item) => {
   if (item.type === 'link') return [];
-  if (item.mobileLinks) return item.mobileLinks;
-  if (item.cards) return item.cards.map((card) => card.title);
+  if (item.mobileLinks) return item.mobileLinks.map(formatMobileSection);
+  if (item.cards) return item.cards.map((card) => ({ label: card.title, href: card.href }));
+  if (item.feature)
+    return [formatMobileSection({ label: item.feature.title, href: item.feature.href })];
   return [];
 };
 
@@ -457,18 +504,34 @@ const Navbar = () => {
                   }`}
                 >
                   <div className="mx-2 my-2 space-y-2 rounded-xl bg-gray-50 p-2 pb-3 pl-4">
-                    {sections.map((section, index) => (
-                      <div
-                        key={section}
-                        className="block transform rounded-lg px-3 py-3 text-sm text-gray-600 transition-all duration-300 hover:translate-x-3 hover:bg-blue-100 hover:text-blue-600"
-                        style={{
-                          transitionDelay:
-                            activeDropdown === item.title ? `${index * 80}ms` : '0ms',
-                        }}
-                      >
-                        {section}
-                      </div>
-                    ))}
+                    {sections.map((section, index) => {
+                      const key = section.label || section;
+                      const commonClasses =
+                        'block transform rounded-lg px-3 py-3 text-sm text-gray-600 transition-all duration-300 hover:translate-x-3 hover:bg-blue-100 hover:text-blue-600';
+                      const style = {
+                        transitionDelay: activeDropdown === item.title ? `${index * 80}ms` : '0ms',
+                      };
+
+                      if (section.href) {
+                        return (
+                          <Link
+                            key={key}
+                            href={section.href}
+                            className={commonClasses}
+                            style={style}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {section.label}
+                          </Link>
+                        );
+                      }
+
+                      return (
+                        <div key={key} className={commonClasses} style={style}>
+                          {section.label || section}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

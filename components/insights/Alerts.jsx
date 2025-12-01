@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Alerts = () => {
   return (
-    <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
+    <section id="alerts" className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
       <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
         <Starter
           heading="Real-Time Alerts That Protect Your Revenue"
