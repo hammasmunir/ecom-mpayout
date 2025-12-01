@@ -8,39 +8,36 @@ const Roles = () => {
 
   const faqs = [
     {
-      question: 'What types of businesses do you support?',
-      answer:
-        'We work with nearly every industry from standard eCommerce to high-risk sectors like CBD, vape, adult, and supplements. If traditional processors rejected you, we can help.',
+      question: 'Accounting',
+      answer: 'No open roles at the moment',
     },
     {
-      question: 'How fast can I get approved?',
-      answer:
-        'Our streamlined approval process typically takes 24-48 hours. We review applications quickly and provide fast decisions so you can start processing payments without delay.',
+      question: 'Customer Relations',
+      answer: 'No open roles at the moment',
     },
     {
-      question: 'Do you offer global payment processing?',
-      answer:
-        'Yes, we provide global payment processing solutions that allow you to accept payments from customers worldwide. Our platform supports multiple currencies and payment methods across different regions.',
+      question: 'Human Resources',
+      answer: 'No open roles at the moment',
     },
     {
-      question: 'How are you different from Stripe or PayPal?',
-      answer:
-        'Unlike Stripe or PayPal, we specialize in high-risk businesses and offer more flexible approval processes. We provide dedicated support, transparent pricing, and solutions tailored for businesses that traditional processors often reject.',
+      question: 'Logistics',
+      answer: 'No open roles at the moment',
     },
     {
-      question: 'What are your payout times?',
-      answer:
-        'Payout times vary based on your business type and risk profile. Most businesses receive payouts within 2-5 business days, with some eligible for next-day payouts once established.',
+      question: 'Marketing',
+      answer: 'No open roles at the moment',
     },
     {
-      question: 'Can I integrate your system with my existing setup?',
-      answer:
-        'Absolutely! We offer comprehensive APIs, plugins, and integrations that work with most eCommerce platforms, shopping carts, and custom systems. Our developer-friendly documentation makes integration straightforward.',
+      question: 'Operations',
+      answer: 'No open roles at the moment',
     },
     {
-      question: 'How do you handle chargebacks and fraud?',
-      answer:
-        'We provide advanced fraud prevention tools and chargeback management services. Our system includes real-time fraud detection, dispute resolution support, and tools to help minimize chargeback rates and protect your business.',
+      question: 'Sales',
+      answer: 'No open roles at the moment',
+    },
+    {
+      question: 'Technical Support',
+      answer: 'No open roles at the moment',
     },
   ];
 
@@ -79,7 +76,7 @@ const Roles = () => {
           style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
         >
           <div className="min-h-0">
-            <div className="px-6 pb-5">
+            <div className="px-6 py-5">
               <p className="text-base leading-relaxed text-gray-600">{faq.answer}</p>
             </div>
           </div>
