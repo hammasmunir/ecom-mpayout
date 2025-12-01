@@ -32,7 +32,7 @@ const navItems = [
     title: 'Product',
     type: 'mega',
     layout: 'cards',
-    dropdownWidth: 'w-[980px]',
+    dropdownWidth: 'w-full',
     columns: 4,
     cards: [
       { title: 'Processing', description: 'Fast, stable global payments', Icon: ProcessingIcon },
@@ -46,7 +46,7 @@ const navItems = [
     title: 'Customers',
     type: 'mega',
     layout: 'customers',
-    dropdownWidth: 'w-[920px]',
+    dropdownWidth: 'w-full',
     feature: {
       title: 'All case studies',
       description: 'See real success stories',
@@ -63,7 +63,7 @@ const navItems = [
     title: 'Industries',
     type: 'mega',
     layout: 'cards',
-    dropdownWidth: 'w-[760px]',
+    dropdownWidth: 'w-full',
     columns: 2,
     cards: [
       { title: 'E commerce', description: 'Online payments made easy', Icon: EcommerceIcon },
@@ -75,7 +75,7 @@ const navItems = [
     title: 'Partners',
     type: 'mega',
     layout: 'cards',
-    dropdownWidth: 'w-[900px]',
+    dropdownWidth: 'w-full',
     columns: 3,
     cards: [
       {
@@ -96,7 +96,7 @@ const navItems = [
     title: 'Integration',
     type: 'mega',
     layout: 'integration',
-    dropdownWidth: 'w-[920px]',
+    dropdownWidth: 'w-full',
     feature: {
       title: 'All Integrations',
       description: 'Connect with any platform',
@@ -118,7 +118,7 @@ const navItems = [
     title: 'Company',
     type: 'mega',
     layout: 'company',
-    dropdownWidth: 'w-[860px]',
+    dropdownWidth: 'w-full',
     feature: {
       title: 'Who we are',
       description: 'Learn about our mission',
@@ -132,15 +132,15 @@ const navItems = [
   },
 ];
 
-const MegaMenuShell = ({ children }) => (
-  <div className="mega-menu-shell rounded-[28px] p-5 text-gray-900 shadow-2xl backdrop-blur-xl">
+const MegaMenuShell = ({ children, className = '' }) => (
+  <div className={`mega-menu-shell rounded-[28px] p-5 text-gray-900 ${className}`}>
     <div className="space-y-4">{children}</div>
   </div>
 );
 
 const MegaMenuCard = ({ title, description, Icon, className = '' }) => (
   <div
-    className={`flex h-full flex-col justify-between rounded-[20px] bg-white p-5 text-left ${className}`}
+    className={`flex h-full flex-col justify-between rounded-[20px] bg-white p-5 text-left shadow-md ${className}`}
   >
     <div>
       <h4 className="text-lg font-semibold text-gray-900">{title}</h4>
@@ -175,6 +175,7 @@ const MegaMenuLogoList = ({ logos }) => (
 );
 
 const renderMegaMenuContent = (item) => {
+  const shellWidthClass = `mx-auto ${item.dropdownWidth || 'w-full'}`;
   switch (item.layout) {
     case 'cards': {
       const columnClass =
@@ -185,7 +186,7 @@ const renderMegaMenuContent = (item) => {
         }[item.columns || item.cards.length] || 'lg:grid-cols-3';
 
       return (
-        <MegaMenuShell>
+        <MegaMenuShell className={shellWidthClass}>
           <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 ${columnClass} `}>
             {item.cards.map((card) => (
               <MegaMenuCard key={card.title} {...card} />
@@ -196,7 +197,7 @@ const renderMegaMenuContent = (item) => {
     }
     case 'customers':
       return (
-        <MegaMenuShell>
+        <MegaMenuShell className={shellWidthClass}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.2fr_1fr]">
             <MegaMenuCard {...item.feature} />
             <MegaMenuLogoList logos={item.logos} />
@@ -205,7 +206,7 @@ const renderMegaMenuContent = (item) => {
       );
     case 'integration':
       return (
-        <MegaMenuShell>
+        <MegaMenuShell className={shellWidthClass}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.2fr_1fr]">
             <MegaMenuCard {...item.feature} />
             <MegaMenuLogoList logos={item.logos} />
@@ -214,7 +215,7 @@ const renderMegaMenuContent = (item) => {
       );
     case 'company':
       return (
-        <MegaMenuShell>
+        <MegaMenuShell className={shellWidthClass}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.2fr_0.8fr]">
             <MegaMenuCard {...item.feature} />
             <div className="flex flex-col gap-3">
@@ -299,7 +300,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 w-full px-5 transition-all duration-300">
       <div
-        className="relative mx-auto w-full max-w-[1440px] rounded-full border border-[#EBEBEB] px-4 backdrop-blur-md sm:px-6 lg:px-8"
+        className="relative mx-auto w-full max-w-[1440px] overflow-hidden rounded-[32px] border border-[#EBEBEB] bg-white/40 px-4 backdrop-blur-xs sm:px-6 lg:px-8"
         onMouseLeave={handleMenuLeave}
       >
         <div className="flex h-16 items-center justify-between gap-5">
