@@ -13,9 +13,11 @@ const HeroStarter = ({ heading, text, noCenter, label, className }) => {
             {heading}
           </h1>
 
-          <p className="text-text mb-6 max-w-xl px-2 text-base sm:max-w-2xl sm:px-0 sm:text-lg md:text-xl">
-            {text}
-          </p>
+          {text && (
+            <p className="text-text mb-6 max-w-xl px-2 text-base sm:max-w-2xl sm:px-0 sm:text-lg md:text-xl">
+              {text}
+            </p>
+          )}
         </div>
       </div>
     </section>
