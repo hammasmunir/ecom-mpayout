@@ -159,7 +159,7 @@ const MegaMenuLogoList = ({ logos }) => (
     {logos.map((logo) => (
       <div
         key={logo.name}
-        className="flex items-center justify-between rounded-[20px] bg-white px-4 py-3"
+        className="flex h-full items-center justify-between rounded-[20px] bg-white px-4 py-3 shadow-md"
       >
         <span className="text-sm font-medium text-gray-700">{logo.name}</span>
         <Image
@@ -167,7 +167,7 @@ const MegaMenuLogoList = ({ logos }) => (
           alt={logo.name}
           width={logo.width}
           height={logo.height}
-          className="h-6 w-auto"
+          className="w-full max-w-[60px]"
         />
       </div>
     ))}
