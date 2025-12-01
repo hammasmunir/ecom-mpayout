@@ -1,3 +1,4 @@
+import Roles from '@/components/careers/Roles';
 import Value from '@/components/careers/Value';
 import HeroStarter from '@/components/ui/HeroStarter';
 import React from 'react';
@@ -11,6 +12,7 @@ const page = () => {
         label="Careers"
       />
       <Value />
+      <Roles />
     </>
   );
 };
