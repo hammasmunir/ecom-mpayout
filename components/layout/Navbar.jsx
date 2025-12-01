@@ -133,14 +133,14 @@ const navItems = [
 ];
 
 const MegaMenuShell = ({ children }) => (
-  <div className="rounded-[28px] bg-white p-5 text-gray-900 shadow-2xl backdrop-blur-xl">
+  <div className="mega-menu-shell rounded-[28px] p-5 text-gray-900 shadow-2xl backdrop-blur-xl">
     <div className="space-y-4">{children}</div>
   </div>
 );
 
 const MegaMenuCard = ({ title, description, Icon, className = '' }) => (
   <div
-    className={`flex h-full flex-col justify-between rounded-[20px] bg-white p-5 text-left shadow-sm ${className}`}
+    className={`flex h-full flex-col justify-between rounded-[20px] bg-white p-5 text-left ${className}`}
   >
     <div>
       <h4 className="text-lg font-semibold text-gray-900">{title}</h4>
@@ -159,7 +159,7 @@ const MegaMenuLogoList = ({ logos }) => (
     {logos.map((logo) => (
       <div
         key={logo.name}
-        className="flex items-center justify-between rounded-[20px] bg-white px-4 py-3 shadow-sm"
+        className="flex items-center justify-between rounded-[20px] bg-white px-4 py-3"
       >
         <span className="text-sm font-medium text-gray-700">{logo.name}</span>
         <Image
@@ -243,6 +243,9 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const mobileMenuRef = useRef(null);
   const hideTimeoutRef = useRef(null);
+  const activeMegaItem = navItems.find(
+    (item) => item.title === activeDropdown && item.type !== 'link'
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -295,7 +298,10 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 w-full px-5 transition-all duration-300">
-      <div className="relative mx-auto w-full max-w-[1440px] rounded-full border border-[#EBEBEB] px-4 backdrop-blur-md sm:px-6 lg:px-8">
+      <div
+        className="relative mx-auto w-full max-w-[1440px] rounded-full border border-[#EBEBEB] px-4 backdrop-blur-md sm:px-6 lg:px-8"
+        onMouseLeave={handleMenuLeave}
+      >
         <div className="flex h-16 items-center justify-between gap-5">
           {/* Logo */}
           <div className="">
@@ -329,7 +335,6 @@ const Navbar = () => {
                   key={item.title}
                   className="group"
                   onMouseEnter={() => handleMenuEnter(item.title)}
-                  onMouseLeave={handleMenuLeave}
                 >
                   <button className="flex items-center text-sm font-medium whitespace-nowrap text-gray-700 transition-all duration-300 hover:text-blue-600 xl:text-base">
                     {item.title}
@@ -339,16 +344,6 @@ const Navbar = () => {
                       }`}
                     />
                   </button>
-
-                  <div
-                    className={`absolute top-full left-1/2 z-50 w-screen max-w-[1440px] -translate-x-1/2 px-4 pt-4 transition-all duration-300 ${
-                      isActive
-                        ? 'pointer-events-auto visible translate-y-0 opacity-100'
-                        : 'pointer-events-none invisible -translate-y-3 opacity-0'
-                    }`}
-                  >
-                    {renderMegaMenuContent(item)}
-                  </div>
                 </div>
               );
             })}
@@ -387,6 +382,22 @@ const Navbar = () => {
                 <FiMenu size={20} className="transition-transform duration-300" />
               )}
             </button>
+          </div>
+        </div>
+
+        {/* Desktop Mega Menu rendered inside glass panel */}
+        <div className="hidden lg:block">
+          <div
+            className={`overflow-hidden transition-all duration-300 ease-out ${
+              activeMegaItem
+                ? 'pointer-events-auto max-h-[560px] opacity-100'
+                : 'pointer-events-none max-h-0 opacity-0'
+            }`}
+            onMouseEnter={() => activeDropdown && handleMenuEnter(activeDropdown)}
+          >
+            {activeMegaItem && (
+              <div className="pt-4 pb-6">{renderMegaMenuContent(activeMegaItem)}</div>
+            )}
           </div>
         </div>
       </div>
