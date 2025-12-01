@@ -1,3 +1,4 @@
+import Alerts from '@/components/insights/Alerts';
 import Explore from '@/components/insights/Explore';
 import HeroStarter from '@/components/ui/HeroStarter';
 import React from 'react';
@@ -11,6 +12,7 @@ const page = () => {
         label="Insights"
       />
       <Explore />
+      <Alerts />
     </>
   );
 };
