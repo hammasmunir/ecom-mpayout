@@ -47,13 +47,7 @@ const page = () => {
                   className={`${reverse ? 'md:order-2' : 'md:order-1'} order-1 flex flex-col gap-5`}
                 >
                   <h3 className="text-2xl font-medium md:text-3xl">{item.title}</h3>
-                  <p className="text-text text-lg md:text-xl">
-                    {item.description}
-                    <br />
-                    <br />
-                    We knew businesses needed a payment system that was transparent, stable, and
-                    human-driven.
-                  </p>
+                  <p className="text-text text-lg md:text-xl">{item.description}</p>
                 </div>
 
                 <div
