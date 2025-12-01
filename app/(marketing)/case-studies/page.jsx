@@ -3,7 +3,7 @@ import Starter from '@/components/ui/Starter';
 import React from 'react';
 import Image1 from '@/assets/images/case-studies/cs-1.svg';
 import Image2 from '@/assets/images/case-studies/cs-2.svg';
-import Image3 from '@/assets/images/case-studies/cs-3.png';
+import Image3 from '@/assets/images/case-studies/cs-3.svg';
 import Image from 'next/image';
 
 const page = () => {
@@ -30,27 +30,34 @@ const page = () => {
           <section className="grid w-full grid-cols-1 grid-rows-none gap-6 md:grid-cols-2 md:grid-rows-2">
             <article className="rounded-2xl bg-[#F6FFFE] p-8">
               <h4 className="text-3xl font-medium text-black">Healthletic</h4>
-              <div className="flex h-full items-center">
+              <div className="flex h-full items-center justify-center">
                 {' '}
                 <Image src={Image1} alt="" className="h-auto w-full max-w-[500px]" />
               </div>
             </article>
             <article className="rounded-2xl bg-[#0047A0] p-8">
-              <h4 className="text-3xl font-medium text-white">Healthletic</h4>
-              <div className="flex h-full items-center">
+              <h4 className="text-3xl font-medium text-white">OMNX</h4>
+              <div className="flex h-full items-center justify-center">
                 {' '}
                 <Image src={Image2} alt="" className="h-auto w-full max-w-[500px]" />
               </div>{' '}
             </article>{' '}
-            <article
-              className="col-start-2 col-end-3 row-start-1 row-end-3 rounded-2xl p-8"
-              style={{
-                backgroundImage: `url(${Image3})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              Hello 3
+            <article className="relative col-start-2 col-end-3 row-start-1 row-end-3 overflow-hidden rounded-2xl p-8">
+              <div className="absolute inset-0">
+                <Image
+                  src={Image3}
+                  alt="Case study background"
+                  fill
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                  }}
+                  className="rounded-2xl"
+                />
+              </div>
+              <div className="relative z-10 flex h-full">
+                <h4 className="text-3xl font-medium text-white">Viberide</h4>
+              </div>
             </article>
           </section>
         </section>
