@@ -27,22 +27,22 @@ const page = () => {
               platform.
             </p>
           </div>
-          <section className="grid w-full grid-cols-1 grid-rows-none gap-6 md:grid-cols-2 md:grid-rows-2">
-            <article className="rounded-2xl bg-[#F6FFFE] p-8">
+          <section className="grid w-full grid-cols-1 gap-6 lg:grid-cols-2 lg:grid-rows-2">
+            <article className="flex min-h-[280px] flex-col rounded-2xl bg-[#F6FFFE] p-8">
               <h4 className="text-3xl font-medium text-black">Healthletic</h4>
               <div className="flex h-full items-center justify-center">
                 {' '}
                 <Image src={Image1} alt="" className="h-auto w-full max-w-[500px]" />
               </div>
             </article>
-            <article className="rounded-2xl bg-[#0047A0] p-8">
+            <article className="flex min-h-[280px] flex-col rounded-2xl bg-[#0047A0] p-8">
               <h4 className="text-3xl font-medium text-white">OMNX</h4>
               <div className="flex h-full items-center justify-center">
                 {' '}
                 <Image src={Image2} alt="" className="h-auto w-full max-w-[500px]" />
               </div>{' '}
             </article>{' '}
-            <article className="relative col-start-2 col-end-3 row-start-1 row-end-3 overflow-hidden rounded-2xl p-8">
+            <article className="relative flex min-h-[280px] flex-col overflow-hidden rounded-2xl p-8 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-3">
               <div className="absolute inset-0">
                 <Image
                   src={Image3}
