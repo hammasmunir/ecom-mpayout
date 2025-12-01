@@ -56,7 +56,7 @@ export default function Footer() {
             </p>
 
             <div className="z-5 flex flex-wrap justify-center gap-6 text-white">
-              <Link href="/about" className="hover:text-gray-100">
+              <Link href="/who-are-we" className="hover:text-gray-100">
                 About Us
               </Link>
               <Link href="/contact" className="hover:text-gray-100">
@@ -123,8 +123,16 @@ export default function Footer() {
                 <ul className="space-y-2 text-gray-600">
                   <li>Processing</li>
                   <li>Gateway</li>
-                  <li>Insights</li>
-                  <li>Alerts</li>
+                  <li>
+                    <Link href="/insights" className="transition hover:text-gray-900">
+                      Insights
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/insights#alerts" className="transition hover:text-gray-900">
+                      Alerts
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
@@ -165,7 +173,11 @@ export default function Footer() {
               <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Customers</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>All case studies</li>
+                  <li>
+                    <Link href="/case-studies" className="transition hover:text-gray-900">
+                      All case studies
+                    </Link>
+                  </li>
                   <li>Viberide</li>
                   <li>Healthletic</li>
                   <li>OMNX</li>
@@ -176,8 +188,16 @@ export default function Footer() {
               <div className="p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Company</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>Who we are</li>
-                  <li>Careers</li>
+                  <li>
+                    <Link href="/who-are-we" className="transition hover:text-gray-900">
+                      Who we are
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/careers" className="transition hover:text-gray-900">
+                      Careers
+                    </Link>
+                  </li>
                   <li>Contact Us</li>
                 </ul>
               </div>
