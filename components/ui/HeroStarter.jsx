@@ -5,7 +5,7 @@ const HeroStarter = ({ heading, text, noCenter, label, className }) => {
   return (
     <section className="relative w-full overflow-hidden px-6 sm:px-12 md:px-24">
       <div
-        className={`relative z-10 mx-auto mt-20 flex max-w-[1440px] flex-col ${!noCenter && 'items-center justify-center'} gap-4 px-5 text-center sm:mt-24 md:mt-28 ${className}`}
+        className={`relative z-10 mt-20 flex max-w-[600px] flex-col ${!noCenter && 'mx-auto items-center justify-center'} gap-4 px-5 text-center sm:mt-24 md:mt-28 ${className}`}
       >
         <div className="flex max-w-4xl flex-col items-center gap-4">
           <Label text={label} />
