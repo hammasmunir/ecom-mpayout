@@ -77,14 +77,6 @@ spans {
   }
 }
 
-.dash-border {
-  border-style: dashed !important;
-  border-width: 3px !important;
-  border-color: var(--border-color);
-  border-top: none !important;
-  border-left: none !important;
-  border-right: none !important;
-}
 .benefits-grid {
   display: grid;
   grid-template-columns: 1fr;
