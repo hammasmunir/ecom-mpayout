@@ -4,6 +4,7 @@ import React from 'react';
 import WhoImage1 from '@/assets/images/who-are-we/who-1.jpg';
 import WhoImage2 from '@/assets/images/who-are-we/who-2.jpg';
 import WhoImage3 from '@/assets/images/who-are-we/who-3.jpg';
+import HeroStarter from '@/components/ui/HeroStarter';
 
 const page = () => {
   const data = [
@@ -28,7 +29,11 @@ const page = () => {
   ];
   return (
     <>
-      <Hero />
+      <HeroStarter
+        heading="Confidence in Every Transaction You Make"
+        text="Gain complete confidence with a payment system that shows you every sale, payout, and dispute in real time"
+        label="Who we are"
+      />
       <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
           {data.map((item, idx) => {
