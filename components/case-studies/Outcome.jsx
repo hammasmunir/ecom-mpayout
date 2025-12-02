@@ -52,7 +52,7 @@ const Outcome = ({ data = exampleOutcomes }) => {
   if (rows.length === 0) {
     return (
       <div className="flex flex-col gap-5">
-        <h2 className="text-2xl font-medium md:text-4xl">Key Outcomes</h2>
+        <h2 className="text-xl font-medium sm:text-2xl lg:text-4xl">Key Outcomes</h2>
         <p>No outcome data available</p>
       </div>
     );
@@ -60,16 +60,19 @@ const Outcome = ({ data = exampleOutcomes }) => {
 
   return (
     <div className="flex flex-col gap-5">
-      <h2 className="text-2xl font-medium md:text-4xl">Key Outcomes</h2>
-      <div className="overflow-hidden rounded-xl border border-gray-200">
-        <table className="w-full table-fixed text-xl">
+      <h2 className="text-xl font-medium sm:text-2xl lg:text-4xl">Key Outcomes</h2>
+      <div className="rounded-xl border border-gray-200">
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[640px] table-fixed text-sm sm:text-base lg:text-xl">
           <thead className="bg-gray-50 text-center">
             <tr>
-              <th className="w-1/3 p-6 font-normal text-gray-900">{heading}</th>
-              <th className="w-1/3 border-l border-gray-200 p-6 font-normal text-gray-900">
+                <th className="w-1/3 px-4 py-3 font-normal text-gray-900 sm:p-5 lg:p-6">
+                  {heading}
+                </th>
+                <th className="w-1/3 border-l border-gray-200 px-4 py-3 font-normal text-gray-900 sm:p-5 lg:p-6">
                 {beforeLabel}
               </th>
-              <th className="w-1/3 border-l border-gray-200 bg-[#0357F0] p-6 font-normal text-white">
+                <th className="w-1/3 border-l border-gray-200 bg-[#0357F0] px-4 py-3 font-normal text-white sm:p-5 lg:p-6">
                 {afterLabel}
               </th>
             </tr>
@@ -77,13 +80,18 @@ const Outcome = ({ data = exampleOutcomes }) => {
           <tbody className="bg-white">
             {rows.map((item, index) => (
               <tr key={index} className="bg-white">
-                <td className="w-1/3 p-6 text-gray-900">{item.metric}</td>
-                <td className="w-1/3 border-l border-gray-200 p-6 text-gray-500">{item.before}</td>
-                <td className="w-1/3 border-l border-gray-200 p-6 text-gray-500">{item.after}</td>
+                  <td className="w-1/3 px-4 py-3 text-gray-900 sm:p-5 lg:p-6">{item.metric}</td>
+                  <td className="w-1/3 border-l border-gray-200 px-4 py-3 text-gray-500 sm:p-5 lg:p-6">
+                    {item.before}
+                  </td>
+                  <td className="w-1/3 border-l border-gray-200 px-4 py-3 text-gray-500 sm:p-5 lg:p-6">
+                    {item.after}
+                  </td>
               </tr>
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );
