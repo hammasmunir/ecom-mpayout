@@ -69,15 +69,27 @@ const navItems = [
       href: '/case-studies',
     },
     logos: [
-      { name: 'Viberide', image: ViberideLogo, width: 92, height: 30 },
-      { name: 'Healthletic', image: HealthleticLogo, width: 120, height: 30 },
-      { name: 'OMNX', image: OmnxLogo, width: 90, height: 28 },
+      {
+        name: 'Viberide',
+        image: ViberideLogo,
+        width: 92,
+        height: 30,
+        href: '/case-studies/viberide',
+      },
+      {
+        name: 'Healthletic',
+        image: HealthleticLogo,
+        width: 120,
+        height: 30,
+        href: '/case-studies/healthletic',
+      },
+      { name: 'OMNX', image: OmnxLogo, width: 90, height: 28, href: '/case-studies/omnx' },
     ],
     mobileLinks: [
       { label: 'All case studies', href: '/case-studies' },
-      { label: 'Viberide' },
-      { label: 'Healthletic' },
-      { label: 'OMNX' },
+      { label: 'Viberide', href: '/case-studies/viberide' },
+      { label: 'Healthletic', href: '/case-studies/healthletic' },
+      { label: 'OMNX', href: '/case-studies/omnx' },
     ],
   },
   {
@@ -198,21 +210,34 @@ const MegaMenuCard = ({ title, description, Icon, className = '', href }) => {
 
 const MegaMenuLogoList = ({ logos }) => (
   <div className="flex flex-col gap-3">
-    {logos.map((logo) => (
-      <div
-        key={logo.name}
-        className="flex h-full items-center justify-between rounded-[20px] bg-white px-4 py-3 shadow-md"
-      >
-        <span className="text-sm font-medium text-gray-700">{logo.name}</span>
-        <Image
-          src={logo.image}
-          alt={logo.name}
-          width={logo.width}
-          height={logo.height}
-          className="w-full max-w-[60px]"
-        />
-      </div>
-    ))}
+    {logos.map((logo) => {
+      const content = (
+        <div className="flex h-full items-center justify-between rounded-[20px] bg-white px-4 py-3 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
+          <span className="text-sm font-medium text-gray-700">{logo.name}</span>
+          <Image
+            src={logo.image}
+            alt={logo.name}
+            width={logo.width}
+            height={logo.height}
+            className="w-full max-w-[60px]"
+          />
+        </div>
+      );
+
+      if (logo.href) {
+        return (
+          <Link key={logo.name} href={logo.href} className="block h-full">
+            {content}
+          </Link>
+        );
+      }
+
+      return (
+        <div key={logo.name} className="block h-full">
+          {content}
+        </div>
+      );
+    })}
   </div>
 );
 

@@ -178,9 +178,21 @@ export default function Footer() {
                       All case studies
                     </Link>
                   </li>
-                  <li>Viberide</li>
-                  <li>Healthletic</li>
-                  <li>OMNX</li>
+                <li>
+                  <Link href="/case-studies/viberide" className="transition hover:text-gray-900">
+                    Viberide
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/case-studies/healthletic" className="transition hover:text-gray-900">
+                    Healthletic
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/case-studies/omnx" className="transition hover:text-gray-900">
+                    OMNX
+                  </Link>
+                </li>
                 </ul>
               </div>
 
