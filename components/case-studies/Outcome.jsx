@@ -61,25 +61,25 @@ const Outcome = ({ data = exampleOutcomes }) => {
   return (
     <div className="flex flex-col gap-5">
       <h2 className="text-xl font-medium sm:text-2xl lg:text-4xl">Key Outcomes</h2>
-      <div className="rounded-xl border border-gray-200">
+      <div className="rounded-md border border-gray-200">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px] table-fixed text-sm sm:text-base lg:text-xl">
-          <thead className="bg-gray-50 text-center">
-            <tr>
+            <thead className="bg-gray-50 text-center">
+              <tr>
                 <th className="w-1/3 px-4 py-3 font-normal text-gray-900 sm:p-5 lg:p-6">
                   {heading}
                 </th>
                 <th className="w-1/3 border-l border-gray-200 px-4 py-3 font-normal text-gray-900 sm:p-5 lg:p-6">
-                {beforeLabel}
-              </th>
+                  {beforeLabel}
+                </th>
                 <th className="w-1/3 border-l border-gray-200 bg-[#0357F0] px-4 py-3 font-normal text-white sm:p-5 lg:p-6">
-                {afterLabel}
-              </th>
-            </tr>
-          </thead>
-          <tbody className="bg-white">
-            {rows.map((item, index) => (
-              <tr key={index} className="bg-white">
+                  {afterLabel}
+                </th>
+              </tr>
+            </thead>
+            <tbody className="bg-white">
+              {rows.map((item, index) => (
+                <tr key={index} className="bg-white">
                   <td className="w-1/3 px-4 py-3 text-gray-900 sm:p-5 lg:p-6">{item.metric}</td>
                   <td className="w-1/3 border-l border-gray-200 px-4 py-3 text-gray-500 sm:p-5 lg:p-6">
                     {item.before}
@@ -87,10 +87,10 @@ const Outcome = ({ data = exampleOutcomes }) => {
                   <td className="w-1/3 border-l border-gray-200 px-4 py-3 text-gray-500 sm:p-5 lg:p-6">
                     {item.after}
                   </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
