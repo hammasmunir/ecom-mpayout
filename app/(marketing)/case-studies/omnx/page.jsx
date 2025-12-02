@@ -9,7 +9,7 @@ import AuthorBox from '@/components/case-studies/AuthorBox';
 
 const page = () => {
   const points = [
-    { title: '+100%', description: 'Revenue Increase After 6 to12 Months' },
+    { title: '+100%', description: 'Revenue Increase After 6 to 12 Months' },
     { title: '30–50%', description: 'Chargeback Reduction Via Early Alerts' },
     { title: '+4%', description: 'Authorization Rates Increase' },
   ];
