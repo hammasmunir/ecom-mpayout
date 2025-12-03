@@ -50,7 +50,6 @@ const Form = ({
     e.preventDefault();
     const newErrors = {};
 
-    // Validate all fields
     fields.forEach((field) => {
       const value = formData[field.name];
       const error = validateField(field, value);
@@ -64,7 +63,6 @@ const Form = ({
       return;
     }
 
-    // Call onSubmit with form data
     if (onSubmit) {
       onSubmit(formData, e);
     }
@@ -75,7 +73,7 @@ const Form = ({
     const fieldValue = formData[field.name] || '';
     const fieldError = errors[field.name];
     const bgColor = field.bgColor || '#FAFAFA';
-    const isRequired = field.required !== false; // Default to true unless explicitly false
+    const isRequired = field.required !== false;
 
     const baseInputClasses = `text-text border-border rounded-lg border px-5 py-2 shadow-[0px_3px_8px_0px_#00000014]
  text-lg outline-none ${fieldError ? 'border-red-500' : ''}`;
