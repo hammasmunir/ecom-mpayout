@@ -4,8 +4,6 @@ import HeroStarter from '@/components/ui/HeroStarter';
 import React from 'react';
 
 const Contact = () => {
-  const companyTypes = ['E-commerce', 'Retail', 'SaaS'];
-
   const formFields = [
     {
       name: 'firstName',
@@ -68,6 +66,7 @@ const Contact = () => {
           label="Contact Us"
           noCustom
           noCenter
+          maxWidth="500px"
         />
         <Form
           fields={formFields}
