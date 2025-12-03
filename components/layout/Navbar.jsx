@@ -35,8 +35,13 @@ const navItems = [
     dropdownWidth: 'w-full',
     columns: 4,
     cards: [
-      { title: 'Processing', description: 'Fast, stable global payments', Icon: ProcessingIcon },
-      { title: 'Gateway', description: 'Smart, secure integrations', Icon: GatewayIcon },
+      {
+        title: 'Processing',
+        description: 'Fast, stable global payments',
+        Icon: ProcessingIcon,
+        href: '/processing',
+      },
+      { title: 'Gateway', description: 'Smart, secure integrations', Icon: GatewayIcon, href: '/gateway' },
       {
         title: 'Insights',
         description: 'Real-time performance tracking',
@@ -51,8 +56,8 @@ const navItems = [
       },
     ],
     mobileLinks: [
-      { label: 'Processing' },
-      { label: 'Gateway' },
+      { label: 'Processing', href: '/processing' },
+      { label: 'Gateway', href: '/gateway' },
       { label: 'Insights', href: '/insights' },
       { label: 'Alerts', href: '/insights#alerts' },
     ],
@@ -115,6 +120,7 @@ const navItems = [
         title: 'Partner Program',
         description: 'Earn more by partnering with us',
         Icon: PartnerProgramIcon,
+        href: '/partner-program',
       },
       {
         title: 'White Label Solutions',
@@ -123,7 +129,11 @@ const navItems = [
       },
       { title: 'ISO Platform', description: 'Manage merchants under your account', Icon: IOSIcon },
     ],
-    mobileLinks: ['Partner Program', 'White Label', 'ISO Platform'],
+    mobileLinks: [
+      { label: 'Partner Program', href: '/partner-program' },
+      { label: 'White Label' },
+      { label: 'ISO Platform' },
+    ],
   },
   {
     title: 'Integration',
@@ -134,13 +144,19 @@ const navItems = [
       title: 'All Integrations',
       description: 'Connect with any platform',
       Icon: IntegrationIcon,
+      href: '/integration',
     },
     logos: [
       { name: 'Shopify', image: ShopifyLogo, width: 90, height: 26 },
       { name: 'Authorize.net', image: AuthorizeLogo, width: 120, height: 28 },
       { name: 'Disputely', image: DisputelyLogo, width: 110, height: 28 },
     ],
-    mobileLinks: ['All Integrations', 'Shopify', 'Authorize.net', 'Disputely'],
+    mobileLinks: [
+      { label: 'All Integrations', href: '/integration' },
+      { label: 'Shopify' },
+      { label: 'Authorize.net' },
+      { label: 'Disputely' },
+    ],
   },
   {
     title: 'Pricing',
@@ -165,12 +181,17 @@ const navItems = [
         Icon: CareersIcon,
         href: '/careers',
       },
-      { title: 'Contact Us', description: "We're here to help you", Icon: ContactIcon },
+      {
+        title: 'Contact Us',
+        description: "We're here to help you",
+        Icon: ContactIcon,
+        href: '/contact',
+      },
     ],
     mobileLinks: [
       { label: 'Who we are', href: '/who-are-we' },
       { label: 'Careers', href: '/careers' },
-      { label: 'Contact Us' },
+      { label: 'Contact Us', href: '/contact' },
     ],
   },
 ];
