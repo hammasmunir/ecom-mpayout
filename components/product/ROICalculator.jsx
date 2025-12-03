@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Label from '../ui/Label';
 import Starter from '../ui/Starter';
+import Dropdown from '../ui/Dropdown';
 import Image from 'next/image';
 import ROIimage from '@/assets/images/roi-calc.svg';
 import ROIBg from '@/assets/images/roi-bg.png';
@@ -13,26 +14,6 @@ import NotesIcon from '@/assets/icons/NotesIcon';
 const ROICalculator = () => {
   const industries = ['Select from Dropdown', 'E-commerce', 'Retail', 'SaaS'];
   const [selectedIndustry, setSelectedIndustry] = useState(industries[0]);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
-
-  const handleSelect = (option) => {
-    setSelectedIndustry(option);
-    setIsDropdownOpen(false);
-  };
 
   return (
     <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
@@ -83,42 +64,12 @@ const ROICalculator = () => {
               ))}
               <label className="text-text flex flex-col gap-2 text-sm font-medium">
                 Industry
-                <div className="relative" ref={dropdownRef}>
-                  <button
-                    type="button"
-                    onClick={toggleDropdown}
-                    className="flex w-full items-center justify-between rounded-lg border border-[#E5E7EB] px-4 py-3 text-left text-base font-medium text-gray-900 transition hover:border-gray-400"
-                  >
-                    <span>{selectedIndustry}</span>
-                    <svg
-                      className={`h-4 w-4 transform text-gray-500 transition ${
-                        isDropdownOpen ? 'rotate-180' : 'rotate-0'
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {isDropdownOpen && (
-                    <div className="absolute right-0 left-0 z-10 mt-2 overflow-hidden rounded-lg border border-[#E5E7EB] bg-white shadow-lg">
-                      {industries.map((option) => (
-                        <button
-                          key={option}
-                          type="button"
-                          onClick={() => handleSelect(option)}
-                          className={`w-full px-4 py-2 text-left text-sm transition hover:bg-gray-100 ${
-                            selectedIndustry === option ? 'bg-gray-50 font-semibold' : ''
-                          }`}
-                        >
-                          {option}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <Dropdown
+                  options={industries}
+                  value={selectedIndustry}
+                  onChange={setSelectedIndustry}
+                  placeholder="Select from Dropdown"
+                />
               </label>
             </div>
           </div>
