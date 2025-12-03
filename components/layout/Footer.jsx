@@ -121,8 +121,16 @@ export default function Footer() {
               <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Product</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>Processing</li>
-                  <li>Gateway</li>
+                  <li>
+                    <Link href="/processing" className="transition hover:text-gray-900">
+                      Processing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/gateway" className="transition hover:text-gray-900">
+                      Gateway
+                    </Link>
+                  </li>
                   <li>
                     <Link href="/insights" className="transition hover:text-gray-900">
                       Insights
@@ -140,7 +148,11 @@ export default function Footer() {
               <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Integrations</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>All Integrations</li>
+                  <li>
+                    <Link href="/integration" className="transition hover:text-gray-900">
+                      All Integrations
+                    </Link>
+                  </li>
                   <li>Shopify</li>
                   <li>Authorize.net</li>
                   <li>Disputely</li>
@@ -163,7 +175,11 @@ export default function Footer() {
               <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Partners</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>Partner Program</li>
+                  <li>
+                    <Link href="/partner-program" className="transition hover:text-gray-900">
+                      Partner Program
+                    </Link>
+                  </li>
                   <li>White Label Solutions</li>
                   <li>ISO Platform</li>
                 </ul>
@@ -210,7 +226,11 @@ export default function Footer() {
                       Careers
                     </Link>
                   </li>
-                  <li>Contact Us</li>
+                  <li>
+                    <Link href="/contact" className="transition hover:text-gray-900">
+                      Contact Us
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
