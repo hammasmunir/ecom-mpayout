@@ -67,7 +67,11 @@ h6 {
 }
 
 p,
-spans {
+spans,
+label,
+li,
+input,
+textarea {
   font-family: var(--font-inter), sans-serif;
 }
 
