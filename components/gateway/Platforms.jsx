@@ -54,7 +54,7 @@ const Platforms = () => {
           {platforms.map((p) => (
             <article
               key={p.name}
-              className="flex w-full flex-col rounded-3xl p-3 shadow-[0px_4px_20px_2px_#0000001F] lg:w-[30%]"
+              className="flex w-full flex-col rounded-3xl p-3 shadow-[0px_4px_20px_2px_#0000001F] transition-shadow duration-300 hover:shadow-[0px_4px_20px_8px_#0000001F] lg:w-[30%]"
             >
               <div className="flex h-[330px] items-center justify-center rounded-2xl bg-[#F5F5F5] p-4">
                 <Image
