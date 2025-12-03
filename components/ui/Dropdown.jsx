@@ -46,8 +46,8 @@ const Dropdown = ({
         type="button"
         onClick={toggleDropdown}
         disabled={disabled}
-        className={`text-text flex w-full items-center justify-between rounded-lg border border-[#E5E7EB] px-4 py-3 text-left text-base font-medium text-gray-900 transition hover:border-gray-400 ${
-          disabled ? 'cursor-not-allowed opacity-50' : ''
+        className={`text-text flex w-full items-center justify-between rounded-lg border border-[#E5E7EB] px-4 py-3 text-left text-base font-medium shadow-[0px_3px_8px_0px_#00000014] transition hover:border-gray-400 ${
+          disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
         }`}
         style={bgColor ? { backgroundColor: bgColor } : {}}
       >

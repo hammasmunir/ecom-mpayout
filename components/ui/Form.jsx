@@ -77,9 +77,8 @@ const Form = ({
     const bgColor = field.bgColor || '#FAFAFA';
     const isRequired = field.required !== false; // Default to true unless explicitly false
 
-    const baseInputClasses = `text-text border-border rounded-lg border px-5 py-2 text-lg outline-none ${
-      fieldError ? 'border-red-500' : ''
-    }`;
+    const baseInputClasses = `text-text border-border rounded-lg border px-5 py-2 shadow-[0px_3px_8px_0px_#00000014]
+ text-lg outline-none ${fieldError ? 'border-red-500' : ''}`;
 
     switch (field.type) {
       case 'dropdown':
