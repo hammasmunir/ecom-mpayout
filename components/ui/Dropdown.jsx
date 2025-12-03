@@ -9,6 +9,7 @@ const Dropdown = ({
   placeholder = 'Select an option',
   className = '',
   disabled = false,
+  bgColor,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -48,6 +49,7 @@ const Dropdown = ({
         className={`flex w-full items-center justify-between rounded-lg border border-[#E5E7EB] px-4 py-3 text-left text-base font-medium text-gray-900 transition hover:border-gray-400 ${
           disabled ? 'cursor-not-allowed opacity-50' : ''
         }`}
+        style={bgColor ? { backgroundColor: bgColor } : {}}
       >
         <span>{displayValue}</span>
         <svg
@@ -83,4 +85,3 @@ const Dropdown = ({
 };
 
 export default Dropdown;
-
