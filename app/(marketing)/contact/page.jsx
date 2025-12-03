@@ -29,17 +29,25 @@ const Contact = () => {
       bgColor: '#FAFAFA',
     },
     {
-      name: 'companyName',
-      label: 'Company Name',
-      type: 'text',
+      name: 'industry',
+      label: 'Industry',
+      type: 'dropdown',
+      options: ['E-commerce', 'Retail', 'SaaS'],
       required: true,
       bgColor: '#FAFAFA',
     },
     {
-      name: 'companyType',
-      label: 'Company Type',
-      type: 'dropdown',
-      options: companyTypes,
+      name: 'message',
+      label: 'Message',
+      type: 'textarea',
+      required: true,
+      bgColor: '#FAFAFA',
+      rows: 4,
+    },
+    {
+      name: 'companyName',
+      label: 'Company Name',
+      type: 'text',
       required: true,
       bgColor: '#FAFAFA',
     },
@@ -53,7 +61,7 @@ const Contact = () => {
 
   return (
     <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
-      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-20 px-5 lg:grid-cols-[1fr_0.8fr]">
+      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-10 px-5 lg:grid-cols-[1fr_0.8fr] lg:gap-20">
         <HeroStarter
           heading="Get in Touch with Our Team"
           text="Talk to our experts for tailored guidance on payments, onboarding, and growth."
@@ -67,7 +75,7 @@ const Contact = () => {
           formBgColor="bg-white"
           submitButton={{
             text: 'Submit',
-            className: 'bg-primary-500 rounded-full px-4 py-2 text-white',
+            className: 'bg-primary-500 rounded-full p-4 text-white cursor-pointer',
           }}
         />
       </section>

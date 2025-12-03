@@ -98,9 +98,7 @@ const Form = ({
               disabled={field.disabled}
               bgColor={bgColor}
             />
-            {fieldError && (
-              <span className="text-sm text-red-500">{fieldError}</span>
-            )}
+            {fieldError && <span className="text-sm text-red-500">{fieldError}</span>}
           </div>
         );
 
@@ -123,9 +121,7 @@ const Form = ({
               rows={field.rows || 4}
               disabled={field.disabled}
             />
-            {fieldError && (
-              <span className="text-sm text-red-500">{fieldError}</span>
-            )}
+            {fieldError && <span className="text-sm text-red-500">{fieldError}</span>}
           </div>
         );
 
@@ -146,18 +142,14 @@ const Form = ({
               required={isRequired}
               disabled={field.disabled}
             >
-              {field.placeholder && (
-                <option value="">{field.placeholder}</option>
-              )}
+              {field.placeholder && <option value="">{field.placeholder}</option>}
               {field.options?.map((option) => (
                 <option key={option.value || option} value={option.value || option}>
                   {option.label || option}
                 </option>
               ))}
             </select>
-            {fieldError && (
-              <span className="text-sm text-red-500">{fieldError}</span>
-            )}
+            {fieldError && <span className="text-sm text-red-500">{fieldError}</span>}
           </div>
         );
 
@@ -183,9 +175,7 @@ const Form = ({
               max={field.max}
               step={field.step}
             />
-            {fieldError && (
-              <span className="text-sm text-red-500">{fieldError}</span>
-            )}
+            {fieldError && <span className="text-sm text-red-500">{fieldError}</span>}
           </div>
         );
     }
@@ -199,7 +189,7 @@ const Form = ({
       {fields.map((field) => renderField(field))}
       <button
         type="submit"
-        className={submitButton.className || 'bg-primary-500 rounded-full px-4 py-2 text-white'}
+        className={submitButton.className || 'bg-primary-500 rounded-full p-4 text-white'}
         disabled={submitButton.disabled}
       >
         {submitButton.text || 'Submit'}
@@ -209,4 +199,3 @@ const Form = ({
 };
 
 export default Form;
-
