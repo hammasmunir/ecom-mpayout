@@ -31,8 +31,10 @@ const Features = ({ title, desp, data = [] }) => {
                     className="flex flex-col gap-3 rounded-xl p-7 shadow-md transition-shadow duration-300 hover:shadow-lg"
                   >
                     {item.icon}
-                    <h3 className="text-xl font-medium lg:text-2xl">{item.title}</h3>
-                    <p className="text-text text-base lg:text-xl">{item.description}</p>
+                    <div className="flex max-w-[380px] flex-col gap-2">
+                      <h3 className="text-xl font-medium lg:text-2xl">{item.title}</h3>
+                      <p className="text-text text-base lg:text-xl">{item.description}</p>
+                    </div>
                   </article>
                 ))}
               </div>
