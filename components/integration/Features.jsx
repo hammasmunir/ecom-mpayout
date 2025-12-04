@@ -13,19 +13,29 @@ const Features = ({ title, desp, data = [] }) => {
           />
           <p className="text-text max-w-[400px] text-center lg:text-left">{desp}</p>
         </div>
-        <section className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1fr_0.6fr]">
-          {data.map((item, idx) => {
-            const isRow2 = idx >= 2;
+        <section className="flex flex-col gap-10">
+          {Array.from({ length: Math.ceil(data.length / 2) }).map((_, rowIdx) => {
+            const rowItems = data.slice(rowIdx * 2, rowIdx * 2 + 2);
+            const isEvenRow = rowIdx % 2 === 0;
 
             return (
-              <article
-                key={idx}
-                className={`flex flex-col gap-3 rounded-xl p-7 shadow-md transition-shadow duration-300 hover:shadow-lg ${isRow2 ? 'lg:col-[span_1] lg:grid-cols-[0.6fr_1fr]' : ''} `}
+              <div
+                key={rowIdx}
+                className={`grid grid-cols-1 gap-10 md:grid-cols-2 ${
+                  isEvenRow ? 'lg:grid-cols-[1fr_0.6fr]' : 'lg:grid-cols-[0.6fr_1fr]'
+                }`}
               >
-                {item.icon}
-                <h3 className="text-xl font-medium lg:text-2xl">{item.title}</h3>
-                <p className="text-text text-base lg:text-xl">{item.description}</p>
-              </article>
+                {rowItems.map((item, itemIdx) => (
+                  <article
+                    key={rowIdx * 2 + itemIdx}
+                    className="flex flex-col gap-3 rounded-xl p-7 shadow-md transition-shadow duration-300 hover:shadow-lg"
+                  >
+                    {item.icon}
+                    <h3 className="text-xl font-medium lg:text-2xl">{item.title}</h3>
+                    <p className="text-text text-base lg:text-xl">{item.description}</p>
+                  </article>
+                ))}
+              </div>
             );
           })}
         </section>
