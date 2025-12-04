@@ -37,7 +37,7 @@ const IconBoxes = () => {
           const smallScreen = !isLast ? 'border-b-[3px]' : '';
 
           const mdRightBorder = idx % 2 === 0 ? 'md:border-r-[3px]' : '';
-          const mdBottomBorder = idx < 2 ? 'md:border-b-[3px]' : '';
+          const mdNoBottom = 'md:border-b-0';
 
           const lgRightBorder = idx !== data.length - 1 ? 'lg:border-r-[3px]' : '';
           const lgNoBottom = 'lg:border-b-0';
@@ -45,7 +45,7 @@ const IconBoxes = () => {
           return (
             <article
               key={idx}
-              className={`border-border flex flex-col items-start gap-3 border-dashed p-8 ${smallScreen} ${mdRightBorder} ${mdBottomBorder} ${lgRightBorder} ${lgNoBottom} `}
+              className={`border-border flex flex-col items-start gap-3 border-dashed p-8 ${smallScreen} ${mdRightBorder} ${mdNoBottom} ${lgRightBorder} ${lgNoBottom} `}
             >
               {item.icon}
               <h3 className="text-xl font-medium">{item.title}</h3>
