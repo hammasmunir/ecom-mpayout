@@ -1,14 +1,18 @@
+'use client';
 import React from 'react';
+import Slider from 'react-slick';
 import Starter from '../ui/Starter';
 import RoutingIcon from '@/assets/icons/white-label/RoutingIcon';
 import GatewayIcon from '@/assets/icons/white-label/GatewayIcon';
 import ReportingIcon from '@/assets/icons/white-label/ReportingIcon';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const FeatureCard = ({ title, description, icon }) => {
   return (
-    <article className="flex flex-col items-center gap-10 rounded-2xl p-6">
+    <article className="flex h-full flex-col items-center justify-between gap-20 rounded-2xl bg-[#F5F5F5] p-6">
       <h3 className="w-full text-xl font-medium lg:text-2xl">{title}</h3>
-      {icon}
+      <div className="flex flex-1 items-center justify-center">{icon}</div>
       <p className="text-text w-full text-base lg:text-xl">{description}</p>
     </article>
   );
@@ -16,6 +20,21 @@ const FeatureCard = ({ title, description, icon }) => {
 
 const CoreFeatures = () => {
   const cardData = [
+    {
+      title: 'Smart Routing + MIDs',
+      description: 'Represents routing paths, logic, and multiple processors/MIDs.',
+      icon: <RoutingIcon />,
+    },
+    {
+      title: 'Custom Gateway',
+      description: 'Accept payments globally using a gateway branded with your company identity.',
+      icon: <GatewayIcon />,
+    },
+    {
+      title: 'Powerful Reporting',
+      description: 'Give clients real-time insights into sales, payouts, and chargebacks.',
+      icon: <ReportingIcon />,
+    },
     {
       title: 'Smart Routing + MIDs',
       description: 'Represents routing paths, logic, and multiple processors/MIDs.',
@@ -47,7 +66,40 @@ const CoreFeatures = () => {
           </p>
         </div>
       </section>
-      <section className="mx-auto flex flex-col gap-10 px-5 lg:gap-20">hello</section>
+      <section className="mx-auto flex flex-col gap-10 px-5 lg:gap-20">
+        <div className="feature-carousel">
+          <Slider
+            dots={false}
+            infinite={true}
+            speed={500}
+            arrows={false}
+            slidesToShow={4}
+            slidesToScroll={1}
+            autoplay={true}
+            autoplaySpeed={3000}
+            responsive={[
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 2,
+                },
+              },
+              {
+                breakpoint: 640,
+                settings: {
+                  slidesToShow: 1,
+                },
+              },
+            ]}
+          >
+            {cardData.map((card, index) => (
+              <div key={index} className="h-full px-3">
+                <FeatureCard title={card.title} description={card.description} icon={card.icon} />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
     </section>
   );
 };
