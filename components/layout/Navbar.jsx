@@ -147,15 +147,15 @@ const navItems = [
       href: '/integration',
     },
     logos: [
-      { name: 'Shopify', image: ShopifyLogo, width: 90, height: 26 },
-      { name: 'Authorize.net', image: AuthorizeLogo, width: 120, height: 28 },
-      { name: 'Disputely', image: DisputelyLogo, width: 110, height: 28 },
+      { name: 'Shopify', image: ShopifyLogo, width: 90, height: 26, href: '/integration/shopify' },
+      { name: 'Authorize.net', image: AuthorizeLogo, width: 120, height: 28, href: '/integration/authorized-net' },
+      { name: 'Disputely', image: DisputelyLogo, width: 110, height: 28, href: '/integration/disputely' },
     ],
     mobileLinks: [
       { label: 'All Integrations', href: '/integration' },
-      { label: 'Shopify' },
-      { label: 'Authorize.net' },
-      { label: 'Disputely' },
+      { label: 'Shopify', href: '/integration/shopify' },
+      { label: 'Authorize.net', href: '/integration/authorized-net' },
+      { label: 'Disputely', href: '/integration/disputely' },
     ],
   },
   {

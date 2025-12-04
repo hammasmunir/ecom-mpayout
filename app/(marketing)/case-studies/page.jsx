@@ -13,6 +13,7 @@ const page = () => {
         heading="Real Results From Real Businessess"
         text="Explore success stories that show the impact of better processing, smarter routing, and stable MIDs."
         label="All case studies"
+        maxWidth="680px"
       />
       <section className="border-border mt-20 border-t-[3px] border-b-[3px] border-dashed py-16 lg:py-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-16 px-5">

@@ -153,9 +153,21 @@ export default function Footer() {
                       All Integrations
                     </Link>
                   </li>
-                  <li>Shopify</li>
-                  <li>Authorize.net</li>
-                  <li>Disputely</li>
+                  <li>
+                    <Link href="/integration/shopify" className="transition hover:text-gray-900">
+                      Shopify
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/integration/authorized-net" className="transition hover:text-gray-900">
+                      Authorize.net
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/integration/disputely" className="transition hover:text-gray-900">
+                      Disputely
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
