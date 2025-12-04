@@ -61,7 +61,7 @@ const Outcome = ({ data = exampleOutcomes }) => {
   return (
     <div className="flex flex-col gap-5">
       <h2 className="text-xl font-medium sm:text-2xl lg:text-4xl">Key Outcomes</h2>
-      <div className="rounded-md border border-gray-200">
+      <div className="border-border overflow-hidden rounded-2xl border">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px] table-fixed text-sm sm:text-base lg:text-xl">
             <thead className="bg-gray-50 text-center">
