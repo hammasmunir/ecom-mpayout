@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+
 import Slider from 'react-slick';
 import Starter from '../ui/Starter';
 import RoutingIcon from '@/assets/icons/white-label/RoutingIcon';

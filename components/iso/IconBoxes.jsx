@@ -2,7 +2,6 @@ import DrumIcon from '@/assets/icons/iso/DrumIcon';
 import GraphIcon from '@/assets/icons/iso/GraphIcon';
 import StackIcon from '@/assets/icons/iso/StackIcon';
 import TableIcon from '@/assets/icons/iso/TableIcon';
-import React from 'react';
 
 const IconBoxes = () => {
   const data = [
