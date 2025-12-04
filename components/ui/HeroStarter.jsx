@@ -4,7 +4,7 @@ import Label from './Label';
 const HeroStarter = ({ heading, text, noCenter, label, className, noCustom, maxWidth }) => {
   const width = maxWidth ? maxWidth : '1440px';
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative mx-auto w-full max-w-[1440px] overflow-hidden'">
       <div
         className={`flex flex-col ${!noCenter && 'mx-auto items-center justify-center text-center'} gap-4 ${!noCustom && 'z-10 mt-20 px-5 pb-10 md:mt-28'} ${className}`}
         style={{ maxWidth: width }}
@@ -18,9 +18,7 @@ const HeroStarter = ({ heading, text, noCenter, label, className, noCustom, maxW
           </h1>
 
           {text && (
-            <p className="text-text mb-6 max-w-xl px-2 text-base sm:max-w-2xl sm:px-0 sm:text-lg md:text-xl">
-              {text}
-            </p>
+            <p className="text-text mb-6 px-2 text-base sm:px-0 sm:text-lg md:text-xl">{text}</p>
           )}
         </div>
       </div>

@@ -77,6 +77,7 @@ const page = () => {
         label="OMNX"
         noCenter={true}
         className="items-start"
+        maxWidth="680px"
       />
       <section className="border-border border-b-[3px] border-dashed pt-10 pb-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
