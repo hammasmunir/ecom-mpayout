@@ -5,6 +5,7 @@ import Sections from '@/components/iso/Sections';
 import CardImage1 from '@/assets/images/iso/img-1.svg';
 import CardImage2 from '@/assets/images/iso/img-2.svg';
 import { MdArrowForwardIos } from 'react-icons/md';
+import IconBoxes from '@/components/iso/IconBoxes';
 
 const page = () => {
   const data = [
@@ -105,6 +106,7 @@ const page = () => {
           </article>
         </section>
       </section>
+      <IconBoxes />
     </>
   );
 };
