@@ -1,6 +1,11 @@
 import HeroStarter from '@/components/ui/HeroStarter';
 import Image from 'next/image';
 import CardImage from '@/assets/images/integration/shopify-card.svg';
+import Features from '@/components/integration/Features';
+import TagIcon from '@/assets/icons/integration/shopify/TagIcon';
+import CardIcon from '@/assets/icons/integration/shopify/CardIcon';
+import ShopIcon from '@/assets/icons/integration/shopify/ShopIcon';
+import LinkIcon from '@/assets/icons/integration/shopify/LinkIcon';
 
 const page = () => {
   return (
@@ -27,6 +32,36 @@ const page = () => {
           </article>
         </section>
       </section>
+      <Features
+        title="You Need to Process Payments Smoothly"
+        desp="Get reliable approvals, real-time visibility, and a checkout experience your customers can trust."
+        data={[
+          {
+            icon: <TagIcon />,
+            title: 'Automated Order Tagging',
+            description:
+              'We automatically flag and organize disputed orders and customers so you always know what needs attention.',
+          },
+          {
+            icon: <CardIcon />,
+            title: 'Flexible, Fair Pricing',
+            description:
+              'You’re only charged when we successfully recover a chargeback never before.',
+          },
+          {
+            icon: <ShopIcon />,
+            title: 'Multi-Account Ready',
+            description:
+              ' Use multiple processors and manage multiple stores seamlessly as your business grows.',
+          },
+          {
+            icon: <LinkIcon />,
+            title: 'Shopify-Optimized Processing',
+            description:
+              'A direct, compliant integration built to work perfectly with Shopify and Shopify Payments.',
+          },
+        ]}
+      />
     </>
   );
 };

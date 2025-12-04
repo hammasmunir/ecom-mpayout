@@ -7,14 +7,11 @@ const Features = ({ title, desp, data = [] }) => {
       <section className="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 lg:gap-20">
         <div className="flex w-full flex-col items-center gap-5 lg:flex-row lg:items-center lg:justify-between">
           <Starter
-            heading="Why Choose Our Partner Program"
-            className="max-w-[400px] lg:items-start lg:text-left"
+            heading={title}
+            className="max-w-[600px] lg:items-start lg:text-left"
             noCenter={true}
           />
-          <p className="text-text max-w-[400px] text-center lg:text-left">
-            Get reliable approvals, real-time visibility, and a checkout experience your customers
-            can trust.
-          </p>
+          <p className="text-text max-w-[400px] text-center lg:text-left">{desp}</p>
         </div>
         <section className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1fr_0.6fr]">
           {data.map((item, idx) => {
