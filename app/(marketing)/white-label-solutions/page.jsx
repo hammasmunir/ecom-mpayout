@@ -1,0 +1,20 @@
+import HeroStarter from '@/components/ui/HeroStarter';
+import Image from 'next/image';
+import CardImage from '@/assets/images/ecommerce-retail/retail-banner.svg';
+import Brand from '@/components/white-label/Brand';
+
+const page = () => {
+  return (
+    <>
+      <HeroStarter
+        heading="Launch Your Own Payment Platform"
+        text="Offer your clients a fully branded gateway, dashboard, and merchant onboarding system powered by our infrastructure."
+        label="White Label Solutions"
+        maxWidth="800px"
+      />
+      <Brand />
+    </>
+  );
+};
+
+export default page;

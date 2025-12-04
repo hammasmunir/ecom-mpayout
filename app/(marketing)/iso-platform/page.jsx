@@ -50,8 +50,17 @@ const page = () => {
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
           <Sections data={data} />
           <article
-            className={`grid w-full grid-cols-1 items-center gap-16 overflow-hidden rounded-xl p-6 shadow-[0px_4px_20px_2px_#0000001F] lg:grid-cols-[1fr_0.6fr] lg:p-10`}
+            className={`grid w-full grid-cols-1 items-center gap-16 overflow-hidden rounded-xl p-6 shadow-[0px_4px_20px_2px_#0000001F] lg:grid-cols-[0.6fr_1fr] lg:p-10`}
           >
+            <div className={`flex flex-col gap-5`}>
+              <h3 className="text-2xl font-medium lg:text-3xl">
+                Simple Pricing Built for Your Growth{' '}
+              </h3>
+              <p className="text-text text-lg lg:text-xl">
+                Clear monthly costs and flexible buy rates that let you create your own pricing
+                model.
+              </p>
+            </div>
             <div className="flex gap-4 rounded-2xl bg-[#F5F5F5] p-8">
               <div className="border-border flex flex-col items-start gap-3 border-r-[3px] border-dashed pr-8">
                 <span className="border-border text-text rounded-sm border bg-white p-1">
@@ -93,15 +102,6 @@ const page = () => {
                   );
                 })}
               </ul>
-            </div>
-            <div className={`order-2 flex flex-col gap-5 lg:order-2`}>
-              <h3 className="text-2xl font-medium lg:text-3xl">
-                Simple Pricing Built for Your Growth{' '}
-              </h3>
-              <p className="text-text text-lg lg:text-xl">
-                Clear monthly costs and flexible buy rates that let you create your own pricing
-                model.
-              </p>
             </div>
           </article>
         </section>
