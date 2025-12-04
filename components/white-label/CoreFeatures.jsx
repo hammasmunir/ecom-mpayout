@@ -1,5 +1,8 @@
 import React from 'react';
 import Starter from '../ui/Starter';
+import RoutingIcon from '@/assets/icons/white-label/RoutingIcon';
+import GatewayIcon from '@/assets/icons/white-label/GatewayIcon';
+import ReportingIcon from '@/assets/icons/white-label/ReportingIcon';
 
 const FeatureCard = ({ title, description, icon }) => {
   return (
@@ -12,6 +15,23 @@ const FeatureCard = ({ title, description, icon }) => {
 };
 
 const CoreFeatures = () => {
+  const cardData = [
+    {
+      title: 'Smart Routing + MIDs',
+      description: 'Represents routing paths, logic, and multiple processors/MIDs.',
+      icon: <RoutingIcon />,
+    },
+    {
+      title: 'Custom Gateway',
+      description: 'Accept payments globally using a gateway branded with your company identity.',
+      icon: <GatewayIcon />,
+    },
+    {
+      title: 'Powerful Reporting',
+      description: 'Give clients real-time insights into sales, payouts, and chargebacks.',
+      icon: <ReportingIcon />,
+    },
+  ];
   return (
     <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
       <section className="mx-auto mb-20 flex max-w-[1440px] flex-col gap-10 px-5 lg:gap-20">
