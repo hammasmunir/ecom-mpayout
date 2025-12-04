@@ -175,8 +175,16 @@ export default function Footer() {
               <div className="p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Industries</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>E commerce</li>
-                  <li>Retail</li>
+                  <li>
+                    <Link href="/ecommerce" className="transition hover:text-gray-900">
+                      E commerce
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/retail" className="transition hover:text-gray-900">
+                      Retail
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -192,8 +200,16 @@ export default function Footer() {
                       Partner Program
                     </Link>
                   </li>
-                  <li>White Label Solutions</li>
-                  <li>ISO Platform</li>
+                  <li>
+                    <Link href="/white-label-solutions" className="transition hover:text-gray-900">
+                      White Label Solutions
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/iso-platform" className="transition hover:text-gray-900">
+                      ISO Platform
+                    </Link>
+                  </li>
                 </ul>
               </div>
 

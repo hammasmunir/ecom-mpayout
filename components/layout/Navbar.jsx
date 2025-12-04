@@ -104,10 +104,23 @@ const navItems = [
     dropdownWidth: 'w-full',
     columns: 2,
     cards: [
-      { title: 'E commerce', description: 'Online payments made easy', Icon: EcommerceIcon },
-      { title: 'Retail', description: 'Fast, secure in-store transactions', Icon: RetailIcon },
+      {
+        title: 'E commerce',
+        description: 'Online payments made easy',
+        Icon: EcommerceIcon,
+        href: '/ecommerce',
+      },
+      {
+        title: 'Retail',
+        description: 'Fast, secure in-store transactions',
+        Icon: RetailIcon,
+        href: '/retail',
+      },
     ],
-    mobileLinks: ['E commerce', 'Retail'],
+    mobileLinks: [
+      { label: 'E commerce', href: '/ecommerce' },
+      { label: 'Retail', href: '/retail' },
+    ],
   },
   {
     title: 'Partners',
@@ -126,13 +139,19 @@ const navItems = [
         title: 'White Label Solutions',
         description: 'Launch your own payment brand',
         Icon: WhiteLabelIcon,
+        href: '/white-label-solutions',
       },
-      { title: 'ISO Platform', description: 'Manage merchants under your account', Icon: IOSIcon },
+      {
+        title: 'ISO Platform',
+        description: 'Manage merchants under your account',
+        Icon: IOSIcon,
+        href: '/iso-platform',
+      },
     ],
     mobileLinks: [
       { label: 'Partner Program', href: '/partner-program' },
-      { label: 'White Label' },
-      { label: 'ISO Platform' },
+      { label: 'White Label', href: '/white-label-solutions' },
+      { label: 'ISO Platform', href: '/iso-platform' },
     ],
   },
   {
