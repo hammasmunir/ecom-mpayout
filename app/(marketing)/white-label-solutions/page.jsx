@@ -2,6 +2,7 @@ import HeroStarter from '@/components/ui/HeroStarter';
 import Image from 'next/image';
 import CardImage from '@/assets/images/ecommerce-retail/retail-banner.svg';
 import Brand from '@/components/white-label/Brand';
+import CoreFeatures from '@/components/white-label/CoreFeatures';
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
         maxWidth="800px"
       />
       <Brand />
+      <CoreFeatures />
     </>
   );
 };
