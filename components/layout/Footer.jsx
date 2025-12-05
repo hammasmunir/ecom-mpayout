@@ -13,6 +13,11 @@ import ThumbIcon from '@/assets/icons/ThumbIcon';
 import WalletIcon from '@/assets/icons/WalletIcon';
 import CardIcon from '@/assets/icons/CardIcon';
 import Logo from '@/assets/images/main-logo.svg';
+import XIcon from '@/assets/icons/social/XIcon';
+import LinkedinIcon from '@/assets/icons/social/LinkedinIcon';
+import InstagramIcon from '@/assets/icons/social/InstagramIcon';
+import FBIcon from '@/assets/icons/social/FBIcon';
+import DiscordIcon from '@/assets/icons/social/DiscordIcon';
 export default function Footer() {
   return (
     <footer className="w-full">
@@ -76,12 +81,9 @@ export default function Footer() {
             </div>
 
             {/* Social Icons */}
-            <div className="mt-7 flex w-full justify-between text-xl md:w-[260px]">
-              <RiTwitterXFill />
-              <PiLinkedinLogo />
-              <SlSocialInstagram />
-              <PiFacebookLogo />
-              <TfiGame />
+            <div className="mt-7 flex w-full justify-between gap-4 text-xl">
+              <XIcon />
+              <LinkedinIcon /> <InstagramIcon /> <FBIcon /> <DiscordIcon />
             </div>
 
             {/* Input + Button */}
