@@ -15,7 +15,7 @@ const page = () => {
         label="All case studies"
         maxWidth="680px"
       />
-      <section className="border-border mt-20 border-t-[3px] border-b-[3px] border-dashed py-16 lg:py-20">
+      <section className="border-border b-bottom b-top mt-20 border-dashed py-16 lg:py-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-16 px-5">
           <div className="flex w-full flex-col items-center gap-5 lg:flex-row lg:items-center lg:justify-between">
             <Starter

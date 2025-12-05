@@ -28,17 +28,17 @@ const IconBoxes = () => {
   ];
 
   return (
-    <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
+    <section className="border-border b-bottom border-dashed py-16 lg:py-20">
       <section className="mx-auto grid max-w-[1440px] grid-cols-1 px-5 md:grid-cols-2 lg:grid-cols-4">
         {data.map((item, idx) => {
           const isLast = idx === data.length - 1;
 
-          const smallScreen = !isLast ? 'border-b-[3px]' : '';
+          const smallScreen = !isLast ? 'b-bottom' : '';
 
-          const mdRightBorder = idx % 2 === 0 ? 'md:border-r-[3px]' : '';
+          const mdRightBorder = idx % 2 === 0 ? 'md:b-right' : '';
           const mdNoBottom = 'md:border-b-0';
 
-          const lgRightBorder = idx !== data.length - 1 ? 'lg:border-r-[3px]' : '';
+          const lgRightBorder = idx !== data.length - 1 ? 'lg:b-right' : '';
           const lgNoBottom = 'lg:border-b-0';
 
           return (

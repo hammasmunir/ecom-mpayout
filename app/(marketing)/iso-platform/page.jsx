@@ -46,7 +46,7 @@ const page = () => {
         label="ISO Platform"
         maxWidth="800px"
       />
-      <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
+      <section className="border-border b-bottom border-dashed py-16 lg:py-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
           <Sections data={data} />
           <article
@@ -62,7 +62,7 @@ const page = () => {
               </p>
             </div>
             <div className="flex gap-4 rounded-2xl bg-[#F5F5F5] p-8">
-              <div className="border-border flex flex-col items-start gap-3 border-r-[3px] border-dashed pr-8">
+              <div className="border-border b-right flex flex-col items-start gap-3 border-dashed pr-8">
                 <span className="border-border text-text rounded-sm border bg-white p-1">
                   Retainer
                 </span>

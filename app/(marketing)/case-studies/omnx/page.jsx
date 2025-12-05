@@ -79,7 +79,7 @@ const page = () => {
         className="items-start"
         maxWidth="680px"
       />
-      <section className="border-border border-b-[3px] border-dashed pt-10 pb-20">
+      <section className="border-border b-bottom border-dashed pt-10 pb-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
           <div className="flex h-[420px] w-full items-center justify-center rounded-xl bg-[#0047A0]">
             <Image src={omnxImage} alt="healthletic" className="w-full max-w-[520px] rounded-xl" />

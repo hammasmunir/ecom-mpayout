@@ -11,7 +11,7 @@ const page = () => {
         label="Retail"
         maxWidth="800px"
       />
-      <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
+      <section className="border-border b-bottom border-dashed py-16 lg:py-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
           <article
             className={`grid w-full grid-cols-1 items-center gap-16 overflow-hidden rounded-xl p-6 shadow-[0px_4px_20px_2px_#0000001F] lg:grid-cols-2 lg:p-10`}
@@ -96,69 +96,69 @@ const page = () => {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       PAX P3
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       PAX A920
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       PAX A920 Pro
                     </td>
-                    <td className="border-border text-text border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom border-dashed p-4 text-base">
                       PAX A35
                     </td>
                   </tr>
                   <tr>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       PAX A920 MAX
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Dejavoo QD4
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Dejavoo QD2
                     </td>
-                    <td className="border-border text-text border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom border-dashed p-4 text-base">
                       Dejavoo QD5 Pinpad
                     </td>
                   </tr>
                   <tr>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Dejavoo Z6
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Dejavoo Z8
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Dejavoo Z9
                     </td>
-                    <td className="border-border text-text border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom border-dashed p-4 text-base">
                       Dejavoo Z11
                     </td>
                   </tr>
                   <tr>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       SwipeSimple B350
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       iDynamo 5 (Gen II)
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Aries 8 Tablet
                     </td>
-                    <td className="border-border text-text border-b-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom border-dashed p-4 text-base">
                       Aries 8 Stand
                     </td>
                   </tr>
                   <tr>
-                    <td className="border-border text-text border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-right border-dashed p-4 text-base">
                       IDTECH VP3350
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-right border-dashed p-4 text-base">
                       TSP 143IIIU Printer
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-right border-dashed p-4 text-base">
                       PAX L920
                     </td>
                     <td className="border-border text-text border-dashed p-4 text-base">

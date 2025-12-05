@@ -18,7 +18,7 @@ export default function MarketingLayout({ children }) {
 
         {/* Centered Hello Section */}
         <section className="pointer-events-none absolute inset-0 mx-auto flex max-w-[1480px] items-center justify-center max-[1480px]:px-2">
-          <div className="border-border bg-blue- h-full w-full border-x-[3px] border-dashed text-center"></div>
+          <div className="border-border bg-blue- b-right b-left h-full w-full border-dashed text-center"></div>
         </section>
 
         {/* Footer */}
