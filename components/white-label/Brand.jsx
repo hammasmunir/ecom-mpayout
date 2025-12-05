@@ -1,4 +1,3 @@
-import React from 'react';
 import Starter from '../ui/Starter';
 import Image from 'next/image';
 import BrandImage from '@/assets/images/white-label/brand-baner.svg';

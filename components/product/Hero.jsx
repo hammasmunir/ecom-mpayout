@@ -4,12 +4,13 @@ import Label from '../ui/Label';
 import FlashIcon from '@/assets/icons/FlashIcon';
 import HeroDesktop from '@/assets/images/hero-desk.svg';
 import HeroMobile from '@/assets/images/hero-mobile.svg';
+import Button from '../ui/Button';
 
 const Hero = () => {
   return (
     <section className="relative w-full overflow-hidden px-6 sm:px-12 md:px-24">
       {/* ===== Background Image + Radial Gradient ===== */}
-      <div className="absolute inset-0 -z-10 h-[50%] w-full">
+      <div className="absolute inset-0 -z-10 mx-auto h-[50%] w-full max-w-[1440px]">
         <Image src="/home/section1/grid.png" alt="Background Grid" fill className="object-cover" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0)_0%,#ffffff_100%)]" />
       </div>
@@ -26,10 +27,12 @@ const Hero = () => {
             Get approved fast, process globally, and never worry about sudden holds or bans again.
           </p>
 
-          <button className="flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500 sm:px-6 sm:py-3 sm:text-base">
-            Secure your spot
-            <MdArrowOutward size={20} />
-          </button>
+          <Button
+            text="Secure your spot"
+            className="z-10"
+            icon={<MdArrowOutward size={20} />}
+            variant="primary"
+          />
         </div>
 
         {/* ===== Dashboard + Group Image ===== */}

@@ -13,11 +13,54 @@ import ThumbIcon from '@/assets/icons/ThumbIcon';
 import WalletIcon from '@/assets/icons/WalletIcon';
 import CardIcon from '@/assets/icons/CardIcon';
 import Logo from '@/assets/images/main-logo.svg';
+import XIcon from '@/assets/icons/social/XIcon';
+import LinkedinIcon from '@/assets/icons/social/LinkedinIcon';
+import InstagramIcon from '@/assets/icons/social/InstagramIcon';
+import FBIcon from '@/assets/icons/social/FBIcon';
+import DiscordIcon from '@/assets/icons/social/DiscordIcon';
+import Button from '../ui/Button';
+
 export default function Footer() {
+  // Footer links data
+  const footerLinks = {
+    product: [
+      { label: 'Processing', href: '/processing' },
+      { label: 'Gateway', href: '/gateway' },
+      { label: 'Insights', href: '/insights' },
+      { label: 'Alerts', href: '/insights#alerts' },
+    ],
+    integrations: [
+      { label: 'All Integrations', href: '/integration' },
+      { label: 'Shopify', href: '/integration/shopify' },
+      { label: 'Authorize.net', href: '/integration/authorized-net' },
+      { label: 'Disputely', href: '/integration/disputely' },
+    ],
+    industries: [
+      { label: 'E commerce', href: '/ecommerce' },
+      { label: 'Retail', href: '/retail' },
+    ],
+    partners: [
+      { label: 'Partner Program', href: '/partner-program' },
+      { label: 'White Label Solutions', href: '/white-label-solutions' },
+      { label: 'ISO Platform', href: '/iso-platform' },
+    ],
+    customers: [
+      { label: 'All case studies', href: '/case-studies' },
+      { label: 'Viberide', href: '/case-studies/viberide' },
+      { label: 'Healthletic', href: '/case-studies/healthletic' },
+      { label: 'OMNX', href: '/case-studies/omnx' },
+    ],
+    company: [
+      { label: 'Who we are', href: '/who-are-we' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'Contact Us', href: '/contact' },
+    ],
+  };
+
   return (
     <footer className="w-full">
       <div className="w-full px-5 py-20">
-        <div className="relative mx-auto flex min-h-[350px] max-w-[1440px] flex-col items-center justify-center overflow-hidden rounded-2xl text-center md:min-h-[447px] lg:min-h-[447px]">
+        <div className="relative mx-auto flex min-h-[350px] max-w-[1420px] flex-col items-center justify-center overflow-hidden rounded-[36px] text-center md:min-h-[447px] lg:min-h-[490px]">
           <Image
             src={FooterBg}
             alt="Footer Background"
@@ -55,224 +98,162 @@ export default function Footer() {
               reliable and efficient payment solutions tailored to your business needs.
             </p>
 
-            <div className="z-5 flex flex-wrap justify-center gap-6 text-white">
-              <Link href="/who-are-we" className="hover:text-gray-100">
-                About Us
-              </Link>
-              <Link href="/contact" className="hover:text-gray-100">
-                Contact
-              </Link>
-            </div>
-
-            <button className="bg-primary-500 hover:text-primary-500 mt-6 rounded-full border-4 px-6 py-3 font-semibold text-white transition hover:bg-gray-100">
-              <div className="flex items-center justify-center gap-2">
-                <span>Secure your spot</span>
-                <MdArrowOutward />
-              </div>
-            </button>
+            <Button
+              text="Secure your spot"
+              icon={<MdArrowOutward />}
+              variant="primary"
+              className="z-10"
+            />
           </div>
         </div>
       </div>
 
       {/* Main Footer Content */}
 
-      <div className="">
-        <div className="mx-auto flex max-w-[1440px] flex-col px-5 lg:flex-row lg:items-start lg:justify-between">
-          {/* ------- LEFT SIDE ------- */}
-          <div className="flex w-full flex-col items-start py-8 lg:w-auto lg:pl-20">
-            <div className="h-[50px] w-[200px] md:w-[260px]">
-              <Image src={Logo} alt="Footer Logo" />
-            </div>
-
-            {/* Social Icons */}
-            <div className="mt-7 flex w-full justify-between text-xl md:w-[260px]">
-              <RiTwitterXFill />
-              <PiLinkedinLogo />
-              <SlSocialInstagram />
-              <PiFacebookLogo />
-              <TfiGame />
-            </div>
-
-            {/* Input + Button */}
-            <div className="relative mt-7 w-full md:w-[260px]">
-              <input
-                type="text"
-                placeholder="Enter your email"
-                className="h-14 w-full rounded-lg border-gray-500 bg-[#F5F5F5] px-4 pr-20"
+      <div className="w-full border-t border-transparent">
+        <div className="border-border mx-auto flex w-full max-w-[1480px] flex-col gap-12 border-t-[3px] border-dashed lg:flex-row lg:justify-between lg:pl-5">
+          {/* LEFT SIDE */}
+          <div className="flex w-full max-w-[400px] flex-col px-5 py-10 lg:px-20">
+            <div className="">
+              <Image
+                src={Logo}
+                alt="Footer Logo"
+                className="w-full max-w-[200px] lg:max-w-[300px]"
               />
-
-              <button className="absolute top-1/2 right-2 h-11 -translate-y-1/2 rounded-md bg-blue-600 px-4 text-sm text-white">
-                Send
-              </button>
             </div>
 
-            {/* Badges */}
-            <div className="mt-7 flex w-full items-center justify-between md:w-[260px]">
+            <div className="mt-7 flex items-center gap-4 text-xl">
+              <XIcon />
+              <LinkedinIcon />
+              <InstagramIcon />
+              <FBIcon />
+              <DiscordIcon />
+            </div>
+
+            <form
+              action=""
+              className="mt-7 flex w-full items-center gap-2 rounded-2xl bg-[#F5F5F5] p-1"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="text-text w-full rounded-lg border-none bg-transparent px-3 py-2 text-base outline-none"
+              />
+              <Button text="Submit" type="submit" variant="formBtn" />
+            </form>
+            <div className="mt-7 hidden items-center justify-between gap-4 lg:flex">
               <Image src="/footer/pic.png" alt="Badge 1" width={123} height={45} />
               <Image src="/footer/secure.png" alt="Badge 2" width={117} height={45} />
             </div>
           </div>
 
-          {/* ------- RIGHT SIDE ------- */}
-          <div className="mt-12 flex w-full flex-col lg:mt-0 lg:w-auto">
-            {/* TOP 3 COLUMNS */}
-            <div className="grid grid-cols-3 sm:grid-cols-2 lg:flex lg:flex-row">
-              {/* Product */}
-              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Product</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>
-                    <Link href="/processing" className="transition hover:text-gray-900">
-                      Processing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/gateway" className="transition hover:text-gray-900">
-                      Gateway
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/insights" className="transition hover:text-gray-900">
-                      Insights
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/insights#alerts" className="transition hover:text-gray-900">
-                      Alerts
-                    </Link>
-                  </li>
+          {/* RIGHT SIDE */}
+          <div className="flex w-full flex-col lg:max-w-[600px]">
+            {/* TOP ROW */}
+            <div className="flex flex-col min-[380px]:flex-row min-[380px]:justify-between">
+              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed py-5 pr-5 pl-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Product
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
+                  {footerLinks.product.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
-
-              {/* Integrations */}
-              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Integrations</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>
-                    <Link href="/integration" className="transition hover:text-gray-900">
-                      All Integrations
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/integration/shopify" className="transition hover:text-gray-900">
-                      Shopify
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/integration/authorized-net" className="transition hover:text-gray-900">
-                      Authorize.net
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/integration/disputely" className="transition hover:text-gray-900">
-                      Disputely
-                    </Link>
-                  </li>
+              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed px-5 py-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Integrations
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
+                  {footerLinks.integrations.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
-
-              {/* Industries */}
-              <div className="p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Industries</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>
-                    <Link href="/ecommerce" className="transition hover:text-gray-900">
-                      E commerce
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/retail" className="transition hover:text-gray-900">
-                      Retail
-                    </Link>
-                  </li>
+              <div className="border-border flex grow flex-col gap-2 py-5 pr-5 pl-5 min-[380px]:pr-2 min-[380px]:pl-2 sm:pr-3 sm:pl-3 lg:pr-0 lg:pl-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Industries
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
+                  {footerLinks.industries.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
-
-            {/* BOTTOM 3 COLUMNS */}
-            <div className="border-border grid grid-cols-3 border-t-[3px] border-dashed sm:grid-cols-2 lg:flex lg:flex-row">
-              {/* Partners */}
-              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Partners</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>
-                    <Link href="/partner-program" className="transition hover:text-gray-900">
-                      Partner Program
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/white-label-solutions" className="transition hover:text-gray-900">
-                      White Label Solutions
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/iso-platform" className="transition hover:text-gray-900">
-                      ISO Platform
-                    </Link>
-                  </li>
+            {/* BOTTOM ROW */}
+            <div className="border-border flex flex-col border-t-[3px] border-dashed min-[380px]:flex-row min-[380px]:justify-between">
+              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed py-5 pr-5 pl-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Partners
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
+                  {footerLinks.partners.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
-
-              {/* Customers */}
-              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Customers</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>
-                    <Link href="/case-studies" className="transition hover:text-gray-900">
-                      All case studies
-                    </Link>
-                  </li>
-                <li>
-                  <Link href="/case-studies/viberide" className="transition hover:text-gray-900">
-                    Viberide
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/case-studies/healthletic" className="transition hover:text-gray-900">
-                    Healthletic
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/case-studies/omnx" className="transition hover:text-gray-900">
-                    OMNX
-                  </Link>
-                </li>
+              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed px-5 py-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Customers
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
+                  {footerLinks.customers.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
-
-              {/* Company */}
-              <div className="p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Company</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>
-                    <Link href="/who-are-we" className="transition hover:text-gray-900">
-                      Who we are
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/careers" className="transition hover:text-gray-900">
-                      Careers
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact" className="transition hover:text-gray-900">
-                      Contact Us
-                    </Link>
-                  </li>
+              <div className="border-border flex grow flex-col gap-2 py-5 pr-5 pl-5 min-[380px]:pr-2 min-[380px]:pl-2 sm:pr-3 sm:pl-3 lg:pr-5 lg:pl-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Company
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
+                  {footerLinks.company.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
+        </div>
+        <div className="mx-auto flex w-full max-w-[1480px] items-center justify-around gap-4 px-5 py-10 lg:hidden">
+          <Image src="/footer/pic.png" alt="Badge 1" width={123} height={45} />
+          <Image src="/footer/secure.png" alt="Badge 2" width={117} height={45} />
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-border border-t-[3px] border-dashed py-7">
         <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between px-5 md:flex-row">
-          <p className="text-gray-[#525252] text-base md:text-xl">
+          <p className="text-text text-base md:text-xl">
             &copy; 2024 EcomPayouts. All rights reserved.
           </p>
-          <div className="mt-4 flex space-x-6 text-base text-gray-400 md:mt-0">
+          <div className="text-text mt-4 flex space-x-6 text-base md:mt-0">
             <div>Terms of Service</div>
             <div>Privacy Policy</div>
           </div>

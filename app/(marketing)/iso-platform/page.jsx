@@ -1,6 +1,6 @@
 import HeroStarter from '@/components/ui/HeroStarter';
 import Image from 'next/image';
-import React from 'react';
+
 import Sections from '@/components/iso/Sections';
 import CardImage1 from '@/assets/images/iso/img-1.svg';
 import CardImage2 from '@/assets/images/iso/img-2.svg';

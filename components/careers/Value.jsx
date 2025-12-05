@@ -35,10 +35,13 @@ const Value = () => {
             The principles that guide how we work and grow together.
           </p>
         </div>
-        <section className="grid w-full grid-cols-1 gap-10 lg:grid-cols-2">
+        <section className="grid w-full grid-cols-1 gap-5 lg:grid-cols-2">
           {data.map((item, idx) => {
             return (
-              <article key={idx} className="flex flex-col gap-5 rounded-xl p-10 shadow-md">
+              <article
+                key={idx}
+                className="flex flex-col gap-5 rounded-2xl p-10 shadow-[0px_4px_20px_2px_#0000001F]"
+              >
                 <h3 className="text-xl font-semibold lg:text-2xl">{item.title}</h3>
                 <p className="text-text text-base lg:text-xl">{item.description}</p>
               </article>
