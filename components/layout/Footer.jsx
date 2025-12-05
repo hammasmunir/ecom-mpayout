@@ -100,7 +100,7 @@ export default function Footer() {
             </div>
 
             {/* Badges */}
-            <div className="mt-7 flex w-full items-center justify-between md:w-[260px]">
+            <div className="mt-7 flex w-full items-center justify-between gap-4 md:w-[260px]">
               <Image src="/footer/pic.png" alt="Badge 1" width={123} height={45} />
               <Image src="/footer/secure.png" alt="Badge 2" width={117} height={45} />
             </div>
