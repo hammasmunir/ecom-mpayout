@@ -19,6 +19,8 @@ const Button = ({
     ghost: 'text-primary-500 px-4 py-2',
     primary:
       'border-[4px] border-[#DBE8FF] bg-primary-500 text-white py-3 px-4 rounded-full transition flex items-center gap shadow-[inset_0_0_8px_3px_#FFFFFF66] font-semibold cursor-pointer shadow-btn',
+    formBtn:
+      'border-[4px] border-[#DBE8FF] bg-primary-500 text-white px-2 py-2 rounded-[10px] transition flex items-center gap shadow-[inset_0_0_8px_3px_#FFFFFF66] font-semibold cursor-pointer ',
   };
 
   const classes = `${variants[variant] || variants.default} ${className}`.trim();

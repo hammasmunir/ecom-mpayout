@@ -113,7 +113,7 @@ export default function Footer() {
       <div className="w-full border-t border-transparent">
         <div className="border-border mx-auto flex w-full max-w-[1480px] flex-col gap-12 border-t-[3px] border-dashed lg:flex-row lg:justify-between lg:pl-5">
           {/* LEFT SIDE */}
-          <div className="flex w-full max-w-sm flex-col px-5 py-10 lg:px-20">
+          <div className="flex w-full max-w-[400px] flex-col px-5 py-10 lg:px-20">
             <div className="">
               <Image
                 src={Logo}
@@ -130,17 +130,17 @@ export default function Footer() {
               <DiscordIcon />
             </div>
 
-            <div className="relative mt-7 w-full">
+            <form
+              action=""
+              className="mt-7 flex w-full items-center gap-2 rounded-2xl bg-[#F5F5F5] p-1"
+            >
               <input
-                type="text"
+                type="email"
                 placeholder="Enter your email"
-                className="h-14 w-full rounded-lg bg-[#F5F5F5] px-4 pr-24 text-sm"
+                className="text-text w-full rounded-lg border-none bg-transparent px-3 py-2 text-base outline-none"
               />
-              <button className="absolute top-1/2 right-2 h-11 -translate-y-1/2 rounded-md bg-blue-600 px-4 text-white">
-                Send
-              </button>
-            </div>
-
+              <Button text="Submit" variant="formBtn" />
+            </form>
             <div className="mt-7 hidden items-center justify-between gap-4 lg:flex">
               <Image src="/footer/pic.png" alt="Badge 1" width={123} height={45} />
               <Image src="/footer/secure.png" alt="Badge 2" width={117} height={45} />
