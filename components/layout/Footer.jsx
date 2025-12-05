@@ -139,7 +139,7 @@ export default function Footer() {
                 placeholder="Enter your email"
                 className="text-text w-full rounded-lg border-none bg-transparent px-3 py-2 text-base outline-none"
               />
-              <Button text="Submit" variant="formBtn" />
+              <Button text="Submit" type="submit" variant="formBtn" />
             </form>
             <div className="mt-7 hidden items-center justify-between gap-4 lg:flex">
               <Image src="/footer/pic.png" alt="Badge 1" width={123} height={45} />
