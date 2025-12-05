@@ -43,7 +43,7 @@ const CoreFeatures = () => {
     },
   ];
   return (
-    <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
+    <section className="border-border b-bottom border-dashed py-16 lg:py-20">
       <section className="mx-auto mb-20 flex max-w-[1440px] flex-col gap-10 px-5 lg:gap-20">
         <div className="flex w-full flex-col items-center gap-5 lg:flex-row lg:items-center lg:justify-between">
           <Starter

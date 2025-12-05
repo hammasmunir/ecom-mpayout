@@ -111,7 +111,7 @@ export default function Footer() {
       {/* Main Footer Content */}
 
       <div className="w-full border-t border-transparent">
-        <div className="border-border mx-auto flex w-full max-w-[1480px] flex-col gap-12 border-t-[3px] border-dashed lg:flex-row lg:justify-between lg:pl-5">
+        <div className="border-border b-top mx-auto flex w-full max-w-[1480px] flex-col gap-12 border-dashed lg:flex-row lg:justify-between lg:pl-5">
           {/* LEFT SIDE */}
           <div className="flex w-full max-w-[400px] flex-col px-5 py-10 lg:px-20">
             <div className="">
@@ -151,7 +151,7 @@ export default function Footer() {
           <div className="flex w-full flex-col lg:max-w-[600px]">
             {/* TOP ROW */}
             <div className="flex flex-col min-[380px]:flex-row min-[380px]:justify-between">
-              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed py-5 pr-5 pl-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
+              <div className="border-border b-bottom flex grow flex-col gap-2 border-dashed py-5 pr-5 pl-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
                 <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
                   Product
                 </h3>
@@ -165,7 +165,7 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed px-5 py-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
+              <div className="border-border b-bottom flex grow flex-col gap-2 border-dashed px-5 py-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
                 <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
                   Integrations
                 </h3>
@@ -195,8 +195,8 @@ export default function Footer() {
               </div>
             </div>
             {/* BOTTOM ROW */}
-            <div className="border-border flex flex-col border-t-[3px] border-dashed min-[380px]:flex-row min-[380px]:justify-between">
-              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed py-5 pr-5 pl-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
+            <div className="border-border b-top flex flex-col border-dashed min-[380px]:flex-row min-[380px]:justify-between">
+              <div className="border-border b-bottom flex grow flex-col gap-2 border-dashed py-5 pr-5 pl-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
                 <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
                   Partners
                 </h3>
@@ -210,7 +210,7 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed px-5 py-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
+              <div className="border-border b-bottom flex grow flex-col gap-2 border-dashed px-5 py-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
                 <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
                   Customers
                 </h3>
@@ -248,7 +248,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-border border-t-[3px] border-dashed py-7">
+      <div className="border-border b-top border-dashed py-7">
         <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between px-5 md:flex-row">
           <p className="text-text text-base md:text-xl">
             &copy; 2024 EcomPayouts. All rights reserved.

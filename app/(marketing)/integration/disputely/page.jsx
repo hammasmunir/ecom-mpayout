@@ -17,7 +17,7 @@ const page = () => {
         label="Disputely"
         maxWidth="800px"
       />
-      <section className="border-border border-b-[3px] border-dashed py-16 lg:py-20">
+      <section className="border-border b-bottom border-dashed py-16 lg:py-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
           <article
             className={`grid w-full grid-cols-1 items-center gap-16 overflow-hidden rounded-xl p-6 shadow-[0px_4px_20px_2px_#0000001F] lg:grid-cols-2 lg:p-10`}

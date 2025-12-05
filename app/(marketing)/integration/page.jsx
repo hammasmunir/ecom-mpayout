@@ -191,14 +191,11 @@ const page = () => {
         label="Integrations"
         maxWidth="800px"
       />
-      <section className="border-border mx-auto flex max-w-[1440px] items-center justify-center border-b-[3px] border-dashed px-5 pb-10 lg:pb-20">
+      <section className="border-border b-bottom mx-auto flex max-w-[1440px] items-center justify-center border-dashed px-5 pb-10 lg:pb-20">
         <Image src={Banner} alt="Integration Banner" className="h-auto w-full" />
       </section>
       {data.map((section, sectionIndex) => (
-        <section
-          key={sectionIndex}
-          className="border-border border-b-[3px] border-dashed py-16 lg:py-20"
-        >
+        <section key={sectionIndex} className="border-border b-bottom border-dashed py-16 lg:py-20">
           <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
             <div className="flex w-full flex-col items-center gap-5 lg:flex-row lg:justify-between">
               <Starter

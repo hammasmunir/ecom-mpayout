@@ -35,7 +35,7 @@ export default function ImageCarousel() {
   };
 
   return (
-    <section className="icon-slide border-border mt-20 border-t-[3px] border-b-[3px] border-dashed">
+    <section className="icon-slide border-border b-bottom b-top mt-20 border-dashed">
       <section className="mx-auto max-w-[1440px] px-5">
         <Slider {...settings}>
           {images.map((src, index) => (
