@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer className="w-full">
       <div className="w-full px-5 py-20">
-        <div className="relative mx-auto flex min-h-[350px] max-w-[1420px] flex-col items-center justify-center overflow-hidden rounded-2xl text-center md:min-h-[447px] lg:min-h-[447px]">
+        <div className="relative mx-auto flex min-h-[350px] max-w-[1420px] flex-col items-center justify-center overflow-hidden rounded-[36px] text-center md:min-h-[447px] lg:min-h-[490px]">
           <Image
             src={FooterBg}
             alt="Footer Background"
