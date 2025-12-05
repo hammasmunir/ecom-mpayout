@@ -96,13 +96,13 @@ const page = () => {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       PAX P3
                     </td>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       PAX A920
                     </td>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       PAX A920 Pro
                     </td>
                     <td className="border-border text-text b-bottom border-dashed p-4 text-base">
@@ -110,13 +110,13 @@ const page = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       PAX A920 MAX
                     </td>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Dejavoo QD4
                     </td>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Dejavoo QD2
                     </td>
                     <td className="border-border text-text b-bottom border-dashed p-4 text-base">
@@ -124,13 +124,13 @@ const page = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Dejavoo Z6
                     </td>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Dejavoo Z8
                     </td>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Dejavoo Z9
                     </td>
                     <td className="border-border text-text b-bottom border-dashed p-4 text-base">
@@ -138,13 +138,13 @@ const page = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       SwipeSimple B350
                     </td>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       iDynamo 5 (Gen II)
                     </td>
-                    <td className="border-border text-text b-bottom border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-bottom b-right border-dashed p-4 text-base">
                       Aries 8 Tablet
                     </td>
                     <td className="border-border text-text b-bottom border-dashed p-4 text-base">
@@ -152,13 +152,13 @@ const page = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border-border text-text border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-right border-dashed p-4 text-base">
                       IDTECH VP3350
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-right border-dashed p-4 text-base">
                       TSP 143IIIU Printer
                     </td>
-                    <td className="border-border text-text border-r-[3px] border-dashed p-4 text-base">
+                    <td className="border-border text-text b-right border-dashed p-4 text-base">
                       PAX L920
                     </td>
                     <td className="border-border text-text border-dashed p-4 text-base">

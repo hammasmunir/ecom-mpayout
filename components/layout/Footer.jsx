@@ -151,7 +151,7 @@ export default function Footer() {
           <div className="flex w-full flex-col lg:max-w-[600px]">
             {/* TOP ROW */}
             <div className="flex flex-col min-[380px]:flex-row min-[380px]:justify-between">
-              <div className="border-border b-bottom flex grow flex-col gap-2 border-dashed py-5 pr-5 pl-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
+              <div className="border-border b-bottom min-[380px]:b-right flex grow flex-col gap-2 border-dashed py-5 pr-5 pl-5 min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
                 <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
                   Product
                 </h3>
@@ -165,7 +165,7 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              <div className="border-border b-bottom flex grow flex-col gap-2 border-dashed px-5 py-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
+              <div className="border-border b-bottom min-[380px]:b-right flex grow flex-col gap-2 border-dashed px-5 py-5 min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
                 <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
                   Integrations
                 </h3>
@@ -196,7 +196,7 @@ export default function Footer() {
             </div>
             {/* BOTTOM ROW */}
             <div className="border-border b-top flex flex-col border-dashed min-[380px]:flex-row min-[380px]:justify-between">
-              <div className="border-border b-bottom flex grow flex-col gap-2 border-dashed py-5 pr-5 pl-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
+              <div className="border-border b-bottom min-[380px]:b-right flex grow flex-col gap-2 border-dashed py-5 pr-5 pl-5 min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
                 <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
                   Partners
                 </h3>
@@ -210,7 +210,7 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              <div className="border-border b-bottom flex grow flex-col gap-2 border-dashed px-5 py-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
+              <div className="border-border b-bottom min-[380px]:b-right flex grow flex-col gap-2 border-dashed px-5 py-5 min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
                 <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
                   Customers
                 </h3>

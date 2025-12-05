@@ -35,10 +35,10 @@ const IconBoxes = () => {
 
           const smallScreen = !isLast ? 'b-bottom' : '';
 
-          const mdRightBorder = idx % 2 === 0 ? 'md:border-r-[3px]' : '';
+          const mdRightBorder = idx % 2 === 0 ? 'md:b-right' : '';
           const mdNoBottom = 'md:border-b-0';
 
-          const lgRightBorder = idx !== data.length - 1 ? 'lg:border-r-[3px]' : '';
+          const lgRightBorder = idx !== data.length - 1 ? 'lg:b-right' : '';
           const lgNoBottom = 'lg:border-b-0';
 
           return (

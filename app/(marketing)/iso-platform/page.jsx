@@ -62,7 +62,7 @@ const page = () => {
               </p>
             </div>
             <div className="flex gap-4 rounded-2xl bg-[#F5F5F5] p-8">
-              <div className="border-border flex flex-col items-start gap-3 border-r-[3px] border-dashed pr-8">
+              <div className="border-border b-right flex flex-col items-start gap-3 border-dashed pr-8">
                 <span className="border-border text-text rounded-sm border bg-white p-1">
                   Retainer
                 </span>
