@@ -18,6 +18,7 @@ import LinkedinIcon from '@/assets/icons/social/LinkedinIcon';
 import InstagramIcon from '@/assets/icons/social/InstagramIcon';
 import FBIcon from '@/assets/icons/social/FBIcon';
 import DiscordIcon from '@/assets/icons/social/DiscordIcon';
+import Button from '../ui/Button';
 
 export default function Footer() {
   // Footer links data
@@ -97,12 +98,12 @@ export default function Footer() {
               reliable and efficient payment solutions tailored to your business needs.
             </p>
 
-            <button className="bg-primary-500 hover:text-primary-500 mt-6 rounded-full border-4 px-6 py-3 font-semibold text-white transition hover:bg-gray-100">
-              <div className="flex items-center justify-center gap-2">
-                <span>Secure your spot</span>
-                <MdArrowOutward />
-              </div>
-            </button>
+            <Button
+              text="Secure your spot"
+              icon={<MdArrowOutward />}
+              variant="primary"
+              className="z-10"
+            />
           </div>
         </div>
       </div>

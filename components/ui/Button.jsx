@@ -10,46 +10,37 @@ const Button = ({
   onClick,
   disabled = false,
   type = 'button',
-  iconPosition = 'left',
+  iconPosition = 'right',
   ...props
 }) => {
-  // Variant classNames - you can extend these later
-  const variantClasses = {
+  const variants = {
     default: 'bg-primary-500 text-white px-4 py-2 rounded',
     outline: 'border border-primary-500 text-primary-500 px-4 py-2 rounded',
     ghost: 'text-primary-500 px-4 py-2',
-    // Add more variants as needed
+    primary:
+      'border-[4px] border-[#DBE8FF] bg-primary-500 text-white py-3 px-4 rounded-full transition flex items-center gap shadow-[inset_0_0_8px_3px_#FFFFFF66] font-semibold cursor-pointer shadow-btn',
   };
 
-  const baseClasses = variantClasses[variant] || variantClasses.default;
-  const combinedClasses = `${baseClasses} ${className}`.trim();
+  const classes = `${variants[variant] || variants.default} ${className}`.trim();
 
   const content = (
-    <>
-      {icon && iconPosition === 'left' && <span className="mr-2">{icon}</span>}
-      {text && <span>{text}</span>}
-      {icon && iconPosition === 'right' && <span className="ml-2">{icon}</span>}
-    </>
+    <span className="flex items-center gap-2">
+      {icon && iconPosition === 'left' && icon}
+      {text}
+      {icon && iconPosition === 'right' && icon}
+    </span>
   );
 
-  // If href is provided, render as Link
   if (href) {
     return (
-      <Link href={href} className={combinedClasses} {...props}>
+      <Link href={href} className={classes} {...props}>
         {content}
       </Link>
     );
   }
 
-  // Otherwise render as button
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={combinedClasses}
-      {...props}
-    >
+    <button type={type} onClick={onClick} disabled={disabled} className={classes} {...props}>
       {content}
     </button>
   );

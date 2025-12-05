@@ -4,6 +4,7 @@ import Label from '../ui/Label';
 import FlashIcon from '@/assets/icons/FlashIcon';
 import HeroDesktop from '@/assets/images/hero-desk.svg';
 import HeroMobile from '@/assets/images/hero-mobile.svg';
+import Button from '../ui/Button';
 
 const Hero = () => {
   return (
@@ -26,10 +27,12 @@ const Hero = () => {
             Get approved fast, process globally, and never worry about sudden holds or bans again.
           </p>
 
-          <button className="flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500 sm:px-6 sm:py-3 sm:text-base">
-            Secure your spot
-            <MdArrowOutward size={20} />
-          </button>
+          <Button
+            text="Secure your spot"
+            className="z-10"
+            icon={<MdArrowOutward size={20} />}
+            variant="primary"
+          />
         </div>
 
         {/* ===== Dashboard + Group Image ===== */}
