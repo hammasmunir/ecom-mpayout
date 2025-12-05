@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className="relative w-full overflow-hidden px-6 sm:px-12 md:px-24">
       {/* ===== Background Image + Radial Gradient ===== */}
-      <div className="absolute inset-0 -z-10 h-[50%] w-full">
+      <div className="absolute inset-0 -z-10 mx-auto h-[50%] w-full max-w-[1440px]">
         <Image src="/home/section1/grid.png" alt="Background Grid" fill className="object-cover" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0)_0%,#ffffff_100%)]" />
       </div>
