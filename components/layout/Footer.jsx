@@ -71,8 +71,8 @@ export default function Footer() {
         <div className="mx-auto flex max-w-[1440px] flex-col px-5 lg:flex-row lg:items-start lg:justify-between">
           {/* ------- LEFT SIDE ------- */}
           <div className="flex w-full flex-col items-start py-8 lg:w-auto lg:pl-20">
-            <div className="h-[50px] w-[200px] md:w-[260px]">
-              <Image src={Logo} alt="Footer Logo" />
+            <div className="h-[50px] w-full">
+              <Image src={Logo} alt="Footer Logo" className="w-full max-w-[300px]" />
             </div>
 
             {/* Social Icons */}
