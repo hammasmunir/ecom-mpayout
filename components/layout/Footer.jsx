@@ -55,15 +55,6 @@ export default function Footer() {
               reliable and efficient payment solutions tailored to your business needs.
             </p>
 
-            <div className="z-5 flex flex-wrap justify-center gap-6 text-white">
-              <Link href="/who-are-we" className="hover:text-gray-100">
-                About Us
-              </Link>
-              <Link href="/contact" className="hover:text-gray-100">
-                Contact
-              </Link>
-            </div>
-
             <button className="bg-primary-500 hover:text-primary-500 mt-6 rounded-full border-4 px-6 py-3 font-semibold text-white transition hover:bg-gray-100">
               <div className="flex items-center justify-center gap-2">
                 <span>Secure your spot</span>
@@ -120,7 +111,7 @@ export default function Footer() {
               {/* Product */}
               <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Product</h3>
-                <ul className="space-y-2 text-gray-600">
+                <ul className="text-text space-y-2">
                   <li>
                     <Link href="/processing" className="transition hover:text-gray-900">
                       Processing
@@ -147,7 +138,7 @@ export default function Footer() {
               {/* Integrations */}
               <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Integrations</h3>
-                <ul className="space-y-2 text-gray-600">
+                <ul className="text-text space-y-2">
                   <li>
                     <Link href="/integration" className="transition hover:text-gray-900">
                       All Integrations
@@ -177,7 +168,7 @@ export default function Footer() {
               {/* Industries */}
               <div className="p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Industries</h3>
-                <ul className="space-y-2 text-gray-600">
+                <ul className="text-text space-y-2">
                   <li>
                     <Link href="/ecommerce" className="transition hover:text-gray-900">
                       E commerce
@@ -197,7 +188,7 @@ export default function Footer() {
               {/* Partners */}
               <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
                 <h3 className="mt-4 mb-4 text-xl font-medium">Partners</h3>
-                <ul className="space-y-2 text-gray-600">
+                <ul className="text-text space-y-2">
                   <li>
                     <Link href="/partner-program" className="transition hover:text-gray-900">
                       Partner Program
@@ -275,10 +266,10 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-border border-t-[3px] border-dashed py-7">
         <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between px-5 md:flex-row">
-          <p className="text-gray-[#525252] text-base md:text-xl">
+          <p className="text-text text-base md:text-xl">
             &copy; 2024 EcomPayouts. All rights reserved.
           </p>
-          <div className="mt-4 flex space-x-6 text-base text-gray-400 md:mt-0">
+          <div className="text-text mt-4 flex space-x-6 text-base md:mt-0">
             <div>Terms of Service</div>
             <div>Privacy Policy</div>
           </div>
