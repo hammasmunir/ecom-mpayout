@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer className="w-full">
       <div className="w-full px-5 py-20">
-        <div className="relative mx-auto flex min-h-[350px] max-w-[1440px] flex-col items-center justify-center overflow-hidden rounded-2xl text-center md:min-h-[447px] lg:min-h-[447px]">
+        <div className="relative mx-auto flex min-h-[350px] max-w-[1420px] flex-col items-center justify-center overflow-hidden rounded-2xl text-center md:min-h-[447px] lg:min-h-[447px]">
           <Image
             src={FooterBg}
             alt="Footer Background"
@@ -159,7 +159,10 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/integration/authorized-net" className="transition hover:text-gray-900">
+                    <Link
+                      href="/integration/authorized-net"
+                      className="transition hover:text-gray-900"
+                    >
                       Authorize.net
                     </Link>
                   </li>
@@ -222,21 +225,24 @@ export default function Footer() {
                       All case studies
                     </Link>
                   </li>
-                <li>
-                  <Link href="/case-studies/viberide" className="transition hover:text-gray-900">
-                    Viberide
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/case-studies/healthletic" className="transition hover:text-gray-900">
-                    Healthletic
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/case-studies/omnx" className="transition hover:text-gray-900">
-                    OMNX
-                  </Link>
-                </li>
+                  <li>
+                    <Link href="/case-studies/viberide" className="transition hover:text-gray-900">
+                      Viberide
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/case-studies/healthletic"
+                      className="transition hover:text-gray-900"
+                    >
+                      Healthletic
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/case-studies/omnx" className="transition hover:text-gray-900">
+                      OMNX
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
