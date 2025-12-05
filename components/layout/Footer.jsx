@@ -110,11 +110,15 @@ export default function Footer() {
       {/* Main Footer Content */}
 
       <div className="w-full border-t border-transparent">
-        <div className="border-border mx-auto flex w-full max-w-[1480px] flex-col gap-12 border-t-[3px] border-dashed pl-5 lg:flex-row lg:justify-between">
+        <div className="border-border mx-auto flex w-full max-w-[1480px] flex-col gap-12 border-t-[3px] border-dashed lg:flex-row lg:justify-between lg:pl-5">
           {/* LEFT SIDE */}
-          <div className="flex w-full max-w-sm flex-col py-10 lg:pl-20">
-            <div className="h-[50px]">
-              <Image src={Logo} alt="Footer Logo" className="w-full max-w-[300px]" />
+          <div className="flex w-full max-w-sm flex-col px-5 py-10 lg:px-20">
+            <div className="">
+              <Image
+                src={Logo}
+                alt="Footer Logo"
+                className="w-full max-w-[200px] lg:max-w-[300px]"
+              />
             </div>
 
             <div className="mt-7 flex items-center gap-4 text-xl">
@@ -136,80 +140,109 @@ export default function Footer() {
               </button>
             </div>
 
-            <div className="mt-7 flex items-center justify-between gap-4">
+            <div className="mt-7 hidden items-center justify-between gap-4 lg:flex">
               <Image src="/footer/pic.png" alt="Badge 1" width={123} height={45} />
               <Image src="/footer/secure.png" alt="Badge 2" width={117} height={45} />
             </div>
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex w-full max-w-[600px] flex-col">
+          <div className="flex w-full flex-col lg:max-w-[600px]">
             {/* TOP ROW */}
-            <div className="flex justify-between">
-              <div className="border-border flex grow flex-col gap-2 border-r-[3px] border-dashed py-5 pr-10 pl-5">
-                <h3 className="text-xl font-medium">Product</h3>
-                <ul className="text-text flex flex-col gap-2">
+            <div className="flex flex-col min-[380px]:flex-row min-[380px]:justify-between">
+              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed py-5 pr-5 pl-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Product
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
                   {footerLinks.product.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href}>{link.label}</Link>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="border-border flex grow flex-col gap-2 border-r-[3px] border-dashed px-10 py-5">
-                <h3 className="text-xl font-medium">Integrations</h3>
-                <ul className="text-text flex flex-col gap-2">
+              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed px-5 py-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Integrations
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
                   {footerLinks.integrations.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href}>{link.label}</Link>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="border-border flex grow flex-col gap-2 py-5 pl-10">
-                <h3 className="text-xl font-medium">Industries</h3>
-                <ul className="text-text flex flex-col gap-2">
+              <div className="border-border flex grow flex-col gap-2 py-5 pr-5 pl-5 min-[380px]:pr-2 min-[380px]:pl-2 sm:pr-3 sm:pl-3 lg:pr-0 lg:pl-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Industries
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
                   {footerLinks.industries.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href}>{link.label}</Link>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            <div className="border-border flex justify-between border-t-[3px] border-dashed">
-              <div className="border-border flex grow flex-col gap-2 border-r-[3px] border-dashed py-5 pr-10 pl-5">
-                <h3 className="text-xl font-medium">Partners</h3>
-                <ul className="text-text flex flex-col gap-2">
+            {/* BOTTOM ROW */}
+            <div className="border-border flex flex-col border-t-[3px] border-dashed min-[380px]:flex-row min-[380px]:justify-between">
+              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed py-5 pr-5 pl-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:pr-2 sm:pr-3 lg:pr-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Partners
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
                   {footerLinks.partners.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href}>{link.label}</Link>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="border-border flex grow flex-col gap-2 border-r-[3px] border-dashed px-10 py-5">
-                <h3 className="text-xl font-medium">Customers</h3>
-                <ul className="text-text flex flex-col gap-2">
+              <div className="border-border flex grow flex-col gap-2 border-b-[3px] border-dashed px-5 py-5 min-[380px]:border-r-[3px] min-[380px]:border-b-0 min-[380px]:px-2 sm:px-3 lg:px-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Customers
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
                   {footerLinks.customers.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href}>{link.label}</Link>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="border-border flex grow flex-col gap-2 py-5 pr-5 pl-10">
-                <h3 className="text-xl font-medium">Company</h3>
-                <ul className="text-text flex flex-col gap-2">
+              <div className="border-border flex grow flex-col gap-2 py-5 pr-5 pl-5 min-[380px]:pr-2 min-[380px]:pl-2 sm:pr-3 sm:pl-3 lg:pr-5 lg:pl-10">
+                <h3 className="text-base font-medium min-[380px]:text-sm sm:text-lg lg:text-xl">
+                  Company
+                </h3>
+                <ul className="text-text flex flex-col gap-2 text-sm min-[380px]:text-xs sm:text-xs lg:text-base">
                   {footerLinks.company.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href}>{link.label}</Link>
+                      <Link href={link.href} className="transition hover:text-gray-900">
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
           </div>
+        </div>
+        <div className="mx-auto flex w-full max-w-[1480px] items-center justify-around gap-4 px-5 py-10 lg:hidden">
+          <Image src="/footer/pic.png" alt="Badge 1" width={123} height={45} />
+          <Image src="/footer/secure.png" alt="Badge 2" width={117} height={45} />
         </div>
       </div>
 
