@@ -148,7 +148,7 @@ export default function Footer() {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex w-full flex-col lg:max-w-[600px]">
+          <div className="footer-nav-div flex w-full flex-col lg:max-w-[600px]">
             {/* TOP ROW */}
             <div className="flex flex-col min-[380px]:flex-row min-[380px]:justify-between">
               <div className="flex grow flex-col gap-2 py-5 pr-5 pl-5 min-[380px]:pr-2 sm:pr-3 lg:pr-10">

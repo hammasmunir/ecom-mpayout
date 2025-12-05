@@ -292,3 +292,52 @@ textarea {
     )
     3;
 }
+
+@media screen and (min-width: 380px) {
+  .footer-nav-div > div:first-child {
+    /* background-color: pink; */
+    border-bottom: 1.5px solid var(--border-color);
+    border-image: repeating-linear-gradient(
+        to right,
+        var(--color-border) 0 9px,
+        transparent 0px 19px
+      )
+      3;
+    div:not(:last-child) {
+      border-right: 1.5px solid transparent;
+      border-image: repeating-linear-gradient(
+          to bottom,
+          var(--color-border) 0 9px,
+          transparent 0px 19px
+        )
+        3;
+    }
+  }
+
+  .footer-nav-div > div:last-child {
+    div:not(:last-child) {
+      border-right: 1.5px solid transparent;
+      border-image: repeating-linear-gradient(
+          to bottom,
+          var(--color-border) 0 9px,
+          transparent 0px 19px
+        )
+        3;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .footer-nav-div > div:first-child,
+  .footer-nav-div > div:last-child {
+    div:not(:last-child) {
+      border-bottom: 1.5px solid transparent;
+      border-image: repeating-linear-gradient(
+          to right,
+          var(--color-border) 0 9px,
+          transparent 0px 19px
+        )
+        3;
+    }
+  }
+}
