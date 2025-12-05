@@ -18,7 +18,44 @@ import LinkedinIcon from '@/assets/icons/social/LinkedinIcon';
 import InstagramIcon from '@/assets/icons/social/InstagramIcon';
 import FBIcon from '@/assets/icons/social/FBIcon';
 import DiscordIcon from '@/assets/icons/social/DiscordIcon';
+
 export default function Footer() {
+  // Footer links data
+  const footerLinks = {
+    product: [
+      { label: 'Processing', href: '/processing' },
+      { label: 'Gateway', href: '/gateway' },
+      { label: 'Insights', href: '/insights' },
+      { label: 'Alerts', href: '/insights#alerts' },
+    ],
+    integrations: [
+      { label: 'All Integrations', href: '/integration' },
+      { label: 'Shopify', href: '/integration/shopify' },
+      { label: 'Authorize.net', href: '/integration/authorized-net' },
+      { label: 'Disputely', href: '/integration/disputely' },
+    ],
+    industries: [
+      { label: 'E commerce', href: '/ecommerce' },
+      { label: 'Retail', href: '/retail' },
+    ],
+    partners: [
+      { label: 'Partner Program', href: '/partner-program' },
+      { label: 'White Label Solutions', href: '/white-label-solutions' },
+      { label: 'ISO Platform', href: '/iso-platform' },
+    ],
+    customers: [
+      { label: 'All case studies', href: '/case-studies' },
+      { label: 'Viberide', href: '/case-studies/viberide' },
+      { label: 'Healthletic', href: '/case-studies/healthletic' },
+      { label: 'OMNX', href: '/case-studies/omnx' },
+    ],
+    company: [
+      { label: 'Who we are', href: '/who-are-we' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'Contact Us', href: '/contact' },
+    ],
+  };
+
   return (
     <footer className="w-full">
       <div className="w-full px-5 py-20">
@@ -72,192 +109,103 @@ export default function Footer() {
 
       {/* Main Footer Content */}
 
-      <div className="">
-        <div className="mx-auto flex max-w-[1440px] flex-col px-5 lg:flex-row lg:items-start lg:justify-between">
-          {/* ------- LEFT SIDE ------- */}
-          <div className="flex w-full flex-col items-start py-8 lg:w-auto lg:pl-20">
-            <div className="h-[50px] w-full">
+      <div className="w-full border-t border-transparent">
+        <div className="border-border mx-auto flex w-full max-w-[1480px] flex-col gap-12 border-t-[3px] border-dashed pl-5 lg:flex-row lg:justify-between">
+          {/* LEFT SIDE */}
+          <div className="flex w-full max-w-sm flex-col py-10 lg:pl-20">
+            <div className="h-[50px]">
               <Image src={Logo} alt="Footer Logo" className="w-full max-w-[300px]" />
             </div>
 
-            {/* Social Icons */}
-            <div className="mt-7 flex w-full justify-between gap-4 text-xl">
+            <div className="mt-7 flex items-center gap-4 text-xl">
               <XIcon />
-              <LinkedinIcon /> <InstagramIcon /> <FBIcon /> <DiscordIcon />
+              <LinkedinIcon />
+              <InstagramIcon />
+              <FBIcon />
+              <DiscordIcon />
             </div>
 
-            {/* Input + Button */}
-            <div className="relative mt-7 w-full md:w-[260px]">
+            <div className="relative mt-7 w-full">
               <input
                 type="text"
                 placeholder="Enter your email"
-                className="h-14 w-full rounded-lg border-gray-500 bg-[#F5F5F5] px-4 pr-20"
+                className="h-14 w-full rounded-lg bg-[#F5F5F5] px-4 pr-24 text-sm"
               />
-
-              <button className="absolute top-1/2 right-2 h-11 -translate-y-1/2 rounded-md bg-blue-600 px-4 text-sm text-white">
+              <button className="absolute top-1/2 right-2 h-11 -translate-y-1/2 rounded-md bg-blue-600 px-4 text-white">
                 Send
               </button>
             </div>
 
-            {/* Badges */}
-            <div className="mt-7 flex w-full items-center justify-between gap-4 md:w-[260px]">
+            <div className="mt-7 flex items-center justify-between gap-4">
               <Image src="/footer/pic.png" alt="Badge 1" width={123} height={45} />
               <Image src="/footer/secure.png" alt="Badge 2" width={117} height={45} />
             </div>
           </div>
 
-          {/* ------- RIGHT SIDE ------- */}
-          <div className="mt-12 flex w-full flex-col lg:mt-0 lg:w-auto">
-            {/* TOP 3 COLUMNS */}
-            <div className="grid grid-cols-3 sm:grid-cols-2 lg:flex lg:flex-row">
-              {/* Product */}
-              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Product</h3>
-                <ul className="text-text space-y-2">
-                  <li>
-                    <Link href="/processing" className="transition hover:text-gray-900">
-                      Processing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/gateway" className="transition hover:text-gray-900">
-                      Gateway
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/insights" className="transition hover:text-gray-900">
-                      Insights
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/insights#alerts" className="transition hover:text-gray-900">
-                      Alerts
-                    </Link>
-                  </li>
+          {/* RIGHT SIDE */}
+          <div className="flex w-full max-w-[600px] flex-col">
+            {/* TOP ROW */}
+            <div className="flex justify-between">
+              <div className="border-border flex grow flex-col gap-2 border-r-[3px] border-dashed py-5 pr-10 pl-5">
+                <h3 className="text-xl font-medium">Product</h3>
+                <ul className="text-text flex flex-col gap-2">
+                  {footerLinks.product.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
-
-              {/* Integrations */}
-              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Integrations</h3>
-                <ul className="text-text space-y-2">
-                  <li>
-                    <Link href="/integration" className="transition hover:text-gray-900">
-                      All Integrations
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/integration/shopify" className="transition hover:text-gray-900">
-                      Shopify
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/integration/authorized-net"
-                      className="transition hover:text-gray-900"
-                    >
-                      Authorize.net
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/integration/disputely" className="transition hover:text-gray-900">
-                      Disputely
-                    </Link>
-                  </li>
+              <div className="border-border flex grow flex-col gap-2 border-r-[3px] border-dashed px-10 py-5">
+                <h3 className="text-xl font-medium">Integrations</h3>
+                <ul className="text-text flex flex-col gap-2">
+                  {footerLinks.integrations.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
-
-              {/* Industries */}
-              <div className="p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Industries</h3>
-                <ul className="text-text space-y-2">
-                  <li>
-                    <Link href="/ecommerce" className="transition hover:text-gray-900">
-                      E commerce
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/retail" className="transition hover:text-gray-900">
-                      Retail
-                    </Link>
-                  </li>
+              <div className="border-border flex grow flex-col gap-2 py-5 pl-10">
+                <h3 className="text-xl font-medium">Industries</h3>
+                <ul className="text-text flex flex-col gap-2">
+                  {footerLinks.industries.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
-
-            {/* BOTTOM 3 COLUMNS */}
-            <div className="border-border grid grid-cols-3 border-t-[3px] border-dashed sm:grid-cols-2 lg:flex lg:flex-row">
-              {/* Partners */}
-              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Partners</h3>
-                <ul className="text-text space-y-2">
-                  <li>
-                    <Link href="/partner-program" className="transition hover:text-gray-900">
-                      Partner Program
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/white-label-solutions" className="transition hover:text-gray-900">
-                      White Label Solutions
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/iso-platform" className="transition hover:text-gray-900">
-                      ISO Platform
-                    </Link>
-                  </li>
+            <div className="border-border flex justify-between border-t-[3px] border-dashed">
+              <div className="border-border flex grow flex-col gap-2 border-r-[3px] border-dashed py-5 pr-10 pl-5">
+                <h3 className="text-xl font-medium">Partners</h3>
+                <ul className="text-text flex flex-col gap-2">
+                  {footerLinks.partners.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
-
-              {/* Customers */}
-              <div className="border-border border-t-0 border-r-[3px] border-dashed p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Customers</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>
-                    <Link href="/case-studies" className="transition hover:text-gray-900">
-                      All case studies
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/case-studies/viberide" className="transition hover:text-gray-900">
-                      Viberide
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/case-studies/healthletic"
-                      className="transition hover:text-gray-900"
-                    >
-                      Healthletic
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/case-studies/omnx" className="transition hover:text-gray-900">
-                      OMNX
-                    </Link>
-                  </li>
+              <div className="border-border flex grow flex-col gap-2 border-r-[3px] border-dashed px-10 py-5">
+                <h3 className="text-xl font-medium">Customers</h3>
+                <ul className="text-text flex flex-col gap-2">
+                  {footerLinks.customers.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
-
-              {/* Company */}
-              <div className="p-2 md:p-8">
-                <h3 className="mt-4 mb-4 text-xl font-medium">Company</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>
-                    <Link href="/who-are-we" className="transition hover:text-gray-900">
-                      Who we are
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/careers" className="transition hover:text-gray-900">
-                      Careers
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact" className="transition hover:text-gray-900">
-                      Contact Us
-                    </Link>
-                  </li>
+              <div className="border-border flex grow flex-col gap-2 py-5 pr-5 pl-10">
+                <h3 className="text-xl font-medium">Company</h3>
+                <ul className="text-text flex flex-col gap-2">
+                  {footerLinks.company.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
