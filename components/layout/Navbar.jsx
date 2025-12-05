@@ -41,7 +41,12 @@ const navItems = [
         Icon: ProcessingIcon,
         href: '/processing',
       },
-      { title: 'Gateway', description: 'Smart, secure integrations', Icon: GatewayIcon, href: '/gateway' },
+      {
+        title: 'Gateway',
+        description: 'Smart, secure integrations',
+        Icon: GatewayIcon,
+        href: '/gateway',
+      },
       {
         title: 'Insights',
         description: 'Real-time performance tracking',
@@ -167,8 +172,20 @@ const navItems = [
     },
     logos: [
       { name: 'Shopify', image: ShopifyLogo, width: 90, height: 26, href: '/integration/shopify' },
-      { name: 'Authorize.net', image: AuthorizeLogo, width: 120, height: 28, href: '/integration/authorized-net' },
-      { name: 'Disputely', image: DisputelyLogo, width: 110, height: 28, href: '/integration/disputely' },
+      {
+        name: 'Authorize.net',
+        image: AuthorizeLogo,
+        width: 120,
+        height: 28,
+        href: '/integration/authorized-net',
+      },
+      {
+        name: 'Disputely',
+        image: DisputelyLogo,
+        width: 110,
+        height: 28,
+        href: '/integration/disputely',
+      },
     ],
     mobileLinks: [
       { label: 'All Integrations', href: '/integration' },
@@ -451,11 +468,11 @@ const Navbar = () => {
                 >
                   <button className="flex items-center text-sm font-medium whitespace-nowrap text-gray-700 transition-all duration-300 hover:text-blue-600 xl:text-base">
                     {item.title}
-                    <FiChevronDown
+                    {/* <FiChevronDown
                       className={`ml-1 h-3 w-3 transition-transform duration-300 xl:h-4 xl:w-4 ${
                         isActive ? 'rotate-180' : ''
                       }`}
-                    />
+                    /> */}
                   </button>
                 </div>
               );
