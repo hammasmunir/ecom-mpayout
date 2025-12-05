@@ -263,3 +263,32 @@ textarea {
     transition: all 0.5s ease;
   }
 }
+
+.border-dashed.b-top {
+  border-top: 1.5px solid transparent;
+  border-image: repeating-linear-gradient(to right, var(--color-border) 0 9px, transparent 0px 19px)
+    3;
+}
+.border-dashed.b-bottom {
+  border-bottom: 1.5px solid transparent;
+  border-image: repeating-linear-gradient(to right, var(--color-border) 0 9px, transparent 0px 19px)
+    3;
+}
+.border-dashed.b-left {
+  border-left: 1.5px solid transparent;
+  border-image: repeating-linear-gradient(
+      to bottom,
+      var(--color-border) 0 9px,
+      transparent 0px 19px
+    )
+    3;
+}
+.border-dashed.b-right {
+  border-right: 1.5px solid transparent;
+  border-image: repeating-linear-gradient(
+      to bottom,
+      var(--color-border) 0 9px,
+      transparent 0px 19px
+    )
+    3;
+}
