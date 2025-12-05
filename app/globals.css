@@ -222,13 +222,13 @@ textarea {
 .shadow-btn {
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 1s ease;
   &:hover {
     &::before {
-      animation: shadow-btn-hover 1s infinite;
+      border-radius: 0%;
     }
     &::after {
-      animation: shadow-btn-hover 1s infinite;
+      border-radius: 0%;
     }
   }
 
@@ -245,7 +245,7 @@ textarea {
     border-radius: 50%;
     background: #ffffff00;
     backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
   &::after {
     content: '';
@@ -260,17 +260,6 @@ textarea {
     border-radius: 50%;
     background: #ffffff00;
     backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-  }
-}
-@keyframes shadow-btn-hover {
-  0% {
-    box-shadow: 0 0 10px 20px #ffffff66;
-  }
-  50% {
-    box-shadow: 0 0 10px 20px #ffffff;
-  }
-  100% {
-    box-shadow: 0 0 10px 20px #ffffff66;
+    transition: all 0.5s ease;
   }
 }
