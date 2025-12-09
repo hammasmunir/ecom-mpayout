@@ -48,10 +48,18 @@ const Hero = () => {
             alt="Dashboard preview mobile"
             className="block w-full md:hidden"
           />
-          <ThumbIcon />
-          <DollarIcon />
-          <WalletIcon />
-          <CardIcon />
+          <div className="absolute -top-40 left-20">
+            <ThumbIcon />
+          </div>
+          <div className="absolute -top-40 right-20">
+            <DollarIcon />
+          </div>
+          <div className="absolute -top-25 right-50">
+            <WalletIcon />
+          </div>
+          <div className="absolute -top-25 left-50">
+            <CardIcon />
+          </div>
         </div>
       </div>
     </section>
