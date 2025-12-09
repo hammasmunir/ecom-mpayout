@@ -2,7 +2,14 @@ import React from 'react';
 
 const WalletIcon = () => {
   return (
-    <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="86"
+      height="86"
+      viewBox="0 0 86 86"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="max-lg:h-12 max-lg:w-12"
+    >
       <g filter="url(#filter0_i_1_4978)">
         <rect
           x="24.1677"

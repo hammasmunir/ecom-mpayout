@@ -48,16 +48,16 @@ const Hero = () => {
             alt="Dashboard preview mobile"
             className="block w-full md:hidden"
           />
-          <div className="hero-icon-pop absolute -top-40 left-20 delay-1">
+          <div className="hero-icon-pop absolute -top-3 left-0 delay-1 md:-top-40 md:left-20">
             <ThumbIcon />
           </div>
-          <div className="hero-icon-pop absolute -top-40 right-20 delay-2">
+          <div className="hero-icon-pop absolute -top-3 right-0 delay-2 md:-top-40 md:right-20">
             <DollarIcon />
           </div>
-          <div className="hero-icon-pop absolute -top-25 right-50 delay-3">
+          <div className="hero-icon-pop absolute right-3 bottom-0 delay-3 md:-top-25 md:right-10 lg:right-50">
             <WalletIcon />
           </div>
-          <div className="hero-icon-pop absolute -top-25 left-50 delay-4">
+          <div className="hero-icon-pop absolute bottom-0 left-3 delay-4 md:-top-25 md:left-10 lg:left-0">
             <CardIcon />
           </div>
         </div>
