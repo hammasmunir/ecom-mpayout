@@ -6,6 +6,7 @@ import Points from '@/components/case-studies/Points';
 import Outcome from '@/components/case-studies/Outcome';
 import Benefits from '@/components/case-studies/Benefits';
 import AuthorBox from '@/components/case-studies/AuthorBox';
+import ScrollAnimator from '@/components/ui/ScrollAnimator';
 
 const page = () => {
   const points = [
@@ -71,6 +72,7 @@ const page = () => {
   };
   return (
     <>
+      <ScrollAnimator />
       <HeroStarter
         heading="How OMNX Doubled Revenue With Smarter Payments"
         text="See how a fast-growing wellness brand improved approvals, reduced risk, and scaled effortlessly by switching to a more flexible payment infrastructure."
@@ -78,16 +80,22 @@ const page = () => {
         noCenter={true}
         className="items-start"
         maxWidth="680px"
+        data-animate="fade-up"
       />
       <section className="border-border b-bottom border-dashed pt-10 pb-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
-          <div className="flex h-[420px] w-full items-center justify-center rounded-xl bg-[#0047A0]">
+          <div
+            className="flex h-[420px] w-full items-center justify-center rounded-xl bg-[#0047A0]"
+            data-animate="fade-up"
+          >
             <Image src={omnxImage} alt="healthletic" className="w-full max-w-[520px] rounded-xl" />
           </div>
           <section className="grid w-full grid-cols-1 gap-10 lg:grid-cols-[0.4fr_1fr]">
-            <Points data={points} />
+            <div data-animate="fade-up">
+              <Points data={points} />
+            </div>
             <section className="flex flex-col gap-8">
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3" data-animate="fade-up">
                 <h2 className="text-3xl font-medium md:text-5xl">Brand Overview</h2>
                 <p className="text-text">
                   OMNX is a fast-growing direct-to-consumer wellness brand specializing in
@@ -102,7 +110,7 @@ const page = () => {
                   operational burden into an automated and efficient system that drives results.
                 </p>
               </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5" data-animate="fade-up">
                 <h2 className="mb-3 text-2xl font-medium md:text-4xl">
                   Challenges Before Switching
                 </h2>
@@ -132,7 +140,7 @@ const page = () => {
                   complicated processes that limited growth.
                 </p>
               </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5" data-animate="fade-up">
                 <h2 className="text-2xl font-medium md:text-4xl">Solutions Delivered</h2>
 
                 <p className="text-text">
@@ -156,15 +164,21 @@ const page = () => {
                   development and creating a single layer for reporting.
                 </p>
               </div>
-              <Outcome data={outcome} />
-              <Benefits text="Better settlement times helped fund inventory, marketing, and product development faster. || Fewer declines and smoother checkout improved the customer experience and likely boosted retention. || Instant access to KPIs like volume, approvals, disputes, chargebacks, and campaign performance all in real time. || A flexible, future-proof infrastructure gave OMNX the confidence to grow aggressively without payment-related barriers." />
+              <div data-animate="fade-up">
+                <Outcome data={outcome} />
+              </div>
+              <div data-animate="fade-up">
+                <Benefits text="Better settlement times helped fund inventory, marketing, and product development faster. || Fewer declines and smoother checkout improved the customer experience and likely boosted retention. || Instant access to KPIs like volume, approvals, disputes, chargebacks, and campaign performance all in real time. || A flexible, future-proof infrastructure gave OMNX the confidence to grow aggressively without payment-related barriers." />
+              </div>
             </section>
           </section>
-          <AuthorBox
-            text="Switching to ecompayouts was a game changer for us. We doubled our monthly revenue, eliminated risk, and gained insights that changed how we run promotions. Their chargeback alerts alone saved us tens of thousands. And scaling with new MIDs was fast and painless."
-            name="Jane Doe"
-            desg="Chief Operating Officer, OMNX"
-          />
+          <div data-animate="fade-up">
+            <AuthorBox
+              text="Switching to ecompayouts was a game changer for us. We doubled our monthly revenue, eliminated risk, and gained insights that changed how we run promotions. Their chargeback alerts alone saved us tens of thousands. And scaling with new MIDs was fast and painless."
+              name="Jane Doe"
+              desg="Chief Operating Officer, OMNX"
+            />
+          </div>
         </section>
       </section>
     </>

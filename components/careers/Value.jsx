@@ -23,9 +23,12 @@ const Value = () => {
     },
   ];
   return (
-    <section className="border-border b-bottom border-dashed py-16 lg:py-20">
+    <section className="border-border b-bottom border-dashed py-16 lg:py-20" data-animate="fade-up">
       <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
-        <div className="flex w-full flex-col items-center gap-5 lg:flex-row lg:items-center lg:justify-between">
+        <div
+          className="flex w-full flex-col items-center gap-5 lg:flex-row lg:items-center lg:justify-between"
+          data-animate="fade-up"
+        >
           <Starter
             heading="What We Value"
             className="max-w-[400px] lg:items-start lg:text-left"
@@ -40,7 +43,9 @@ const Value = () => {
             return (
               <article
                 key={idx}
-                className="flex flex-col gap-5 rounded-2xl p-10 shadow-[0px_4px_20px_2px_#0000001F]"
+                className="card-hover flex flex-col gap-5 rounded-2xl bg-white p-10 shadow-[0px_4px_20px_2px_#0000001F]"
+                data-animate="fade-up"
+                style={{ transitionDelay: `${idx * 80}ms` }}
               >
                 <h3 className="text-xl font-semibold lg:text-2xl">{item.title}</h3>
                 <p className="text-text text-base lg:text-xl">{item.description}</p>

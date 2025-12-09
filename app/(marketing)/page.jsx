@@ -14,7 +14,6 @@ export default function ProductPage() {
       <Hero />
       <ImageCarousel />
       <Features />
-
       <WhyChooseUs />
       <Benefits />
       <ROICalculator />
