@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import FullLogo from '@/assets/images/main-logo.svg';
 import HalfLogo from '@/assets/images/half-logo.svg';
@@ -238,7 +239,7 @@ const MegaMenuShell = ({ children, className = '' }) => (
   </div>
 );
 
-const MegaMenuCard = ({ title, description, Icon, className = '', href }) => {
+const MegaMenuCard = ({ title, description, Icon, className = '', href, onClick }) => {
   const cardClasses = `flex h-full flex-col justify-between rounded-[20px] bg-white p-5 text-left shadow-md transition hover:-translate-y-0.5 hover:shadow-lg ${className}`;
   const content = (
     <div className={cardClasses}>
@@ -256,7 +257,7 @@ const MegaMenuCard = ({ title, description, Icon, className = '', href }) => {
 
   if (href) {
     return (
-      <Link href={href} className="block h-full">
+      <Link href={href} className="block h-full" onClick={onClick}>
         {content}
       </Link>
     );
@@ -265,7 +266,7 @@ const MegaMenuCard = ({ title, description, Icon, className = '', href }) => {
   return content;
 };
 
-const MegaMenuLogoList = ({ logos }) => (
+const MegaMenuLogoList = ({ logos, onClick }) => (
   <div className="flex flex-col gap-3">
     {logos.map((logo) => {
       const content = (
@@ -283,7 +284,7 @@ const MegaMenuLogoList = ({ logos }) => (
 
       if (logo.href) {
         return (
-          <Link key={logo.name} href={logo.href} className="block h-full">
+          <Link key={logo.name} href={logo.href} className="block h-full" onClick={onClick}>
             {content}
           </Link>
         );
@@ -298,7 +299,7 @@ const MegaMenuLogoList = ({ logos }) => (
   </div>
 );
 
-const renderMegaMenuContent = (item) => {
+const renderMegaMenuContent = (item, onNavigate) => {
   const shellWidthClass = `mx-auto ${item.dropdownWidth || 'w-full'}`;
   switch (item.layout) {
     case 'cards': {
@@ -313,7 +314,7 @@ const renderMegaMenuContent = (item) => {
         <MegaMenuShell className={shellWidthClass}>
           <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 ${columnClass} `}>
             {item.cards.map((card) => (
-              <MegaMenuCard key={card.title} {...card} />
+              <MegaMenuCard key={card.title} {...card} onClick={onNavigate} />
             ))}
           </div>
         </MegaMenuShell>
@@ -323,8 +324,8 @@ const renderMegaMenuContent = (item) => {
       return (
         <MegaMenuShell className={shellWidthClass}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.2fr_1fr]">
-            <MegaMenuCard {...item.feature} />
-            <MegaMenuLogoList logos={item.logos} />
+            <MegaMenuCard {...item.feature} onClick={onNavigate} />
+            <MegaMenuLogoList logos={item.logos} onClick={onNavigate} />
           </div>
         </MegaMenuShell>
       );
@@ -332,8 +333,8 @@ const renderMegaMenuContent = (item) => {
       return (
         <MegaMenuShell className={shellWidthClass}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.2fr_1fr]">
-            <MegaMenuCard {...item.feature} />
-            <MegaMenuLogoList logos={item.logos} />
+            <MegaMenuCard {...item.feature} onClick={onNavigate} />
+            <MegaMenuLogoList logos={item.logos} onClick={onNavigate} />
           </div>
         </MegaMenuShell>
       );
@@ -341,10 +342,10 @@ const renderMegaMenuContent = (item) => {
       return (
         <MegaMenuShell className={shellWidthClass}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.2fr_0.8fr]">
-            <MegaMenuCard {...item.feature} />
+            <MegaMenuCard {...item.feature} onClick={onNavigate} />
             <div className="flex flex-col gap-3">
               {item.cards.map((card) => (
-                <MegaMenuCard key={card.title} {...card} className="h-full" />
+                <MegaMenuCard key={card.title} {...card} className="h-full" onClick={onNavigate} />
               ))}
             </div>
           </div>
@@ -373,6 +374,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const mobileMenuRef = useRef(null);
   const hideTimeoutRef = useRef(null);
+  const pathname = usePathname();
   const activeMegaItem = navItems.find(
     (item) => item.title === activeDropdown && item.type !== 'link'
   );
@@ -408,6 +410,17 @@ const Navbar = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    // Close any open menus on route change
+    setActiveDropdown(null);
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
+  const handleNavigate = () => {
+    setActiveDropdown(null);
+    setIsMobileMenuOpen(false);
+  };
 
   const handleMenuEnter = (title) => {
     if (hideTimeoutRef.current) {
@@ -453,6 +466,7 @@ const Navbar = () => {
                     key={item.title}
                     href={item.href}
                     className="text-sm font-medium whitespace-nowrap text-gray-700 transition hover:text-blue-600 xl:text-base"
+                    onClick={handleNavigate}
                   >
                     {item.title}
                   </Link>
@@ -526,7 +540,9 @@ const Navbar = () => {
             onMouseEnter={() => activeDropdown && handleMenuEnter(activeDropdown)}
           >
             {activeMegaItem && (
-              <div className="pt-4 pb-6">{renderMegaMenuContent(activeMegaItem)}</div>
+              <div className="pt-4 pb-6">
+                {renderMegaMenuContent(activeMegaItem, handleNavigate)}
+              </div>
             )}
           </div>
         </div>
@@ -553,7 +569,7 @@ const Navbar = () => {
                   <Link
                     href={item.href}
                     className="block py-4 text-base font-medium text-gray-700 transition hover:text-blue-600"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={handleNavigate}
                   >
                     {item.title}
                   </Link>
@@ -601,7 +617,7 @@ const Navbar = () => {
                             href={section.href}
                             className={commonClasses}
                             style={style}
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            onClick={handleNavigate}
                           >
                             {section.label}
                           </Link>
@@ -624,13 +640,13 @@ const Navbar = () => {
           <div className="mt-2 space-y-3 border-t border-gray-200 pt-6 pb-4">
             <button
               className="w-full transform rounded-xl border-2 border-gray-200 py-4 text-center text-base font-medium text-gray-700 transition-all duration-300 hover:scale-105 hover:border-blue-600 hover:text-blue-600"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={handleNavigate}
             >
               Sign In
             </button>
             <button
               className="w-full transform rounded-xl bg-blue-600 py-4 text-base font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-blue-700 hover:shadow-xl"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={handleNavigate}
             >
               Book a Call
             </button>
