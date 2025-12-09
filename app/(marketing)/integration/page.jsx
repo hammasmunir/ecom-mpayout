@@ -1,7 +1,10 @@
+'use client';
+
 import HeroStarter from '@/components/ui/HeroStarter';
 import Starter from '@/components/ui/Starter';
 import Image from 'next/image';
 import React from 'react';
+import ScrollAnimator from '@/components/ui/ScrollAnimator';
 import Banner from '@/assets/images/integration/integration-banner.svg';
 import PP1 from '@/assets/images/integration/payment-platforms/img-1.svg';
 import PP2 from '@/assets/images/integration/payment-platforms/img-2.svg';
@@ -185,19 +188,31 @@ const page = () => {
   ];
   return (
     <>
+      <ScrollAnimator />
       <HeroStarter
         heading="Powerful Connections That Keep Payments Flowing"
         text="Build your ideal payment stack with ready-to-use integrations for eCommerce, retail, and service-based businesses."
         label="Integrations"
         maxWidth="800px"
+        data-animate="fade-up"
       />
-      <section className="border-border b-bottom mx-auto flex max-w-[1440px] items-center justify-center border-dashed px-5 pb-10 lg:pb-20">
+      <section
+        className="border-border b-bottom mx-auto flex max-w-[1440px] items-center justify-center border-dashed px-5 pb-10 lg:pb-20"
+        data-animate="fade-up"
+      >
         <Image src={Banner} alt="Integration Banner" className="h-auto w-full" />
       </section>
       {data.map((section, sectionIndex) => (
-        <section key={sectionIndex} className="border-border b-bottom border-dashed py-16 lg:py-20">
+        <section
+          key={sectionIndex}
+          className="border-border b-bottom border-dashed py-16 lg:py-20"
+          data-animate="fade-up"
+        >
           <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
-            <div className="flex w-full flex-col items-center gap-5 lg:flex-row lg:justify-between">
+            <div
+              className="flex w-full flex-col items-center gap-5 lg:flex-row lg:justify-between"
+              data-animate="fade-up"
+            >
               <Starter
                 heading={section.starter.heading}
                 className="lg:items-start lg:text-left"
@@ -211,7 +226,8 @@ const page = () => {
               {section.items.map((item) => (
                 <article
                   key={item.name}
-                  className="flex w-full flex-col rounded-3xl p-3 shadow-[0px_4px_20px_2px_#0000001F] transition-shadow duration-300 hover:shadow-[0px_4px_20px_8px_#0000001F] lg:w-[30%]"
+                  className="card-hover flex w-full flex-col rounded-3xl bg-white p-3 shadow-[0px_4px_20px_2px_#0000001F] transition-shadow duration-300 hover:shadow-[0px_4px_20px_8px_#0000001F] lg:w-[30%]"
+                  data-animate="fade-up"
                 >
                   <div className="flex h-[330px] items-center justify-center rounded-2xl bg-[#F5F5F5] p-4">
                     <Image
