@@ -57,7 +57,7 @@ const Hero = () => {
           <div className="hero-icon-pop absolute right-3 bottom-0 delay-3 md:-top-25 md:right-10 lg:right-50">
             <WalletIcon />
           </div>
-          <div className="hero-icon-pop absolute bottom-0 left-3 delay-4 md:-top-25 md:left-10 lg:left-0">
+          <div className="hero-icon-pop absolute bottom-0 left-3 delay-4 md:-top-25 md:left-10 lg:left-50">
             <CardIcon />
           </div>
         </div>
