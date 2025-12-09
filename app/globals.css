@@ -359,3 +359,49 @@ textarea {
     }
   }
 }
+
+[data-float-icon],
+.footer-float-icon {
+  transform: translate(0, 0);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.footer-in [data-float-icon='tr'] {
+  transform: translate(-28px, 28px);
+}
+
+.footer-in [data-float-icon='br'] {
+  transform: translate(-24px, -24px);
+}
+
+.footer-in [data-float-icon='tl'] {
+  transform: translate(28px, 28px);
+}
+
+.footer-in [data-float-icon='bl'] {
+  transform: translate(24px, -24px);
+}
+
+@media screen and (max-width: 768px) {
+  .footer-in [data-float-icon='tr'] {
+    transform: translate(-16px, 18px);
+  }
+  .footer-in [data-float-icon='br'] {
+    transform: translate(-14px, -16px);
+  }
+  .footer-in [data-float-icon='tl'] {
+    transform: translate(18px, 18px);
+  }
+  .footer-in [data-float-icon='bl'] {
+    transform: translate(16px, -16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-float-icon],
+  .footer-float-icon {
+    transition: none;
+    transform: translate(0, 0) !important;
+  }
+}

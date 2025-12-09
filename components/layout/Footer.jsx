@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MdArrowOutward } from 'react-icons/md';
@@ -21,6 +24,9 @@ import DiscordIcon from '@/assets/icons/social/DiscordIcon';
 import Button from '../ui/Button';
 
 export default function Footer() {
+  const footerRef = useRef(null);
+  const iconsRef = useRef([]);
+
   // Footer links data
   const footerLinks = {
     product: [
@@ -57,8 +63,63 @@ export default function Footer() {
     ],
   };
 
+  useEffect(() => {
+    const footerEl = footerRef.current;
+    if (!footerEl || typeof window === 'undefined') return undefined;
+
+    const prefersReduced =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const icons = Array.from(footerEl.querySelectorAll('[data-float-icon]'));
+    iconsRef.current = icons;
+
+    if (!icons.length || prefersReduced) return undefined;
+
+    const offsets = {
+      tr: { x: -28, y: 28 },
+      br: { x: -24, y: -24 },
+      tl: { x: 28, y: 28 },
+      bl: { x: 24, y: -24 },
+    };
+
+    const update = () => {
+      const rect = footerEl.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+
+      const visibleHeight = Math.min(vh, rect.bottom) - Math.max(0, rect.top);
+      const ratio = Math.max(0, Math.min(1, visibleHeight / Math.min(rect.height, vh)));
+
+      iconsRef.current.forEach((icon) => {
+        const key = icon.getAttribute('data-float-icon');
+        const offset = offsets[key] || { x: 0, y: 0 };
+        const x = offset.x * ratio;
+        const y = offset.y * ratio;
+        icon.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        ticking = false;
+        update();
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', update);
+    };
+  }, []);
+
   return (
-    <footer className="w-full">
+    <footer ref={footerRef} className="w-full">
       <div className="w-full px-5 py-20">
         <div className="relative mx-auto flex min-h-[350px] max-w-[1420px] flex-col items-center justify-center overflow-hidden rounded-[36px] text-center md:min-h-[447px] lg:min-h-[490px]">
           <Image
@@ -75,16 +136,28 @@ export default function Footer() {
             className="absolute inset-0 -z-10 block object-cover md:hidden"
             priority
           />
-          <div className="absolute top-5 right-5 z-1 md:top-15 md:right-10">
+          <div
+            className="footer-float-icon absolute top-5 right-5 z-1 md:top-15 md:right-10"
+            data-float-icon="tr"
+          >
             <DollarIcon />
           </div>
-          <div className="absolute right-5 bottom-5 z-1 md:right-40 md:bottom-15">
+          <div
+            className="footer-float-icon absolute right-5 bottom-5 z-1 md:right-40 md:bottom-15"
+            data-float-icon="br"
+          >
             <WalletIcon />
           </div>
-          <div className="absolute top-5 left-5 z-1 md:top-15 md:left-10">
+          <div
+            className="footer-float-icon absolute top-5 left-5 z-1 md:top-15 md:left-10"
+            data-float-icon="tl"
+          >
             <ThumbIcon />
           </div>
-          <div className="absolute bottom-5 left-5 z-1 md:bottom-15 md:left-30">
+          <div
+            className="footer-float-icon absolute bottom-5 left-5 z-1 md:bottom-15 md:left-30"
+            data-float-icon="bl"
+          >
             <CardIcon />
           </div>
 
