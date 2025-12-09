@@ -2,20 +2,24 @@ import HeroStarter from '@/components/ui/HeroStarter';
 import Image from 'next/image';
 import CardImage from '@/assets/images/gateway/img-1.svg';
 import Platforms from '@/components/gateway/Platforms';
+import ScrollAnimator from '@/components/ui/ScrollAnimator';
 
 const page = () => {
   return (
     <>
+      <ScrollAnimator />
       <HeroStarter
         heading="A Gateway That Works Everywhere"
         text="Connect to every major US gateway and seamlessly integrate with the platforms your business depends on every day."
         label="Gateway"
         maxWidth="800px"
+        data-animate="fade-up"
       />
       <section className="border-border b-bottom border-dashed py-16 lg:py-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
           <article
             className={`grid w-full grid-cols-1 items-center gap-16 overflow-hidden rounded-xl p-6 shadow-[0px_4px_20px_2px_#0000001F] lg:grid-cols-2 lg:p-10`}
+            data-animate="fade-up"
           >
             <div className={`flex flex-col gap-5`}>
               <h3 className="text-2xl font-medium lg:text-3xl">
@@ -33,7 +37,9 @@ const page = () => {
           </article>
         </section>
       </section>
-      <Platforms />
+      <div data-animate="fade-up">
+        <Platforms />
+      </div>
     </>
   );
 };

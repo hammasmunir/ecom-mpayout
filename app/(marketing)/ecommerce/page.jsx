@@ -6,20 +6,24 @@ import GlobeIcon from '@/assets/icons/ecommerce/GlobeIcon';
 import BlockIcon from '@/assets/icons/ecommerce/BlockIcon';
 import CardIcon from '@/assets/icons/ecommerce/CardIcon';
 import SheildIcon from '@/assets/icons/ecommerce/SheildIcon';
+import ScrollAnimator from '@/components/ui/ScrollAnimator';
 
 const page = () => {
   return (
     <>
+      <ScrollAnimator />
       <HeroStarter
         heading="Complete Payment Stack for Modern Online Brands"
         text="Get faster approvals, instant platform integrations, and a custom checkout designed to increase conversions and keep your revenue flowing."
         label="Ecommerce"
         maxWidth="800px"
+        data-animate="fade-up"
       />
       <section className="border-border b-bottom border-dashed py-16 lg:py-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
           <article
             className={`grid w-full grid-cols-1 items-center gap-16 overflow-hidden rounded-xl p-6 shadow-[0px_4px_20px_2px_#0000001F] lg:grid-cols-2 lg:p-10`}
+            data-animate="fade-up"
           >
             <div className={`flex flex-col gap-5`}>
               <h3 className="text-2xl font-medium lg:text-3xl">
@@ -96,33 +100,35 @@ const page = () => {
           </article>
         </section>
       </section>
-      <Features
-        title="E-commerce Processing System"
-        desp="Everything you need to sell online smoothly from approvals to checkout and platform integrations."
-        data={[
-          {
-            icon: <SheildIcon />,
-            title: 'High Approval Rates',
-            description: 'Get approved faster with direct banking partners built for eCommerce.',
-          },
-          {
-            icon: <CardIcon />,
-            title: 'Custom Checkout',
-            description: 'A lightweight, optimized checkout that increases conversions instantly.',
-          },
-          {
-            icon: <BlockIcon />,
-            title: 'Platform Integrations',
-            description: 'Connect with Shopify, WooCommerce, BigCommerce, Wix, and more.',
-          },
-          {
-            icon: <GlobeIcon />,
-            title: 'Hosting Compatibility',
-            description:
-              'Fully supports all leading web hosting platforms with complete flexibility.',
-          },
-        ]}
-      />
+      <div data-animate="fade-up">
+        <Features
+          title="E-commerce Processing System"
+          desp="Everything you need to sell online smoothly from approvals to checkout and platform integrations."
+          data={[
+            {
+              icon: <SheildIcon />,
+              title: 'High Approval Rates',
+              description: 'Get approved faster with direct banking partners built for eCommerce.',
+            },
+            {
+              icon: <CardIcon />,
+              title: 'Custom Checkout',
+              description: 'A lightweight, optimized checkout that increases conversions instantly.',
+            },
+            {
+              icon: <BlockIcon />,
+              title: 'Platform Integrations',
+              description: 'Connect with Shopify, WooCommerce, BigCommerce, Wix, and more.',
+            },
+            {
+              icon: <GlobeIcon />,
+              title: 'Hosting Compatibility',
+              description:
+                'Fully supports all leading web hosting platforms with complete flexibility.',
+            },
+          ]}
+        />
+      </div>
     </>
   );
 };

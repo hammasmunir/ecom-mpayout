@@ -6,6 +6,7 @@ import Points from '@/components/case-studies/Points';
 import Outcome from '@/components/case-studies/Outcome';
 import Benefits from '@/components/case-studies/Benefits';
 import AuthorBox from '@/components/case-studies/AuthorBox';
+import ScrollAnimator from '@/components/ui/ScrollAnimator';
 
 const page = () => {
   const points = [
@@ -52,24 +53,30 @@ const page = () => {
   };
   return (
     <>
+      <ScrollAnimator />
       <HeroStarter
         heading="Scaling VibeRide With Smarter Payments"
         text="VibeRide gained stability, visibility, and the ability to scale launches confidently with smarter routing and instant insights."
         label="Viberide"
         noCenter={true}
         className="items-start"
+        data-animate="fade-up"
       />
       <section className="border-border b-bottom border-dashed pt-10 pb-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
-          <Image
-            src={vibeRideImage}
-            alt="viberide"
-            className="h-[420px] w-full rounded-xl object-cover"
-          />
+          <div data-animate="fade-up">
+            <Image
+              src={vibeRideImage}
+              alt="viberide"
+              className="h-[420px] w-full rounded-xl object-cover"
+            />
+          </div>
           <section className="grid w-full grid-cols-1 gap-10 lg:grid-cols-[0.4fr_1fr]">
-            <Points data={points} />
+            <div data-animate="fade-up">
+              <Points data={points} />
+            </div>
             <section className="flex flex-col gap-8">
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3" data-animate="fade-up">
                 <h2 className="text-3xl font-medium md:text-5xl">Brand Overview</h2>
                 <p className="text-text">
                   VibeRide is an innovative board brand known for the BrakeBoard — a skateboard and
@@ -80,7 +87,7 @@ const page = () => {
                   e-commerce volume.
                 </p>
               </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5" data-animate="fade-up">
                 <h2 className="mb-3 text-2xl font-medium md:text-4xl">
                   Challenges Before Switching
                 </h2>
@@ -119,7 +126,7 @@ const page = () => {
                   raised chargeback exposure, and threatened scaling during major product drops.
                 </p>
               </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5" data-animate="fade-up">
                 <h2 className="text-2xl font-medium md:text-4xl">Solutions Delivered</h2>
 
                 <p className="text-text">
@@ -153,15 +160,21 @@ const page = () => {
                   interruptions.
                 </p>
               </div>
-              <Outcome data={outcome} />
-              <Benefits text="VibeRide saw smoother product launches, improved stability during peak sales periods, and greater confidence in scaling inventory and marketing. With better risk tools and diversified processing, they minimized exposure and gained financial reliability. Reduced reserve pressure freed capital for reinvesting into new board lines and brake technology." />
+              <div data-animate="fade-up">
+                <Outcome data={outcome} />
+              </div>
+              <div data-animate="fade-up">
+                <Benefits text="VibeRide saw smoother product launches, improved stability during peak sales periods, and greater confidence in scaling inventory and marketing. With better risk tools and diversified processing, they minimized exposure and gained financial reliability. Reduced reserve pressure freed capital for reinvesting into new board lines and brake technology." />
+              </div>
             </section>
           </section>
-          <AuthorBox
-            text="Scaling VibeRide was impossible with our old setup — every product launch felt like a risk. Ecom Payouts gave us routing flexibility, instant visibility, and the ability to scale MIDs fast. Now we can handle massive spikes without declines, manage cash better, and grow with confidence."
-            name="Charlie Cannon"
-            desg="Co-Founder, VibeRide"
-          />
+          <div data-animate="fade-up">
+            <AuthorBox
+              text="Scaling VibeRide was impossible with our old setup — every product launch felt like a risk. Ecom Payouts gave us routing flexibility, instant visibility, and the ability to scale MIDs fast. Now we can handle massive spikes without declines, manage cash better, and grow with confidence."
+              name="Charlie Cannon"
+              desg="Co-Founder, VibeRide"
+            />
+          </div>
         </section>
       </section>
     </>
