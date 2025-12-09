@@ -1,3 +1,5 @@
+'use client';
+
 import HeroStarter from '@/components/ui/HeroStarter';
 import Image from 'next/image';
 
@@ -6,6 +8,7 @@ import CardImage1 from '@/assets/images/iso/img-1.svg';
 import CardImage2 from '@/assets/images/iso/img-2.svg';
 import { MdArrowForwardIos } from 'react-icons/md';
 import IconBoxes from '@/components/iso/IconBoxes';
+import ScrollAnimator from '@/components/ui/ScrollAnimator';
 
 const page = () => {
   const data = [
@@ -40,17 +43,22 @@ const page = () => {
 
   return (
     <>
+      <ScrollAnimator />
       <HeroStarter
         heading="Operate Like a Processor Without Building"
         text="Offer your own processing solutions, manage merchants, and grow recurring revenue with a fully white-label platform."
         label="ISO Platform"
         maxWidth="800px"
+        data-animate="fade-up"
       />
       <section className="border-border b-bottom border-dashed py-16 lg:py-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
-          <Sections data={data} />
+          <div data-animate="fade-up">
+            <Sections data={data} />
+          </div>
           <article
             className={`grid w-full grid-cols-1 items-center gap-16 overflow-hidden rounded-xl p-6 shadow-[0px_4px_20px_2px_#0000001F] lg:grid-cols-[0.6fr_1fr] lg:p-10`}
+            data-animate="fade-up"
           >
             <div className={`flex flex-col gap-5`}>
               <h3 className="text-2xl font-medium lg:text-3xl">
@@ -106,7 +114,9 @@ const page = () => {
           </article>
         </section>
       </section>
-      <IconBoxes />
+      <div data-animate="fade-up">
+        <IconBoxes />
+      </div>
     </>
   );
 };

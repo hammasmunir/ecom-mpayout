@@ -25,18 +25,22 @@ const Features = () => {
     },
   ];
   return (
-    <section className="border-border b-bottom border-dashed py-16 lg:py-20">
+    <section className="border-border b-bottom border-dashed py-16 lg:py-20" data-animate="fade-up">
       <section className="mx-auto flex max-w-[1440px] flex-col gap-10 px-5">
-        <Starter
-          heading="Powerful Features Built for Every Merchant"
-          text="From smart routing to fraud protection everything you need to scale securely."
-          label="Features"
-        />
+        <div data-animate="fade-up">
+          <Starter
+            heading="Powerful Features Built for Every Merchant"
+            text="From smart routing to fraud protection everything you need to scale securely."
+            label="Features"
+          />
+        </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {cards.map((card) => (
+          {cards.map((card, idx) => (
             <article
               key={card.title}
-              className="flex flex-col justify-between overflow-hidden rounded-2xl shadow-md"
+              className="card-hover flex flex-col justify-between overflow-hidden rounded-2xl bg-white shadow-md"
+              data-animate="fade-up"
+              style={{ transitionDelay: `${idx * 80}ms` }}
             >
               <div className="flex flex-col gap-3 p-6">
                 <h5 className="text-lg font-medium">{card.title}</h5>

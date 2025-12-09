@@ -5,6 +5,7 @@ import healthImage from '@/assets/images/case-studies/cs-1.svg';
 import Points from '@/components/case-studies/Points';
 import Outcome from '@/components/case-studies/Outcome';
 import Benefits from '@/components/case-studies/Benefits';
+import ScrollAnimator from '@/components/ui/ScrollAnimator';
 
 const page = () => {
   const points = [
@@ -63,6 +64,7 @@ const page = () => {
   };
   return (
     <>
+      <ScrollAnimator />
       <HeroStarter
         heading="The Wellness Brand That Turned Payments Into a Growth Engine"
         text="Earn how advanced risk tools, flexible MID setup, and unified reporting enabled a high-risk wellness brand to operate with more stability and predictability."
@@ -70,10 +72,14 @@ const page = () => {
         noCenter={true}
         className="items-start"
         maxWidth="680px"
+        data-animate="fade-up"
       />
       <section className="border-border b-bottom border-dashed pt-10 pb-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
-          <div className="flex h-[420px] w-full items-center justify-center rounded-xl bg-[#F6FFFE]">
+          <div
+            className="flex h-[420px] w-full items-center justify-center rounded-xl bg-[#F6FFFE]"
+            data-animate="fade-up"
+          >
             <Image
               src={healthImage}
               alt="healthletic"
@@ -81,9 +87,11 @@ const page = () => {
             />
           </div>
           <section className="grid w-full grid-cols-1 gap-10 lg:grid-cols-[0.4fr_1fr]">
-            <Points data={points} />
+            <div data-animate="fade-up">
+              <Points data={points} />
+            </div>
             <section className="flex flex-col gap-8">
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3" data-animate="fade-up">
                 <h2 className="text-3xl font-medium md:text-5xl">Brand Overview</h2>
                 <p className="text-text">
                   Healthletic (healthletic.io) is a health-tech and wellness e-commerce brand
@@ -95,7 +103,7 @@ const page = () => {
                   their operations.
                 </p>
               </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5" data-animate="fade-up">
                 <h2 className="mb-3 text-2xl font-medium md:text-4xl">
                   Challenges Before Switching
                 </h2>
@@ -140,7 +148,7 @@ const page = () => {
                   aggressively.
                 </p>
               </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5" data-animate="fade-up">
                 <h2 className="text-2xl font-medium md:text-4xl">Solutions Delivered</h2>
 
                 <p className="text-text">
@@ -177,8 +185,12 @@ const page = () => {
                   simplified payment operations.
                 </p>
               </div>
-              <Outcome data={outcome} />
-              <Benefits text="Healthletic experienced a meaningful reduction in compliance-related stress, since the platform connected them with banking partners familiar with their vertical. Their strengthened risk controls improved their standing with acquirers, making future approvals and negotiations smoother. Additionally, stable processing, fewer payment failures, and cleaner subscription flows improved customer trust and long-term retention." />
+              <div data-animate="fade-up">
+                <Outcome data={outcome} />
+              </div>
+              <div data-animate="fade-up">
+                <Benefits text="Healthletic experienced a meaningful reduction in compliance-related stress, since the platform connected them with banking partners familiar with their vertical. Their strengthened risk controls improved their standing with acquirers, making future approvals and negotiations smoother. Additionally, stable processing, fewer payment failures, and cleaner subscription flows improved customer trust and long-term retention." />
+              </div>
             </section>
           </section>
         </section>

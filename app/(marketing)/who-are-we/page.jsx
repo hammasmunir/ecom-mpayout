@@ -4,6 +4,7 @@ import WhoImage1 from '@/assets/images/who-are-we/who-1.jpg';
 import WhoImage2 from '@/assets/images/who-are-we/who-2.jpg';
 import WhoImage3 from '@/assets/images/who-are-we/who-3.jpg';
 import HeroStarter from '@/components/ui/HeroStarter';
+import ScrollAnimator from '@/components/ui/ScrollAnimator';
 
 const page = () => {
   const data = [

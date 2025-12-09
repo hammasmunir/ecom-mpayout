@@ -16,18 +16,21 @@ const ROICalculator = () => {
   const [selectedIndustry, setSelectedIndustry] = useState(industries[0]);
 
   return (
-    <section className="border-border b-bottom border-dashed py-16 lg:py-20">
+    <section className="border-border b-bottom border-dashed py-16 lg:py-20" data-animate="fade-up">
       <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
-        <Starter
-          heading="See How Much You Could Save With Smarter Payments"
-          text="Our ROI calculator shows how much more you could make with lower fees, fewer declines, and faster payouts."
-          label="ROI Calculator"
-        />
+        <div data-animate="fade-up">
+          <Starter
+            heading="See How Much You Could Save With Smarter Payments"
+            text="Our ROI calculator shows how much more you could make with lower fees, fewer declines, and faster payouts."
+            label="ROI Calculator"
+          />
+        </div>
         <section
           className="mx-auto grid w-full max-w-5xl grid-cols-1 grid-rows-1 gap-5 rounded-lg bg-cover p-5 lg:grid-cols-[0.8fr_1fr_1fr]"
           style={{ backgroundImage: `url(${ROIBg.src})` }}
+          data-animate="fade-up"
         >
-          <div className="col-span-1 rounded-md bg-white p-4">
+          <div className="card-hover col-span-1 rounded-md bg-white p-4" data-animate="fade-up">
             <div className="mb-4 flex justify-center rounded-md bg-[#EDF3FF] p-4">
               <Image src={Logo} alt="Logo" />
             </div>
@@ -37,7 +40,11 @@ const ROICalculator = () => {
               <li className="py-4">Competitor 3</li>
             </ul>
           </div>
-          <div className="col-span-1 rounded-md bg-white p-4">
+          <div
+            className="card-hover col-span-1 rounded-md bg-white p-4"
+            data-animate="fade-up"
+            style={{ transitionDelay: '80ms' }}
+          >
             <div className="flex items-center gap-2">
               <CalculatorIcon />
               <h3 className="text-xl font-medium">ROI Calculator</h3>
@@ -73,7 +80,11 @@ const ROICalculator = () => {
               </label>
             </div>
           </div>
-          <div className="col-span-1 rounded-md bg-white p-4">
+          <div
+            className="card-hover col-span-1 rounded-md bg-white p-4"
+            data-animate="fade-up"
+            style={{ transitionDelay: '160ms' }}
+          >
             <div className="flex items-center gap-2">
               <NotesIcon />
               <h3 className="text-xl font-medium">Output Summary</h3>

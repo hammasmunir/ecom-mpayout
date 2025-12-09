@@ -1,7 +1,9 @@
 'use client';
+
 import WhyChoose from '@/components/partner/WhyChoose';
 import Form from '@/components/ui/Form';
 import HeroStarter from '@/components/ui/HeroStarter';
+import ScrollAnimator from '@/components/ui/ScrollAnimator';
 import React from 'react';
 
 const PartnerProgram = () => {
@@ -50,6 +52,7 @@ const PartnerProgram = () => {
 
   return (
     <>
+      <ScrollAnimator />
       <section className="border-border b-bottom border-dashed py-16 lg:py-20">
         <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-10 px-5 lg:grid-cols-[1fr_0.8fr] lg:gap-20">
           <HeroStarter
@@ -59,19 +62,24 @@ const PartnerProgram = () => {
             noCustom
             noCenter
             maxWidth="500px"
+            data-animate="fade-up"
           />
-          <Form
-            fields={formFields}
-            onSubmit={handleSubmit}
-            formBgColor="bg-white"
-            submitButton={{
-              text: 'Submit',
-              className: 'bg-primary-500 rounded-full p-4 text-white cursor-pointer',
-            }}
-          />
+          <div data-animate="fade-up">
+            <Form
+              fields={formFields}
+              onSubmit={handleSubmit}
+              formBgColor="bg-white"
+              submitButton={{
+                text: 'Submit',
+                className: 'bg-primary-500 rounded-full p-4 text-white cursor-pointer',
+              }}
+            />
+          </div>
         </section>
       </section>
-      <WhyChoose />
+      <div data-animate="fade-up">
+        <WhyChoose />
+      </div>
     </>
   );
 };

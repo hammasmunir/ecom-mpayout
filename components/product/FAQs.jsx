@@ -50,19 +50,25 @@ const FAQs = () => {
   };
 
   return (
-    <section className="border-border b-bottom border-dashed py-16 lg:py-20">
+    <section className="border-border b-bottom border-dashed py-16 lg:py-20" data-animate="fade-up">
       <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
-        <Starter
-          heading="Got Questions? We've Got Answers."
-          text="Learn how our platform works and keeps your payments running smoothly."
-          label="FAQs"
-        />
-        <div className="w-full max-w-4xl space-y-4">
+        <div data-animate="fade-up">
+          <Starter
+            heading="Got Questions? We've Got Answers."
+            text="Learn how our platform works and keeps your payments running smoothly."
+            label="FAQs"
+          />
+        </div>
+        <div className="w-full max-w-4xl space-y-4" data-animate="fade-up">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
-              <div key={index} className="overflow-hidden rounded-lg bg-[#F5F5F5] shadow-sm">
+              <div
+                key={index}
+                className="card-hover overflow-hidden rounded-lg bg-[#F5F5F5] shadow-sm"
+                style={{ transitionDelay: `${index * 60}ms` }}
+              >
                 <button
                   onClick={() => toggleFAQ(index)}
                   className="w-full p-1 text-left transition-colors"

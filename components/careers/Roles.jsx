@@ -53,7 +53,12 @@ const Roles = () => {
     const isOpen = openIndex === index;
 
     return (
-      <div key={index} className="overflow-hidden rounded-lg bg-[#F5F5F5] shadow-sm">
+      <div
+        key={index}
+        className="card-hover overflow-hidden rounded-lg bg-[#F5F5F5] shadow-sm"
+        data-animate="fade-up"
+        style={{ transitionDelay: `${index * 60}ms` }}
+      >
         <button onClick={() => toggleFAQ(index)} className="w-full p-1 text-left transition-colors">
           <div
             className={`flex w-full items-center justify-between rounded-lg px-5 py-4 transition-all duration-200 ${
@@ -86,9 +91,11 @@ const Roles = () => {
   };
 
   return (
-    <section className="border-border b-bottom border-dashed py-16 lg:py-20">
+    <section className="border-border b-bottom border-dashed py-16 lg:py-20" data-animate="fade-up">
       <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
-        <Starter heading="Open Roles at Our Company" />
+        <div data-animate="fade-up">
+          <Starter heading="Open Roles at Our Company" />
+        </div>
 
         <div className="grid w-full max-w-6xl grid-cols-1 items-start gap-6 md:grid-cols-2">
           <div className="space-y-4">{leftFAQs.map((faq, i) => renderItem(faq, i))}</div>
