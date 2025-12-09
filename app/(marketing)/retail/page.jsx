@@ -1,15 +1,18 @@
 import HeroStarter from '@/components/ui/HeroStarter';
 import Image from 'next/image';
 import CardImage from '@/assets/images/ecommerce-retail/retail-banner.svg';
+import ScrollAnimator from '@/components/ui/ScrollAnimator';
 
 const page = () => {
   return (
     <>
+      <ScrollAnimator />
       <HeroStarter
         heading="Simple Payment Solutions for Retail"
         text="Built to support every retail business with simple, reliable in-store payments."
         label="Retail"
         maxWidth="800px"
+        data-animate="fade-up"
       />
       <section className="border-border b-bottom border-dashed py-16 lg:py-20">
         <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-5">
