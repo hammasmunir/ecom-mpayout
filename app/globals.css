@@ -472,3 +472,60 @@ textarea {
     transform: translate(0, 0) !important;
   }
 }
+
+/* ---- Scroll entrance animations ---- */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: transform, opacity;
+}
+
+[data-animate='fade-left'] {
+  transform: translateX(-26px);
+}
+
+[data-animate='fade-right'] {
+  transform: translateX(26px);
+}
+
+[data-animate='zoom-in'] {
+  transform: scale(0.94);
+}
+
+[data-animate='fade-in'] {
+  transform: scale(0.98);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    transition: none;
+    opacity: 1;
+    transform: translate3d(0, 0, 0) !important;
+  }
+}
+
+/* ---- Subtle card interactivity ---- */
+.card-hover {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 18px 36px -12px rgba(0, 0, 0, 0.15);
+}
+
+.card-hover:active {
+  transform: translateY(-2px) scale(0.995);
+  box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.18);
+}

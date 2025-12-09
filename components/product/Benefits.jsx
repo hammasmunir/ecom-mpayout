@@ -8,15 +8,20 @@ import Image from 'next/image';
 
 const Benefits = () => {
   return (
-    <section className="border-border b-bottom border-dashed py-16 lg:py-20">
+    <section className="border-border b-bottom border-dashed py-16 lg:py-20" data-animate="fade-up">
       <section className="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5">
-        <Starter
-          heading="Built to Power Payments in Every Industry"
-          text="We provide the tools, technology, and stability your business needs to grow worldwide."
-          label="Benefits"
-        />
+        <div data-animate="fade-up">
+          <Starter
+            heading="Built to Power Payments in Every Industry"
+            text="We provide the tools, technology, and stability your business needs to grow worldwide."
+            label="Benefits"
+          />
+        </div>
         <section className="benefits-grid">
-          <article className="flex flex-col gap-3 rounded-2xl p-6 shadow-md lg:justify-end">
+          <article
+            className="card-hover flex flex-col gap-3 rounded-2xl bg-white p-6 shadow-md lg:justify-end"
+            data-animate="fade-up"
+          >
             <Image
               src={BenfitsImage1}
               alt="Benefit 1"
@@ -29,7 +34,11 @@ const Benefits = () => {
               </p>
             </div>
           </article>
-          <article className="flex flex-col justify-between gap-3 overflow-hidden rounded-2xl shadow-md">
+          <article
+            className="card-hover flex flex-col justify-between gap-3 overflow-hidden rounded-2xl bg-white shadow-md"
+            data-animate="fade-up"
+            style={{ transitionDelay: '80ms' }}
+          >
             <div className="flex flex-col gap-3 px-6 pt-6">
               <h5 className="text-lg font-medium">Transparent and Fair Processing</h5>
               <p className="text-text">
@@ -42,7 +51,11 @@ const Benefits = () => {
               className="mx-auto h-auto w-full max-w-[400px] lg:max-w-full"
             />
           </article>
-          <article className="flex flex-col justify-between gap-3 overflow-hidden rounded-2xl shadow-md">
+          <article
+            className="card-hover flex flex-col justify-between gap-3 overflow-hidden rounded-2xl bg-white shadow-md"
+            data-animate="fade-up"
+            style={{ transitionDelay: '140ms' }}
+          >
             <div className="flex flex-col gap-3 px-6 pt-6">
               <h5 className="text-lg font-medium">Scales as You Grow</h5>
               <p className="text-text">
@@ -55,7 +68,11 @@ const Benefits = () => {
               className="mx-auto h-auto w-full max-w-[400px] lg:max-w-full"
             />
           </article>
-          <article className="flex flex-col justify-between gap-3 overflow-hidden rounded-2xl shadow-md">
+          <article
+            className="card-hover flex flex-col justify-between gap-3 overflow-hidden rounded-2xl bg-white shadow-md"
+            data-animate="fade-up"
+            style={{ transitionDelay: '200ms' }}
+          >
             <div className="flex max-w-lg flex-col gap-3 px-6 pt-6">
               <h5 className="text-lg font-medium">Know Exactly Where Your Money Is</h5>
               <p className="text-text">
