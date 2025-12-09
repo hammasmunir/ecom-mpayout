@@ -3,7 +3,7 @@ import { MdArrowOutward } from 'react-icons/md';
 import Label from '../ui/Label';
 import FlashIcon from '@/assets/icons/FlashIcon';
 import HeroDesktop from '@/assets/images/hero-simple.svg';
-import HeroMobile from '@/assets/images/hero-mobile.svg';
+import HeroMobile from '@/assets/images/hero-mob-simple.svg';
 import Button from '../ui/Button';
 import ThumbIcon from '@/assets/icons/hero-icons/ThumbIcon';
 import DollarIcon from '@/assets/icons/hero-icons/DollarIcon';

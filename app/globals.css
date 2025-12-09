@@ -100,6 +100,14 @@ textarea {
     z-index: -1;
   }
 }
+@media screen and (max-width: 768px) {
+  .hero-div {
+    &:after {
+      content: '';
+      max-width: 300px;
+    }
+  }
+}
 
 @keyframes hero-glow {
   0% {
