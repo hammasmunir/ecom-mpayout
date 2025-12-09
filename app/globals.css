@@ -85,6 +85,18 @@ textarea {
     height: 100px;
     background: linear-gradient(to bottom, transparent, white);
   }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    box-shadow: 0 0 100px 30px #0357f0;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 100px;
+    background: pink;
+    z-index: -1;
+  }
 }
 
 .benefits-grid {

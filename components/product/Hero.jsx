@@ -2,9 +2,13 @@ import Image from 'next/image';
 import { MdArrowOutward } from 'react-icons/md';
 import Label from '../ui/Label';
 import FlashIcon from '@/assets/icons/FlashIcon';
-import HeroDesktop from '@/assets/images/hero-desk.svg';
+import HeroDesktop from '@/assets/images/hero-simple.svg';
 import HeroMobile from '@/assets/images/hero-mobile.svg';
 import Button from '../ui/Button';
+import ThumbIcon from '@/assets/icons/hero-icons/ThumbIcon';
+import DollarIcon from '@/assets/icons/hero-icons/DollarIcon';
+import WalletIcon from '@/assets/icons/hero-icons/WalletIcon';
+import CardIcon from '@/assets/icons/hero-icons/CardIcon';
 
 const Hero = () => {
   return (
@@ -36,7 +40,7 @@ const Hero = () => {
         </div>
 
         {/* ===== Dashboard + Group Image ===== */}
-        <div className="hero-div relative -mt-16 w-full max-w-5xl">
+        <div className="hero-div relative mt-10 w-full max-w-5xl">
           {/* Dashboard Image */}
           <Image src={HeroDesktop} alt="Dashboard preview" className="hidden w-full md:block" />
           <Image
@@ -44,6 +48,10 @@ const Hero = () => {
             alt="Dashboard preview mobile"
             className="block w-full md:hidden"
           />
+          <ThumbIcon />
+          <DollarIcon />
+          <WalletIcon />
+          <CardIcon />
         </div>
       </div>
     </section>
