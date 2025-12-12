@@ -295,22 +295,57 @@ const ROICalculator = () => {
             )}
             <div className="flex w-full flex-col gap-4">
               {[
-                { label: 'Yearly Volume', value: '$50,000' },
-                { label: 'Average Order Value', value: '$80.00' },
-                { label: 'Chargebacks Rate', value: '0.5%' },
-                { label: 'Profit margin (%)', value: '10%' },
+                {
+                  label: 'Yearly Volume',
+                  name: 'yearlyVolume',
+                  value: userData.yearlyVolume,
+                  symbol: '$',
+                },
+                {
+                  label: 'Average Order Value',
+                  name: 'averageOrderValue',
+                  value: userData.averageOrderValue,
+                  symbol: '$',
+                },
+                {
+                  label: 'Chargebacks Rate',
+                  name: 'chargebacksRate',
+                  value: userData.chargebacksRate,
+                  symbol: '%',
+                },
+                {
+                  label: 'Profit margin (%)',
+                  name: 'profitMargin',
+                  value: userData.profitMargin,
+                  symbol: '%',
+                },
               ].map((field) => (
                 <label
                   key={field.label}
                   className="text-text flex flex-col gap-2 text-sm font-medium"
                 >
                   {field.label}
-                  <input
-                    type="text"
-                    value={field.value}
-                    readOnly
-                    className="w-full rounded-lg border border-[#E5E7EB] px-4 py-3 text-base font-medium text-gray-900"
-                  />
+                  <div className="relative w-full">
+                    {field.symbol === '$' && (
+                      <span className="absolute top-1/2 left-4 -translate-y-1/2 text-base font-medium text-gray-500">
+                        {field.symbol}
+                      </span>
+                    )}
+                    <input
+                      type="text"
+                      name={field.name}
+                      value={field.value}
+                      onChange={(e) => setUserData({ ...userData, [field.name]: e.target.value })}
+                      className={`w-full rounded-lg border border-[#E5E7EB] py-3 text-base font-medium text-gray-900 ${
+                        field.symbol === '$' ? 'pr-4 pl-8' : 'pr-8 pl-4'
+                      }`}
+                    />
+                    {field.symbol === '%' && (
+                      <span className="absolute top-1/2 right-4 -translate-y-1/2 text-base font-medium text-gray-500">
+                        {field.symbol}
+                      </span>
+                    )}
+                  </div>
                 </label>
               ))}
               <label className="text-text flex flex-col gap-2 text-sm font-medium">
