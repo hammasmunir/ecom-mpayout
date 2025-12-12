@@ -10,6 +10,7 @@ import ROIBg from '@/assets/images/roi-bg.png';
 import Logo from '@/assets/images/main-logo.svg';
 import CalculatorIcon from '@/assets/icons/CalculatorIcon';
 import NotesIcon from '@/assets/icons/NotesIcon';
+import ROIBG from '@/assets/images/ROIBG';
 
 const ROICalculator = () => {
   const industries = ['Select from Dropdown', 'E-commerce', 'Retail', 'SaaS'];
@@ -26,11 +27,13 @@ const ROICalculator = () => {
           />
         </div>
         <section
-          className="mx-auto grid w-full max-w-5xl grid-cols-1 grid-rows-1 gap-5 rounded-lg bg-cover p-5 lg:grid-cols-[0.8fr_1fr_1fr]"
-          style={{ backgroundImage: `url(${ROIBg.src})` }}
+          className="roi-bg relative mx-auto grid w-full max-w-5xl grid-cols-1 grid-rows-1 gap-5 overflow-hidden rounded-lg bg-[#F5F5F5] bg-cover p-5 lg:grid-cols-[0.8fr_1fr_1fr]"
           data-animate="fade-up"
         >
-          <div className="card-hover col-span-1 rounded-md bg-white p-4" data-animate="fade-up">
+          <div className="circle absolute bottom-0 left-0 h-0 w-[10px] rounded-full bg-[#0356f050] shadow-[0_0_500px_90px_#0356f0] backdrop-blur-2xl"></div>
+          <div className="circle absolute top-1/2 left-1/2 h-0 w-[10px] rounded-full bg-[#03CCF0] shadow-[0_0_500px_90px_#03CCF0] backdrop-blur-2xl"></div>
+          <div className="circle absolute top-0 right-0 h-0 w-[10px] rounded-full bg-[##3E03F0] shadow-[0_0_500px_90px_#3E03F0] backdrop-blur-2xl"></div>
+          <div className="col-span-1 rounded-md bg-white p-4" data-animate="fade-up">
             <div className="mb-4 flex justify-center rounded-md bg-[#EDF3FF] p-4">
               <Image src={Logo} alt="Logo" />
             </div>
@@ -41,7 +44,7 @@ const ROICalculator = () => {
             </ul>
           </div>
           <div
-            className="card-hover col-span-1 rounded-md bg-white p-4"
+            className="col-span-1 rounded-md bg-white p-4"
             data-animate="fade-up"
             style={{ transitionDelay: '80ms' }}
           >
@@ -81,7 +84,7 @@ const ROICalculator = () => {
             </div>
           </div>
           <div
-            className="card-hover col-span-1 rounded-md bg-white p-4"
+            className="col-span-1 rounded-md bg-white p-4"
             data-animate="fade-up"
             style={{ transitionDelay: '160ms' }}
           >
