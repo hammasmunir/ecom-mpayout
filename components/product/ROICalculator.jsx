@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import Starter from '../ui/Starter';
 import IndustryDropdown from '../ui/IndustryDropdown';
 import Image from 'next/image';
@@ -134,15 +134,6 @@ const ROICalculator = () => {
     profitMargin: '',
   });
 
-  const [resultData, setResultData] = useState({
-    grossRevenue: '',
-    transactionFee: '',
-    perTransactionFee: '',
-    monthlyFee: '',
-    setupFee: '',
-    netRevenue: '',
-  });
-
   const [selectedIndustry, setSelectedIndustry] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -258,8 +249,8 @@ const ROICalculator = () => {
     });
   };
 
-  // Optimized calculation function
-  const calculateROI = () => {
+  // Auto-calculate results using useMemo
+  const resultData = useMemo(() => {
     const { yearlyVolume, averageOrderValue, profitMargin, chargebacksRate } = userData;
 
     // Validate inputs
@@ -267,25 +258,44 @@ const ROICalculator = () => {
     const avgOrder = parseFloat(averageOrderValue);
     const profit = parseFloat(profitMargin);
 
+    // Silent validation - don't calculate if required fields are missing
     if (!yearly || !avgOrder || !profit) {
-      alert('Please fill in all required fields with valid numbers');
-      return;
+      return {
+        grossRevenue: '',
+        transactionFee: '',
+        perTransactionFee: '',
+        monthlyFee: '',
+        setupFee: '',
+        netRevenue: '',
+      };
     }
 
     // For competitor companies, chargeback rate is required
     if (selectedCompany !== 'ecomPayouts') {
       const chargeback = parseFloat(chargebacksRate);
       if (!chargeback && chargeback !== 0) {
-        alert('Please enter a chargeback rate for competitor pricing calculation');
-        return;
+        return {
+          grossRevenue: '',
+          transactionFee: '',
+          perTransactionFee: '',
+          monthlyFee: '',
+          setupFee: '',
+          netRevenue: '',
+        };
       }
     }
 
     // Get pricing data for selected company and risk level
     const pricingData = getPricingData();
     if (!pricingData) {
-      alert('Please select an industry to determine risk level');
-      return;
+      return {
+        grossRevenue: '',
+        transactionFee: '',
+        perTransactionFee: '',
+        monthlyFee: '',
+        setupFee: '',
+        netRevenue: '',
+      };
     }
 
     // Calculate values using pricing data
@@ -296,15 +306,16 @@ const ROICalculator = () => {
     const netRevenue =
       yearly * (profit / 100) - transactionFee - pricingData.monthlyFee - pricingData.setupFee;
 
-    setResultData({
+    return {
       grossRevenue: formatNumber(yearly),
       transactionFee: formatNumber(transactionFee),
       perTransactionFee: formatNumber(perTransactionFee),
       monthlyFee: formatNumber(pricingData.monthlyFee),
       setupFee: formatNumber(pricingData.setupFee),
       netRevenue: formatNumber(netRevenue),
-    });
-  };
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userData, selectedCompany, selectedIndustry]);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -377,17 +388,11 @@ const ROICalculator = () => {
               <Image src={PayCloudIcon} alt="Logo" />
             </div>
             <div
-              className={`mb-4 flex cursor-pointer justify-center rounded-md bg-[#EDF3FF] p-4 ${selectedCompany === 'highRisk' ? 'bg-[#EDF3FF]' : 'bg-white'}`}
+              className={`flex cursor-pointer justify-center rounded-md bg-[#EDF3FF] p-4 ${selectedCompany === 'highRisk' ? 'bg-[#EDF3FF]' : 'bg-white'}`}
               onClick={() => selectCompany('highRisk')}
             >
               <Image src={HighRiskIcon} alt="Logo" />
             </div>
-            <button
-              onClick={calculateROI}
-              className="w-full rounded-lg bg-blue-600 px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-            >
-              Calculate ROI
-            </button>
           </div>
           <div
             className="col-span-1 flex flex-col items-start gap-4 rounded-md bg-white p-4"
