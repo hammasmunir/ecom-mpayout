@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Label from '../ui/Label';
 import Starter from '../ui/Starter';
-import Dropdown from '../ui/Dropdown';
+import IndustryDropdown from '../ui/IndustryDropdown';
 import Image from 'next/image';
 import ROIimage from '@/assets/images/roi-calc.svg';
 import ROIBg from '@/assets/images/roi-bg.png';
@@ -12,8 +12,49 @@ import CalculatorIcon from '@/assets/icons/CalculatorIcon';
 import NotesIcon from '@/assets/icons/NotesIcon';
 
 const ROICalculator = () => {
-  const industries = ['Select from Dropdown', 'E-commerce', 'Retail', 'SaaS'];
-  const [selectedIndustry, setSelectedIndustry] = useState(industries[0]);
+  const groupedIndustries = [
+    {
+      label: 'Low-Risk',
+      items: [
+        'Fashion & Apparel',
+        'Beauty & Personal Care',
+        'Electronics & Gadgets',
+        'Home & Kitchen',
+        'Pets',
+        'Baby & Kids',
+        'Sports & Outdoor',
+        'Jewelry & Accessories',
+        'Home Improvement / DIY',
+        'Automotive Accessories',
+        'Gifts / Custom Products',
+      ],
+    },
+    {
+      label: 'Mid-Risk',
+      items: [
+        'Health & Wellness',
+        'Coaching / Online Courses',
+        'Dropshipping Stores',
+        'Travel & Ticketing',
+        'Event & Raffle Sites',
+      ],
+    },
+    {
+      label: 'High-Risk',
+      items: [
+        'CBD & Hemp Products',
+        'Nutraceuticals & Supplements',
+        'Vape & Tobacco Alternatives',
+        'Firearms & Weapon Accessories',
+        'Adult Products',
+        'Crypto, Web3 & Investment',
+        'Dating Sites & Apps',
+        'Debt Repair / Credit Services',
+      ],
+    },
+  ];
+
+  const [selectedIndustry, setSelectedIndustry] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -109,8 +150,8 @@ const ROICalculator = () => {
               ))}
               <label className="text-text flex flex-col gap-2 text-sm font-medium">
                 Industry
-                <Dropdown
-                  options={industries}
+                <IndustryDropdown
+                  groupedOptions={groupedIndustries}
                   value={selectedIndustry}
                   onChange={setSelectedIndustry}
                   placeholder="Select from Dropdown"
