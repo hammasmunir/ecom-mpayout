@@ -165,6 +165,21 @@ const ROICalculator = () => {
       userData;
     if (selectedCompany === 'ecomPayouts') {
       const value = yearlyVolume * (ecomCalcData.percentage / 100);
+      const perTransactionFee =
+        averageOrderValue * (ecomCalcData.percentage / 100) + ecomCalcData.transVal;
+      const transactionFee = value + (yearlyVolume / averageOrderValue) * ecomCalcData.transVal;
+      const monthlyFee = ecomCalcData.monthlyFee;
+      const setupFee = ecomCalcData.setupFee;
+      const netRevenue =
+        yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+      setResultData({
+        grossRevenue: yearlyVolume,
+        transactionFee: transactionFee,
+        perTransactionFee: perTransactionFee,
+        monthlyFee: monthlyFee,
+        setupFee: setupFee,
+        netRevenue: netRevenue,
+      });
     }
   };
 
