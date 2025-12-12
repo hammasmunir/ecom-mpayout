@@ -10,6 +10,7 @@ import ScrollAnimator from '@/components/ui/ScrollAnimator';
 export default function ProductPage() {
   return (
     <>
+      {/* //Comment */}
       <ScrollAnimator />
       <Hero />
       <ImageCarousel />
