@@ -162,6 +162,31 @@ const ROICalculator = () => {
     return null;
   };
 
+  // Get effective risk level considering chargeback rate for competitors
+  const getEffectiveRiskLevel = () => {
+    // For ecomPayouts, risk level doesn't affect pricing
+    if (selectedCompany === 'ecomPayouts') {
+      return getRiskLevel(); // Just for display purposes
+    }
+
+    // For competitors, chargeback rate can override industry risk
+    const chargebackRate = parseFloat(userData.chargebacksRate);
+
+    if (chargebackRate && !isNaN(chargebackRate)) {
+      // Chargeback rate >= 1% → Force High-Risk
+      if (chargebackRate >= 1) {
+        return 'High-Risk';
+      }
+      // Chargeback rate >= 0.7% and < 1% → Force Mid-Risk
+      if (chargebackRate >= 0.7) {
+        return 'Mid-Risk';
+      }
+    }
+
+    // Below 0.7% or no chargeback rate → Use industry-based risk
+    return getRiskLevel();
+  };
+
   const getRiskBadgeStyles = (riskLevel) => {
     switch (riskLevel) {
       case 'Low-Risk':
@@ -206,6 +231,9 @@ const ROICalculator = () => {
       return ECOM_PRICING;
     }
 
+    // For competitors, use effective risk level (considers chargeback rate)
+    const effectiveRisk = getEffectiveRiskLevel();
+
     // Map risk levels to nested keys
     const riskMap = {
       'Low-Risk': 'lowRisk',
@@ -213,7 +241,7 @@ const ROICalculator = () => {
       'High-Risk': 'highRisk',
     };
 
-    const riskKey = riskMap[currentRiskLevel];
+    const riskKey = riskMap[effectiveRisk];
     if (!riskKey || !COMPETITOR_PRICING[selectedCompany]) {
       return null;
     }
@@ -232,7 +260,7 @@ const ROICalculator = () => {
 
   // Optimized calculation function
   const calculateROI = () => {
-    const { yearlyVolume, averageOrderValue, profitMargin } = userData;
+    const { yearlyVolume, averageOrderValue, profitMargin, chargebacksRate } = userData;
 
     // Validate inputs
     const yearly = parseFloat(yearlyVolume);
@@ -242,6 +270,15 @@ const ROICalculator = () => {
     if (!yearly || !avgOrder || !profit) {
       alert('Please fill in all required fields with valid numbers');
       return;
+    }
+
+    // For competitor companies, chargeback rate is required
+    if (selectedCompany !== 'ecomPayouts') {
+      const chargeback = parseFloat(chargebacksRate);
+      if (!chargeback && chargeback !== 0) {
+        alert('Please enter a chargeback rate for competitor pricing calculation');
+        return;
+      }
     }
 
     // Get pricing data for selected company and risk level
@@ -362,11 +399,24 @@ const ROICalculator = () => {
               <h3 className="text-xl font-medium">ROI Calculator</h3>
             </div>
             {currentRiskLevel && (
-              <div
-                className={`${badgeStyles.bgColor} ${badgeStyles.textColor} ${badgeStyles.borderColor} flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium`}
-              >
-                <div className={`${badgeStyles.dotColor} h-2.5 w-2.5 rounded-full`}></div>
-                <span>{currentRiskLevel}</span>
+              <div className="flex flex-col gap-2">
+                <div
+                  className={`${badgeStyles.bgColor} ${badgeStyles.textColor} ${badgeStyles.borderColor} flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium`}
+                >
+                  <div className={`${badgeStyles.dotColor} h-2.5 w-2.5 rounded-full`}></div>
+                  <span>{currentRiskLevel} (Industry)</span>
+                </div>
+                {selectedCompany !== 'ecomPayouts' &&
+                  getEffectiveRiskLevel() !== currentRiskLevel && (
+                    <div
+                      className={`${getRiskBadgeStyles(getEffectiveRiskLevel()).bgColor} ${getRiskBadgeStyles(getEffectiveRiskLevel()).textColor} ${getRiskBadgeStyles(getEffectiveRiskLevel()).borderColor} flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium`}
+                    >
+                      <div
+                        className={`${getRiskBadgeStyles(getEffectiveRiskLevel()).dotColor} h-2.5 w-2.5 rounded-full`}
+                      ></div>
+                      <span>{getEffectiveRiskLevel()} (Pricing - High Chargeback)</span>
+                    </div>
+                  )}
               </div>
             )}
             <div className="flex w-full flex-col gap-4">
