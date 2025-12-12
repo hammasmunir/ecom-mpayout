@@ -54,11 +54,94 @@ const ROICalculator = () => {
     },
   ];
 
+  const [userData, setUserData] = useState({
+    yearlyVolume: '',
+    averageOrderValue: '',
+    chargebacksRate: '',
+    profitMargin: '',
+    industry: '',
+    riskLevel: '',
+  });
+
+  const [calcData, setCalcData] = useState({
+    percentage: null,
+    monthlyFee: null,
+    setupFee: null,
+  });
+
+  const [resultData, setResultData] = useState({
+    grossRevenue: '',
+    transactionFee: '',
+    perTransactionFee: '',
+    monthlyFee: '',
+    setupFee: '',
+    netRevenue: '',
+  });
+
+  const [ecomCalcData, setEcomCalcData] = useState({
+    percentage: 2.45,
+    monthlyFee: 50,
+    setupFee: 0,
+  });
+
+  const [compCalcData, setCompCalcData] = useState({
+    zenPayments: {
+      lowRisk: {
+        percentage: 2.82,
+        monthlyFee: 50,
+        setupFee: 250,
+      },
+      midRisk: {
+        percentage: 3.12,
+        monthlyFee: 150,
+        setupFee: 250,
+      },
+      highRisk: {
+        percentage: 4.4,
+        monthlyFee: 150,
+        setupFee: 250,
+      },
+    },
+    highRisk: {
+      lowRisk: {
+        percentage: 2.8,
+        monthlyFee: 50,
+        setupFee: 250,
+      },
+      midRisk: {
+        percentage: 3.1,
+        monthlyFee: 150,
+        setupFee: 250,
+      },
+      highRisk: {
+        percentage: 4.3,
+        monthlyFee: 150,
+        setupFee: 250,
+      },
+    },
+    highRisk: {
+      lowRisk: {
+        percentage: 2.77,
+        monthlyFee: 50,
+        setupFee: 250,
+      },
+      midRisk: {
+        percentage: 3.07,
+        monthlyFee: 150,
+        setupFee: 250,
+      },
+      highRisk: {
+        percentage: 4.25,
+        monthlyFee: 150,
+        setupFee: 250,
+      },
+    },
+  });
+
   const [selectedIndustry, setSelectedIndustry] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Function to get the risk level of the selected industry
   const getRiskLevel = () => {
     if (!selectedIndustry) return null;
 
@@ -70,7 +153,6 @@ const ROICalculator = () => {
     return null;
   };
 
-  // Get risk level badge styling
   const getRiskBadgeStyles = (riskLevel) => {
     switch (riskLevel) {
       case 'Low-Risk':
