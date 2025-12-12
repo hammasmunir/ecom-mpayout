@@ -153,34 +153,15 @@ const ROICalculator = () => {
   };
 
   const [selectedIndustry, setSelectedIndustry] = useState('');
+  const handleSelectedIndustry = (industry) => {
+    setSelectedIndustry(industry);
+    setUserData({ ...userData, riskLevel: getRiskLevel() });
+  };
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   const selectCompany = (company) => {
     setSelectedCompany(company);
-  };
-
-  const calculateROI = () => {
-    const { yearlyVolume, averageOrderValue, chargebacksRate, profitMargin, industry, riskLevel } =
-      userData;
-    if (selectedCompany === 'ecomPayouts') {
-      const value = yearlyVolume * (ecomCalcData.percentage / 100);
-      const perTransactionFee =
-        averageOrderValue * (ecomCalcData.percentage / 100) + ecomCalcData.transVal;
-      const transactionFee = value + (yearlyVolume / averageOrderValue) * ecomCalcData.transVal;
-      const monthlyFee = ecomCalcData.monthlyFee;
-      const setupFee = ecomCalcData.setupFee;
-      const netRevenue =
-        yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
-      setResultData({
-        grossRevenue: yearlyVolume,
-        transactionFee: transactionFee,
-        perTransactionFee: perTransactionFee,
-        monthlyFee: monthlyFee,
-        setupFee: setupFee,
-        netRevenue: netRevenue,
-      });
-    }
   };
 
   const getRiskLevel = () => {
@@ -232,6 +213,208 @@ const ROICalculator = () => {
     ? getRiskBadgeStyles(currentRiskLevel)
     : getRiskBadgeStyles(null);
 
+  const calculateROI = () => {
+    const { yearlyVolume, averageOrderValue, chargebacksRate, profitMargin, industry } = userData;
+    console.log(currentRiskLevel);
+    if (selectedCompany === 'ecomPayouts') {
+      const value = yearlyVolume * (ecomCalcData.percentage / 100);
+      const perTransactionFee =
+        averageOrderValue * (ecomCalcData.percentage / 100) + ecomCalcData.transVal;
+      const transactionFee = value + (yearlyVolume / averageOrderValue) * ecomCalcData.transVal;
+      const monthlyFee = ecomCalcData.monthlyFee;
+      const setupFee = ecomCalcData.setupFee;
+      const netRevenue =
+        yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+      setResultData({
+        grossRevenue: yearlyVolume,
+        transactionFee: transactionFee,
+        perTransactionFee: perTransactionFee,
+        monthlyFee: monthlyFee,
+        setupFee: setupFee,
+        netRevenue: netRevenue,
+      });
+    } else if (selectedCompany === 'zenPayments') {
+      if (currentRiskLevel === 'Low-Risk') {
+        const value = yearlyVolume * (compCalData.zenPayments.lowRisk.percentage / 100);
+        const perTransactionFee =
+          averageOrderValue * (compCalData.zenPayments.lowRisk.percentage / 100) +
+          compCalData.zenPayments.lowRisk.transVal;
+        const transactionFee =
+          value + (yearlyVolume / averageOrderValue) * compCalData.zenPayments.lowRisk.transVal;
+        const monthlyFee = compCalData.zenPayments.lowRisk.monthlyFee;
+        const setupFee = compCalData.zenPayments.lowRisk.setupFee;
+        const netRevenue =
+          yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+        setResultData({
+          grossRevenue: yearlyVolume,
+          transactionFee: transactionFee,
+          perTransactionFee: perTransactionFee,
+          monthlyFee: monthlyFee,
+          setupFee: setupFee,
+          netRevenue: netRevenue,
+        });
+      } else if (currentRiskLevel === 'Mid-Risk') {
+        const value = yearlyVolume * (compCalData.zenPayments.midRisk.percentage / 100);
+        const perTransactionFee =
+          averageOrderValue * (compCalData.zenPayments.midRisk.percentage / 100) +
+          compCalData.zenPayments.midRisk.transVal;
+        const transactionFee =
+          value + (yearlyVolume / averageOrderValue) * compCalData.zenPayments.midRisk.transVal;
+        const monthlyFee = compCalData.zenPayments.midRisk.monthlyFee;
+        const setupFee = compCalData.zenPayments.midRisk.setupFee;
+        const netRevenue =
+          yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+        setResultData({
+          grossRevenue: yearlyVolume,
+          transactionFee: transactionFee,
+          perTransactionFee: perTransactionFee,
+          monthlyFee: monthlyFee,
+          setupFee: setupFee,
+          netRevenue: netRevenue,
+        });
+      } else if (currentRiskLevel === 'High-Risk') {
+        const value = yearlyVolume * (compCalData.zenPayments.highRisk.percentage / 100);
+        const perTransactionFee =
+          averageOrderValue * (compCalData.zenPayments.highRisk.percentage / 100) +
+          compCalData.zenPayments.highRisk.transVal;
+        const transactionFee =
+          value + (yearlyVolume / averageOrderValue) * compCalData.zenPayments.highRisk.transVal;
+        const monthlyFee = compCalData.zenPayments.highRisk.monthlyFee;
+        const setupFee = compCalData.zenPayments.highRisk.setupFee;
+        const netRevenue =
+          yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+        setResultData({
+          grossRevenue: yearlyVolume,
+          transactionFee: transactionFee,
+          perTransactionFee: perTransactionFee,
+          monthlyFee: monthlyFee,
+          setupFee: setupFee,
+          netRevenue: netRevenue,
+        });
+      }
+    } else if (selectedCompany === 'payCloud') {
+      if (currentRiskLevel === 'Low-Risk') {
+        const value = yearlyVolume * (compCalData.payCloud.lowRisk.percentage / 100);
+        const perTransactionFee =
+          averageOrderValue * (compCalData.payCloud.lowRisk.percentage / 100) +
+          compCalData.payCloud.lowRisk.transVal;
+        const transactionFee =
+          value + (yearlyVolume / averageOrderValue) * compCalData.payCloud.lowRisk.transVal;
+        const monthlyFee = compCalData.payCloud.lowRisk.monthlyFee;
+        const setupFee = compCalData.payCloud.lowRisk.setupFee;
+        const netRevenue =
+          yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+        setResultData({
+          grossRevenue: yearlyVolume,
+          transactionFee: transactionFee,
+          perTransactionFee: perTransactionFee,
+          monthlyFee: monthlyFee,
+          setupFee: setupFee,
+          netRevenue: netRevenue,
+        });
+      } else if (currentRiskLevel === 'Mid-Risk') {
+        const value = yearlyVolume * (compCalData.payCloud.midRisk.percentage / 100);
+        const perTransactionFee =
+          averageOrderValue * (compCalData.payCloud.midRisk.percentage / 100) +
+          compCalData.payCloud.midRisk.transVal;
+        const transactionFee =
+          value + (yearlyVolume / averageOrderValue) * compCalData.payCloud.midRisk.transVal;
+        const monthlyFee = compCalData.payCloud.midRisk.monthlyFee;
+        const setupFee = compCalData.payCloud.midRisk.setupFee;
+        const netRevenue =
+          yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+        setResultData({
+          grossRevenue: yearlyVolume,
+          transactionFee: transactionFee,
+          perTransactionFee: perTransactionFee,
+          monthlyFee: monthlyFee,
+          setupFee: setupFee,
+          netRevenue: netRevenue,
+        });
+      } else if (currentRiskLevel === 'High-Risk') {
+        const value = yearlyVolume * (compCalData.payCloud.highRisk.percentage / 100);
+        const perTransactionFee =
+          averageOrderValue * (compCalData.payCloud.highRisk.percentage / 100) +
+          compCalData.payCloud.highRisk.transVal;
+        const transactionFee =
+          value + (yearlyVolume / averageOrderValue) * compCalData.payCloud.highRisk.transVal;
+        const monthlyFee = compCalData.payCloud.highRisk.monthlyFee;
+        const setupFee = compCalData.payCloud.highRisk.setupFee;
+        const netRevenue =
+          yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+        setResultData({
+          grossRevenue: yearlyVolume,
+          transactionFee: transactionFee,
+          perTransactionFee: perTransactionFee,
+          monthlyFee: monthlyFee,
+          setupFee: setupFee,
+          netRevenue: netRevenue,
+        });
+      }
+    } else if (selectedCompany === 'highRisk') {
+      if (currentRiskLevel === 'Low-Risk') {
+        const value = yearlyVolume * (compCalData.highRisk.lowRisk.percentage / 100);
+        const perTransactionFee =
+          averageOrderValue * (compCalData.highRisk.lowRisk.percentage / 100) +
+          compCalData.highRisk.lowRisk.transVal;
+        const transactionFee =
+          value + (yearlyVolume / averageOrderValue) * compCalData.highRisk.lowRisk.transVal;
+        const monthlyFee = compCalData.highRisk.lowRisk.monthlyFee;
+        const setupFee = compCalData.highRisk.lowRisk.setupFee;
+        const netRevenue =
+          yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+        setResultData({
+          grossRevenue: yearlyVolume,
+          transactionFee: transactionFee,
+          perTransactionFee: perTransactionFee,
+          monthlyFee: monthlyFee,
+          setupFee: setupFee,
+          netRevenue: netRevenue,
+        });
+      } else if (currentRiskLevel === 'Mid-Risk') {
+        const value = yearlyVolume * (compCalData.highRisk.midRisk.percentage / 100);
+        const perTransactionFee =
+          averageOrderValue * (compCalData.highRisk.midRisk.percentage / 100) +
+          compCalData.highRisk.midRisk.transVal;
+        const transactionFee =
+          value + (yearlyVolume / averageOrderValue) * compCalData.highRisk.midRisk.transVal;
+        const monthlyFee = compCalData.highRisk.midRisk.monthlyFee;
+        const setupFee = compCalData.highRisk.midRisk.setupFee;
+        const netRevenue =
+          yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+        setResultData({
+          grossRevenue: yearlyVolume,
+          transactionFee: transactionFee,
+          perTransactionFee: perTransactionFee,
+          monthlyFee: monthlyFee,
+          setupFee: setupFee,
+          netRevenue: netRevenue,
+        });
+      } else if (currentRiskLevel === 'High-Risk') {
+        const value = yearlyVolume * (compCalData.highRisk.highRisk.percentage / 100);
+        const perTransactionFee =
+          averageOrderValue * (compCalData.highRisk.highRisk.percentage / 100) +
+          compCalData.highRisk.highRisk.transVal;
+        const transactionFee =
+          value + (yearlyVolume / averageOrderValue) * compCalData.highRisk.highRisk.transVal;
+        const monthlyFee = compCalData.highRisk.highRisk.monthlyFee;
+        const setupFee = compCalData.highRisk.highRisk.setupFee;
+        const netRevenue =
+          yearlyVolume * (profitMargin / 100) - transactionFee - monthlyFee - setupFee;
+        setResultData({
+          grossRevenue: yearlyVolume,
+          transactionFee: transactionFee,
+          perTransactionFee: perTransactionFee,
+          monthlyFee: monthlyFee,
+          setupFee: setupFee,
+          netRevenue: netRevenue,
+        });
+      }
+    } else {
+      document.location.reload();
+      return;
+    }
+  };
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -388,7 +571,7 @@ const ROICalculator = () => {
                 <IndustryDropdown
                   groupedOptions={groupedIndustries}
                   value={selectedIndustry}
-                  onChange={setSelectedIndustry}
+                  onChange={handleSelectedIndustry}
                   placeholder="Select from Dropdown"
                 />
               </label>
