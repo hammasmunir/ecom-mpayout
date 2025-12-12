@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Label from '../ui/Label';
 import Starter from '../ui/Starter';
 import Dropdown from '../ui/Dropdown';
@@ -10,11 +10,41 @@ import ROIBg from '@/assets/images/roi-bg.png';
 import Logo from '@/assets/images/main-logo.svg';
 import CalculatorIcon from '@/assets/icons/CalculatorIcon';
 import NotesIcon from '@/assets/icons/NotesIcon';
-import ROIBG from '@/assets/images/ROIBG';
 
 const ROICalculator = () => {
   const industries = ['Select from Dropdown', 'E-commerce', 'Retail', 'SaaS'];
   const [selectedIndustry, setSelectedIndustry] = useState(industries[0]);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            // Once animated, we can disconnect the observer
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the section is visible
+        rootMargin: '0px',
+      }
+    );
+
+    const currentSection = sectionRef.current;
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.disconnect();
+      }
+    };
+  }, []);
 
   return (
     <section className="border-border b-bottom border-dashed py-16 lg:py-20" data-animate="fade-up">
@@ -27,12 +57,17 @@ const ROICalculator = () => {
           />
         </div>
         <section
+          ref={sectionRef}
           className="roi-bg relative mx-auto grid w-full max-w-5xl grid-cols-1 grid-rows-1 gap-5 overflow-hidden rounded-lg bg-[#F5F5F5] bg-cover p-5 lg:grid-cols-[0.8fr_1fr_1fr]"
           data-animate="fade-up"
         >
-          <div className="circle absolute bottom-0 left-0 h-0 w-[10px] rounded-full bg-[#0356f050] shadow-[0_0_500px_90px_#0356f0] backdrop-blur-2xl"></div>
-          <div className="circle absolute top-1/2 left-1/2 h-0 w-[10px] rounded-full bg-[#03CCF0] shadow-[0_0_500px_90px_#03CCF0] backdrop-blur-2xl"></div>
-          <div className="circle absolute top-0 right-0 h-0 w-[10px] rounded-full bg-[##3E03F0] shadow-[0_0_500px_90px_#3E03F0] backdrop-blur-2xl"></div>
+          <div
+            className={`circle roi-blob roi-blob-bottom absolute bottom-0 left-0 h-0 w-[10px] rounded-full bg-[#0356f050] shadow-[0_0_500px_90px_#0356f0] backdrop-blur-2xl ${isVisible ? 'animate' : ''}`}
+          ></div>
+          <div className="circle roi-blob roi-blob-mid absolute top-1/2 left-1/2 h-0 w-[10px] rounded-full bg-[#03CCF0] shadow-[0_0_500px_90px_#03CCF0] backdrop-blur-2xl"></div>
+          <div
+            className={`circle roi-blob roi-blob-top absolute top-0 right-0 h-0 w-[10px] rounded-full bg-[#3E03F0] shadow-[0_0_500px_90px_#3E03F0] backdrop-blur-2xl ${isVisible ? 'animate' : ''}`}
+          ></div>
           <div className="col-span-1 rounded-md bg-white p-4" data-animate="fade-up">
             <div className="mb-4 flex justify-center rounded-md bg-[#EDF3FF] p-4">
               <Image src={Logo} alt="Logo" />

@@ -529,3 +529,35 @@ textarea {
   transform: translateY(-2px) scale(0.995);
   box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.18);
 }
+
+.roi-blob {
+  transition: all 0.9s;
+}
+.roi-blob-bottom {
+  bottom: 100%;
+}
+.roi-blob-bottom.animate {
+  animation: roi-b 3s forwards;
+}
+.roi-blob-top {
+  top: 100%;
+}
+.roi-blob-top.animate {
+  animation: roi-t 3s forwards;
+}
+@keyframes roi-b {
+  0% {
+    bottom: 100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes roi-t {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+}
