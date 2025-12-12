@@ -58,6 +58,57 @@ const ROICalculator = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
+  // Function to get the risk level of the selected industry
+  const getRiskLevel = () => {
+    if (!selectedIndustry) return null;
+
+    for (const group of groupedIndustries) {
+      if (group.items.includes(selectedIndustry)) {
+        return group.label;
+      }
+    }
+    return null;
+  };
+
+  // Get risk level badge styling
+  const getRiskBadgeStyles = (riskLevel) => {
+    switch (riskLevel) {
+      case 'Low-Risk':
+        return {
+          bgColor: 'bg-green-50',
+          textColor: 'text-green-700',
+          dotColor: 'bg-green-500',
+          borderColor: 'border-green-200',
+        };
+      case 'Mid-Risk':
+        return {
+          bgColor: 'bg-yellow-50',
+          textColor: 'text-yellow-700',
+          dotColor: 'bg-yellow-500',
+          borderColor: 'border-yellow-200',
+        };
+      case 'High-Risk':
+        return {
+          bgColor: 'bg-red-50',
+          textColor: 'text-red-700',
+          dotColor: 'bg-red-500',
+          borderColor: 'border-red-200',
+        };
+      default:
+        return {
+          bgColor: 'bg-gray-50',
+          textColor: 'text-gray-700',
+          dotColor: 'bg-gray-400',
+          borderColor: 'border-gray-200',
+        };
+    }
+  };
+
+  const currentRiskLevel = getRiskLevel();
+  const badgeStyles = currentRiskLevel
+    ? getRiskBadgeStyles(currentRiskLevel)
+    : getRiskBadgeStyles(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -120,7 +171,7 @@ const ROICalculator = () => {
             </ul>
           </div>
           <div
-            className="col-span-1 rounded-md bg-white p-4"
+            className="col-span-1 flex flex-col items-start gap-4 rounded-md bg-white p-4"
             data-animate="fade-up"
             style={{ transitionDelay: '80ms' }}
           >
@@ -128,7 +179,15 @@ const ROICalculator = () => {
               <CalculatorIcon />
               <h3 className="text-xl font-medium">ROI Calculator</h3>
             </div>
-            <div className="mt-6 flex flex-col gap-4">
+            {currentRiskLevel && (
+              <div
+                className={`${badgeStyles.bgColor} ${badgeStyles.textColor} ${badgeStyles.borderColor} flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium`}
+              >
+                <div className={`${badgeStyles.dotColor} h-2.5 w-2.5 rounded-full`}></div>
+                <span>{currentRiskLevel}</span>
+              </div>
+            )}
+            <div className="flex w-full flex-col gap-4">
               {[
                 { label: 'Yearly Volume', value: '$50,000' },
                 { label: 'Average Order Value', value: '$80.00' },
