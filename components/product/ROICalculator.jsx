@@ -86,6 +86,7 @@ const ROICalculator = () => {
     percentage: 2.45,
     monthlyFee: 50,
     setupFee: 0,
+    transVal: 0.2,
   };
 
   const compCalData = {
@@ -94,16 +95,19 @@ const ROICalculator = () => {
         percentage: 2.82,
         monthlyFee: 50,
         setupFee: 250,
+        transVal: 0.3,
       },
       midRisk: {
         percentage: 3.12,
         monthlyFee: 150,
         setupFee: 250,
+        transVal: 0.3,
       },
       highRisk: {
         percentage: 4.4,
         monthlyFee: 150,
         setupFee: 250,
+        transVal: 0.3,
       },
     },
     payCloud: {
@@ -111,16 +115,19 @@ const ROICalculator = () => {
         percentage: 2.8,
         monthlyFee: 50,
         setupFee: 250,
+        transVal: 0.3,
       },
       midRisk: {
         percentage: 3.1,
         monthlyFee: 150,
         setupFee: 250,
+        transVal: 0.3,
       },
       highRisk: {
         percentage: 4.3,
         monthlyFee: 150,
         setupFee: 250,
+        transVal: 0.3,
       },
     },
     highRisk: {
@@ -128,16 +135,19 @@ const ROICalculator = () => {
         percentage: 2.77,
         monthlyFee: 50,
         setupFee: 250,
+        transVal: 0.3,
       },
       midRisk: {
         percentage: 3.07,
         monthlyFee: 150,
         setupFee: 250,
+        transVal: 0.3,
       },
       highRisk: {
         percentage: 4.25,
         monthlyFee: 150,
         setupFee: 250,
+        transVal: 0.3,
       },
     },
   };
@@ -154,6 +164,7 @@ const ROICalculator = () => {
     const { yearlyVolume, averageOrderValue, chargebacksRate, profitMargin, industry, riskLevel } =
       userData;
     if (selectedCompany === 'ecomPayouts') {
+      const value = yearlyVolume * (ecomCalcData.percentage / 100);
     }
   };
 
