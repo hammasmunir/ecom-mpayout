@@ -283,6 +283,7 @@ const ROICalculator = () => {
           <div
             className={`circle roi-blob roi-blob-top absolute top-0 right-0 h-0 w-[10px] rounded-full bg-[#3E03F0] opacity-75 shadow-[0_0_700px_150px_#3E03F0] backdrop-blur-2xl ${isVisible ? 'animate' : ''}`}
           ></div>
+
           <div className="col-span-1 rounded-md bg-white p-4" data-animate="fade-up">
             <div
               className={`mb-4 flex cursor-pointer justify-center rounded-md bg-[#EDF3FF] p-4 ${selectedCompany === 'ecomPayouts' ? 'bg-[#EDF3FF]' : 'bg-white'}`}
@@ -308,6 +309,7 @@ const ROICalculator = () => {
             >
               <Image src={HighRiskIcon} alt="Logo" />
             </div>
+            <button onClick={calculateROI}>Calculate ROI</button>
           </div>
           <div
             className="col-span-1 flex flex-col items-start gap-4 rounded-md bg-white p-4"
