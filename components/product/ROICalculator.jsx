@@ -82,13 +82,13 @@ const ROICalculator = () => {
     netRevenue: '',
   });
 
-  const [ecomCalcData, setEcomCalcData] = useState({
+  const ecomCalcData = {
     percentage: 2.45,
     monthlyFee: 50,
     setupFee: 0,
-  });
+  };
 
-  const [compCalcData, setCompCalcData] = useState({
+  const compCalData = {
     zenPayments: {
       lowRisk: {
         percentage: 2.82,
@@ -140,7 +140,7 @@ const ROICalculator = () => {
         setupFee: 250,
       },
     },
-  });
+  };
 
   const [selectedIndustry, setSelectedIndustry] = useState('');
   const [isVisible, setIsVisible] = useState(false);
@@ -148,6 +148,13 @@ const ROICalculator = () => {
 
   const selectCompany = (company) => {
     setSelectedCompany(company);
+  };
+
+  const calculateROI = () => {
+    const { yearlyVolume, averageOrderValue, chargebacksRate, profitMargin, industry, riskLevel } =
+      userData;
+    if (selectedCompany === 'ecomPayouts') {
+    }
   };
 
   const getRiskLevel = () => {
