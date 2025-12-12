@@ -10,8 +10,12 @@ import ROIBg from '@/assets/images/roi-bg.png';
 import Logo from '@/assets/images/main-logo.svg';
 import CalculatorIcon from '@/assets/icons/CalculatorIcon';
 import NotesIcon from '@/assets/icons/NotesIcon';
+import PayCloudIcon from '@/assets/images/payment-cloud.svg';
+import ZenPaymentsIcon from '@/assets/images/zen-payments.svg';
+import HighRiskIcon from '@/assets/images/high-risk.svg';
 
 const ROICalculator = () => {
+  const [selectedCompany, setSelectedCompany] = useState('ecomPayouts');
   const groupedIndustries = [
     {
       label: 'Low-Risk',
@@ -102,7 +106,7 @@ const ROICalculator = () => {
         setupFee: 250,
       },
     },
-    highRisk: {
+    payCloud: {
       lowRisk: {
         percentage: 2.8,
         monthlyFee: 50,
@@ -141,6 +145,10 @@ const ROICalculator = () => {
   const [selectedIndustry, setSelectedIndustry] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+
+  const selectCompany = (company) => {
+    setSelectedCompany(company);
+  };
 
   const getRiskLevel = () => {
     if (!selectedIndustry) return null;
@@ -236,21 +244,37 @@ const ROICalculator = () => {
           data-animate="fade-up"
         >
           <div
-            className={`circle roi-blob roi-blob-bottom absolute bottom-0 left-0 h-0 w-[10px] rounded-full bg-[#0356f050] shadow-[0_0_500px_90px_#0356f0] backdrop-blur-2xl ${isVisible ? 'animate' : ''}`}
+            className={`circle roi-blob roi-blob-bottom absolute bottom-0 left-0 h-0 w-[10px] rounded-full bg-[#0356f050] opacity-75 shadow-[0_0_700px_150px_#0356f0] backdrop-blur-2xl ${isVisible ? 'animate' : ''}`}
           ></div>
-          <div className="circle roi-blob roi-blob-mid absolute top-1/2 left-1/2 h-0 w-[10px] rounded-full bg-[#03CCF0] shadow-[0_0_500px_90px_#03CCF0] backdrop-blur-2xl"></div>
+          <div className="circle roi-blob roi-blob-mid absolute top-1/2 left-1/2 h-0 w-[10px] rounded-full bg-[#03CCF0] opacity-75 shadow-[0_0_700px_150px_#03CCF0] backdrop-blur-2xl"></div>
           <div
-            className={`circle roi-blob roi-blob-top absolute top-0 right-0 h-0 w-[10px] rounded-full bg-[#3E03F0] shadow-[0_0_500px_90px_#3E03F0] backdrop-blur-2xl ${isVisible ? 'animate' : ''}`}
+            className={`circle roi-blob roi-blob-top absolute top-0 right-0 h-0 w-[10px] rounded-full bg-[#3E03F0] opacity-75 shadow-[0_0_700px_150px_#3E03F0] backdrop-blur-2xl ${isVisible ? 'animate' : ''}`}
           ></div>
           <div className="col-span-1 rounded-md bg-white p-4" data-animate="fade-up">
-            <div className="mb-4 flex justify-center rounded-md bg-[#EDF3FF] p-4">
+            <div
+              className={`mb-4 flex cursor-pointer justify-center rounded-md bg-[#EDF3FF] p-4 ${selectedCompany === 'ecomPayouts' ? 'bg-[#EDF3FF]' : 'bg-white'}`}
+              onClick={() => selectCompany('ecomPayouts')}
+            >
               <Image src={Logo} alt="Logo" />
             </div>
-            <ul className="text-text text-center text-xl">
-              <li className="py-4">Competitor 1</li>
-              <li className="py-4">Competitor 2</li>
-              <li className="py-4">Competitor 3</li>
-            </ul>
+            <div
+              className={`mb-4 flex cursor-pointer justify-center rounded-md bg-[#EDF3FF] p-4 ${selectedCompany === 'zenPayments' ? 'bg-[#EDF3FF]' : 'bg-white'}`}
+              onClick={() => selectCompany('zenPayments')}
+            >
+              <Image src={ZenPaymentsIcon} alt="Logo" />
+            </div>
+            <div
+              className={`mb-4 flex cursor-pointer justify-center rounded-md bg-[#EDF3FF] p-4 ${selectedCompany === 'payCloud' ? 'bg-[#EDF3FF]' : 'bg-white'}`}
+              onClick={() => selectCompany('payCloud')}
+            >
+              <Image src={PayCloudIcon} alt="Logo" />
+            </div>
+            <div
+              className={`mb-4 flex cursor-pointer justify-center rounded-md bg-[#EDF3FF] p-4 ${selectedCompany === 'highRisk' ? 'bg-[#EDF3FF]' : 'bg-white'}`}
+              onClick={() => selectCompany('highRisk')}
+            >
+              <Image src={HighRiskIcon} alt="Logo" />
+            </div>
           </div>
           <div
             className="col-span-1 flex flex-col items-start gap-4 rounded-md bg-white p-4"
