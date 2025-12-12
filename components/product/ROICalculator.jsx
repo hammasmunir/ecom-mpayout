@@ -370,16 +370,19 @@ const ROICalculator = () => {
             </div>
             <div className="mt-6 grid grid-cols-1 gap-4">
               {[
-                { label: 'Gross Revenue', value: '$50,000' },
-                { label: 'Transaction fee', value: '$950.00' },
-                { label: 'Per transaction fee', value: '$150.00' },
-                { label: 'Monthly fee', value: '$100.00' },
-                { label: 'Setup fee', value: '$50.00' },
-                { label: 'Net Revenue', value: '$48,750' },
+                { label: 'Gross Revenue', value: resultData.grossRevenue, symbol: '$' },
+                { label: 'Transaction fee', value: resultData.transactionFee, symbol: '$' },
+                { label: 'Per transaction fee', value: resultData.perTransactionFee, symbol: '$' },
+                { label: 'Monthly fee', value: resultData.monthlyFee, symbol: '$' },
+                { label: 'Setup fee', value: resultData.setupFee, symbol: '$' },
+                { label: 'Net Revenue', value: resultData.netRevenue, symbol: '$' },
               ].map((field) => (
                 <div key={field.label} className="rounded-lg border border-[#E5E7EB] px-4 py-3">
                   <p className="text-text text-sm font-medium">{field.label}</p>
-                  <p className="text-lg font-semibold text-gray-900">{field.value}</p>
+                  <p className="text-lg font-semibold text-gray-900">
+                    {field.symbol}
+                    {field.value}
+                  </p>
                 </div>
               ))}
             </div>
